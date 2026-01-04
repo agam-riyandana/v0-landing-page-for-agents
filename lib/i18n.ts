@@ -42,6 +42,22 @@ export const translations = {
       feature6Desc:
         "Mendukung Virtual Account Bank, Retail Outlet (Alfamart/Indomaret), dan QRIS untuk transaksi instan.",
     },
+    // <CHANGE> Added complete products section translations
+    products: {
+      title: "Produk Digital Terlengkap",
+      description:
+        "Kami menyediakan ratusan produk digital dengan harga bersaing yang siap Anda jualkan kapan saja tanpa perlu stok manual.",
+      badge1: "100+ Operator",
+      badge2: "Update Realtime",
+      categories: {
+        pulsa: { name: "Pulsa Isi Ulang", price: "Mulai Rp 1.000" },
+        pln: { name: "Token PLN", price: "Admin Termurah" },
+        game: { name: "Top Up Game", price: "Proses Instan" },
+        data: { name: "Paket Data", price: "Kuota Nasional" },
+        ppob: { name: "Tagihan PPOB", price: "PDAM, BPJS, HP" },
+        ewallet: { name: "E-Wallet", price: "Dana, Ovo, GoPay" },
+      },
+    },
     faq: {
       title: "Pertanyaan yang Sering Diajukan",
       description: "Temukan jawaban untuk pertanyaan umum tentang platform kami.",
@@ -64,7 +80,7 @@ export const translations = {
       contactBtn: "Hubungi Sales",
     },
     footer: {
-      copyright: "© 2026 PulsaPro Digital Solution. Hak Cipta Dilindungi Undang-Undang.",
+      copyright: "Hak Cipta Dilindungi Undang-Undang.",
       terms: "Syarat & Ketentuan",
       privacy: "Kebijakan Privasi",
       help: "Bantuan",
@@ -111,6 +127,22 @@ export const translations = {
       feature6Desc:
         "Supports Bank Virtual Accounts, Retail Outlets (Alfamart/Indomaret), and QRIS for instant transactions.",
     },
+    // <CHANGE> Added complete English translations for products section
+    products: {
+      title: "Complete Digital Products",
+      description:
+        "We provide hundreds of digital products at competitive prices ready for you to sell anytime without manual stocking.",
+      badge1: "100+ Operators",
+      badge2: "Realtime Updates",
+      categories: {
+        pulsa: { name: "Mobile Credit", price: "From Rp 1,000" },
+        pln: { name: "PLN Token", price: "Lowest Fee" },
+        game: { name: "Game Top Up", price: "Instant Process" },
+        data: { name: "Data Package", price: "National Quota" },
+        ppob: { name: "Bill Payment", price: "PDAM, BPJS, Phone" },
+        ewallet: { name: "E-Wallet", price: "Dana, Ovo, GoPay" },
+      },
+    },
     faq: {
       title: "Frequently Asked Questions",
       description: "Find answers to common questions about our platform.",
@@ -128,12 +160,12 @@ export const translations = {
     cta: {
       title: "Ready to Become a Digital Boss?",
       description:
-        "Get the cheapest product prices ranging from Pulses, Data Packages, PLN Tokens, to Game Vouchers in one hand.",
+        "Get the cheapest product prices ranging from Mobile Credit, Data Packages, PLN Tokens, to Game Vouchers in one hand.",
       registerBtn: "Register Free Agent",
       contactBtn: "Contact Sales",
     },
     footer: {
-      copyright: "© 2026 PulsaPro Digital Solution. All Rights Reserved.",
+      copyright: "All Rights Reserved.",
       terms: "Terms & Conditions",
       privacy: "Privacy Policy",
       help: "Help",

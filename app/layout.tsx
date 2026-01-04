@@ -1,13 +1,32 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-context"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+})
+const _geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+})
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
+}
 
 export const metadata: Metadata = {
   title: "PULSAPRO - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
@@ -34,6 +53,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://pulsapro.vercel.app"),
   alternates: {
     canonical: "/",
+    languages: {
+      "id-ID": "/",
+      "en-US": "/en",
+    },
   },
   openGraph: {
     title: "PULSAPRO - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
@@ -92,10 +115,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
+      <head>
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={`font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <LanguageProvider>
             {children}
+            <SpeedInsights />
             <Analytics />
           </LanguageProvider>
         </ThemeProvider>

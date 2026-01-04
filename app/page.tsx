@@ -9,9 +9,14 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-context"
 import { Footer } from "@/components/footer"
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef } from "react"
 
 export default function LandingPage() {
   const { t } = useLanguage()
+  const ctaRef = useRef(null)
+  const isCtaInView = useInView(ctaRef, { once: true, margin: "-100px" })
 
   return (
     <main className="min-h-screen">
@@ -19,15 +24,24 @@ export default function LandingPage() {
       <Hero />
       <Features />
       <ProductsSection />
-
       <FaqSection />
 
       {/* Pricing Teaser */}
-      <section id="products" className="py-16 sm:py-20 lg:py-24">
+      <section id="products" className="py-16 sm:py-20 lg:py-24" ref={ctaRef}>
         <div className="container mx-auto px-4">
-          <div className="bg-primary rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white relative overflow-hidden">
+          <motion.div
+            className="bg-primary rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white relative overflow-hidden"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isCtaInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="absolute top-0 right-0 -mt-20 -mr-20 h-64 w-64 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="relative z-10 space-y-4 sm:space-y-6">
+            <motion.div
+              className="relative z-10 space-y-4 sm:space-y-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">{t.cta.title}</h2>
               <p className="text-primary-foreground/80 max-w-xl mx-auto text-sm sm:text-base lg:text-lg">
                 {t.cta.description}
@@ -49,8 +63,8 @@ export default function LandingPage() {
                   <Link href="/contact">{t.cta.contactBtn}</Link>
                 </Button>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

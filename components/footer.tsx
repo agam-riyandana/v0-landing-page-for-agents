@@ -37,8 +37,9 @@ export function Footer() {
           ))}
         </div>
 
+        {/* <CHANGE> Fixed copyright to use dynamic year and proper translation */}
         <p className="text-xs sm:text-sm text-muted-foreground">
-          © {currentYear} PulsaPro Digital Solution. {t.footer.copyright.split(". ")[1]}
+          © {currentYear} PulsaPro Digital Solution. {t.footer.copyright}
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
