@@ -15,7 +15,7 @@ export function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="text-xl sm:text-2xl font-bold tracking-tighter text-primary">
-          PULSA<span className="text-foreground">PRO</span>
+          BAYAR<span className="text-foreground">KITA</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -45,13 +45,13 @@ export function Navbar() {
           {/* Desktop Login and Register */}
           <div className="hidden sm:flex items-center gap-2 ml-2">
             <Link
-              href="/login"
+              href="https://my.bayarkita.com/login"
               className="hidden lg:inline-flex text-sm font-medium hover:text-primary transition-colors px-3 py-2"
             >
               {t.nav.login}
             </Link>
             <Button asChild size="sm" className="rounded-full px-5 h-9 text-sm font-semibold">
-              <Link href="/register">{t.nav.register}</Link>
+              <Link href="https://my.bayarkita.comregister">{t.nav.register}</Link>
             </Button>
           </div>
 
@@ -83,10 +83,10 @@ export function Navbar() {
                     variant="outline"
                     className="w-full rounded-full h-11 text-sm font-semibold bg-transparent"
                   >
-                    <Link href="/login">{t.nav.login}</Link>
+                    <Link href="https://my.bayarkita.com/login">{t.nav.login}</Link>
                   </Button>
                   <Button asChild className="w-full rounded-full h-11 text-sm font-semibold">
-                    <Link href="/register">{t.nav.register}</Link>
+                    <Link href="https://my.bayarkita.com/register">{t.nav.register}</Link>
                   </Button>
                 </div>
               </div>
