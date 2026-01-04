@@ -57,7 +57,7 @@ export default function LandingPage() {
       <footer className="py-8 sm:py-12 border-t border-border">
         <div className="container mx-auto px-4 text-center space-y-4 sm:space-y-6">
           <div className="text-lg sm:text-xl font-bold tracking-tighter text-primary">
-            KITA<span className="text-foreground">BAYAR</span>
+            BAYAR<span className="text-foreground">KITA</span>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground">{t.footer.copyright}</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
