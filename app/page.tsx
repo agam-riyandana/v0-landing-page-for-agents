@@ -37,7 +37,7 @@ export default function LandingPage() {
                   size="lg"
                   className="bg-white text-primary hover:bg-white/90 rounded-full h-11 sm:h-12 px-7 sm:px-8 text-sm sm:text-base font-bold"
                 >
-                  <Link href="/register">{t.cta.registerBtn}</Link>
+                  <Link href="https://my.bayarkita.com/register">{t.cta.registerBtn}</Link>
                 </Button>
                 <Button
                   asChild
@@ -57,7 +57,7 @@ export default function LandingPage() {
       <footer className="py-8 sm:py-12 border-t border-border">
         <div className="container mx-auto px-4 text-center space-y-4 sm:space-y-6">
           <div className="text-lg sm:text-xl font-bold tracking-tighter text-primary">
-            PULSA<span className="text-foreground">PRO</span>
+            KITA<span className="text-foreground">BAYAR</span>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground">{t.footer.copyright}</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
