@@ -9,9 +9,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Facebook, href: "https://facebook.com/asliagam", label: "Facebook" },
+    { icon: Instagram, href: "https://instagram.com/realagam1", label: "Instagram" },
+    { icon: Twitter, href: "https://twitter.com/realagam1", label: "Twitter" },
     { icon: MessageCircle, href: "https://wa.me/yournumber", label: "WhatsApp" },
   ]
 
@@ -19,7 +19,7 @@ export function Footer() {
     <footer className="py-8 sm:py-12 border-t border-border bg-background">
       <div className="container mx-auto px-4 text-center space-y-6 sm:space-y-8">
         <div className="text-lg sm:text-xl font-bold tracking-tighter text-primary">
-          PULSA<span className="text-foreground">PRO</span>
+          BAYAR<span className="text-foreground">KITA</span>
         </div>
 
         <div className="flex justify-center gap-4 sm:gap-6">
@@ -39,7 +39,7 @@ export function Footer() {
 
         {/* <CHANGE> Fixed copyright to use dynamic year and proper translation */}
         <p className="text-xs sm:text-sm text-muted-foreground">
-          © {currentYear} PulsaPro Digital Solution. {t.footer.copyright}
+          © {currentYear} BAYARKITA Digital Solution. {t.footer.copyright}
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
