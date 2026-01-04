@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "google-site-verification" content="DTSWY5jhmq08dcL2jy287ddXoN_jvwCeq2IVdxucAbI",
     yandex: "your-yandex-verification-code",
   },
   generator: "bayarkita.com",
