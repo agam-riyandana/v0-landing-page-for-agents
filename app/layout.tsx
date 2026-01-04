@@ -29,7 +29,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "PULSAPRO - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+  title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
   description:
     "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline. Bisa deposit atau langsung beli tanpa deposit.",
   keywords: [
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     "QRIS",
     "retail outlet",
   ],
-  authors: [{ name: "PULSAPRO" }],
-  creator: "PULSAPRO",
-  publisher: "PULSAPRO",
-  metadataBase: new URL("https://pulsapro.vercel.app"),
+  authors: [{ name: "BAYARKITA" }],
+  creator: "BAYARKITA",
+  publisher: "BAYARKITA",
+  metadataBase: new URL("https://bayarkita.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -59,17 +59,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "PULSAPRO - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+    title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
     description:
       "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline.",
-    url: "https://pulsapro.vercel.app",
-    siteName: "PULSAPRO",
+    url: "https://bayarkita.com",
+    siteName: "bayarkita",
     locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PULSAPRO - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+    title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
     description:
       "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline.",
   },
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
   },
-  generator: "v0.app",
+  generator: "bayarkita.com",
   icons: {
     icon: [
       {
