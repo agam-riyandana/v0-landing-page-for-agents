@@ -15,7 +15,7 @@ export function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="text-xl sm:text-2xl font-bold tracking-tighter text-primary">
-          KITA<span className="text-foreground">BAYAR</span>
+          BAYAR<span className="text-foreground">KITA</span>
         </Link>
 
         {/* Desktop Navigation */}
