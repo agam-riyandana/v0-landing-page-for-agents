@@ -61,7 +61,7 @@ export function Hero() {
                 size="lg"
                 className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-semibold group"
               >
-                <Link href="/register">
+                <Link href="https://my.bayarkita.com/register">
                   {t.hero.cta}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -72,7 +72,7 @@ export function Hero() {
                 variant="outline"
                 className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-semibold bg-transparent border-primary text-primary hover:bg-primary/5"
               >
-                <Link href="/login">{t.hero.loginBtn}</Link>
+                <Link href="https://bayarkita.com/login">{t.hero.loginBtn}</Link>
               </Button>
             </motion.div>
 
