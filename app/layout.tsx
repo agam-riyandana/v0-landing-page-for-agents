@@ -10,7 +10,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "PULSAPRO - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+  title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
   description:
     "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline. Bisa deposit atau langsung beli tanpa deposit.",
   keywords: [
@@ -28,25 +28,25 @@ export const metadata: Metadata = {
     "QRIS",
     "retail outlet",
   ],
-  authors: [{ name: "PULSAPRO" }],
-  creator: "PULSAPRO",
-  publisher: "PULSAPRO",
-  metadataBase: new URL("https://pulsapro.vercel.app"),
+  authors: [{ name: "Agam Riyandana" }],
+  creator: "Agam Riyandana",
+  publisher: "Agam Riyandana",
+  metadataBase: new URL("https://bayarkita.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "PULSAPRO - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+    title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
     description:
       "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline.",
-    url: "https://pulsapro.vercel.app",
-    siteName: "PULSAPRO",
+    url: "https://bayarkita.com",
+    siteName: "BAYARKITA",
     locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PULSAPRO - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+    title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
     description:
       "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline.",
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
   },
-  generator: "v0.app",
+  generator: "bayarkita.com",
   icons: {
     icon: [
       {
