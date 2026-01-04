@@ -7,7 +7,7 @@ export default function TermsPage() {
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold mb-8">Syarat & Ketentuan</h1>
         <div className="prose prose-slate max-w-none space-y-6 text-muted-foreground">
-          <p>Selamat datang di PULSAPRO. Dengan mendaftar sebagai agen, Anda menyetujui ketentuan berikut:</p>
+          <p>Selamat datang di BAYARKITA. Dengan mendaftar sebagai agen, Anda menyetujui ketentuan berikut:</p>
           <section>
             <h2 className="text-xl font-bold text-foreground">1. Pendaftaran</h2>
             <p>Pendaftaran agen bersifat gratis selamanya. Anda bertanggung jawab atas keamanan akun Anda.</p>
