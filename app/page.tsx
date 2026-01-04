@@ -52,7 +52,7 @@ export default function LandingPage() {
                   size="lg"
                   className="bg-white text-primary hover:bg-white/90 rounded-full h-11 sm:h-12 px-7 sm:px-8 text-sm sm:text-base font-bold"
                 >
-                  <Link href="/register">{t.cta.registerBtn}</Link>
+                  <Link href="https://my.bayarkita.com/register">{t.cta.registerBtn}</Link>
                 </Button>
                 <Button
                   asChild
@@ -60,7 +60,7 @@ export default function LandingPage() {
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 rounded-full h-11 sm:h-12 px-7 sm:px-8 text-sm sm:text-base bg-transparent font-bold"
                 >
-                  <Link href="/contact">{t.cta.contactBtn}</Link>
+                  <Link href="mailto:admin@agamofficial.my.id">{t.cta.contactBtn}</Link>
                 </Button>
               </div>
             </motion.div>
