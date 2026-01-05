@@ -11,11 +11,15 @@ const _geist = Geist({
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  weight: ["400", "500", "600", "700", "800"],
+  fallback: ["system-ui", "arial"],
 })
 const _geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  weight: ["400", "500", "700"],
+  fallback: ["monospace"],
 })
 
 export const viewport: Viewport = {
@@ -63,7 +67,7 @@ export const metadata: Metadata = {
     description:
       "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline.",
     url: "https://bayarkita.com",
-    siteName: "bayarkita",
+    siteName: "BAYARKITA",
     locale: "id_ID",
     type: "website",
   },
@@ -88,7 +92,7 @@ export const metadata: Metadata = {
     google: "DTSWY5jhmq08dcL2jy287ddXoN_jvwCeq2IVdxucAbI",
     yandex: "your-yandex-verification-code",
   },
-  generator: "bayarkita.com",
+  generator: "BAYARKITA",
   icons: {
     icon: [
       {
@@ -115,11 +119,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <head>
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
+      <head></head>
       <body className={`font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <LanguageProvider>

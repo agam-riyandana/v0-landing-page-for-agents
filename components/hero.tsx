@@ -20,16 +20,16 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-wider"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary text-primary-foreground font-black uppercase tracking-wider text-[10px] sm:text-xs md:text-sm border-2 border-primary shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.4 }}
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-foreground opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-foreground"></span>
               </span>
-              {t.hero.badge}
+              <span className="leading-tight drop-shadow-sm">{t.hero.badge}</span>
             </motion.div>
 
             <motion.h1
@@ -105,7 +105,7 @@ export function Hero() {
           >
             <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-50 animate-pulse"></div>
             <motion.div
-              className="relative bg-card dark:bg-card rounded-2xl border border-border shadow-2xl p-3 sm:p-4 overflow-hidden"
+              className="relative bg-card dark:bg-card rounded-2xl border border-border shadow-2xl p-4 sm:p-5 overflow-hidden"
               animate={{
                 y: [0, -15, 0],
               }}
@@ -116,52 +116,56 @@ export function Hero() {
               }}
               whileHover={{ scale: 1.02, y: -20 }}
             >
-              <div className="space-y-3 sm:space-y-4">
-                <div className="flex justify-between items-center pb-3 sm:pb-4 border-b border-border">
+              <div className="space-y-4 sm:space-y-5">
+                <div className="flex justify-between items-center pb-4 border-b border-border">
                   <div className="h-6 sm:h-8 w-24 sm:w-32 bg-muted rounded"></div>
-                  <div className="h-6 sm:h-8 w-6 sm:w-8 bg-primary/10 rounded-full"></div>
+                  <div className="h-6 sm:h-8 w-6 sm:w-8 bg-primary/20 rounded-full"></div>
                 </div>
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   <motion.div
-                    className="p-3 sm:p-4 bg-primary text-white rounded-xl space-y-1 sm:space-y-2"
+                    className="p-4 bg-primary text-primary-foreground rounded-xl space-y-1.5 shadow-md"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-[10px] sm:text-xs opacity-80">Saldo Anda</p>
-                    <p className="text-lg sm:text-xl font-bold">Rp 2.5jt</p>
+                    <p className="text-[11px] sm:text-xs font-black uppercase tracking-wider opacity-100">Saldo Anda</p>
+                    <p className="text-xl sm:text-2xl font-black">Rp 2.5jt</p>
                   </motion.div>
                   <motion.div
-                    className="p-3 sm:p-4 bg-secondary rounded-xl space-y-1 sm:space-y-2 border border-border"
+                    className="p-4 bg-secondary rounded-xl space-y-1.5 border-2 border-primary shadow-md"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">Poin Agen</p>
-                    <p className="text-lg sm:text-xl font-bold text-primary">1.250</p>
+                    <p className="text-[11px] sm:text-xs text-foreground font-black uppercase tracking-wider">
+                      Poin Agen
+                    </p>
+                    <p className="text-xl sm:text-2xl font-black text-primary">1.250</p>
                   </motion.div>
                 </div>
-                <div className="space-y-2 sm:space-y-3">
-                  <p className="text-[10px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                <div className="space-y-3">
+                  <p className="text-[11px] sm:text-xs font-black text-foreground uppercase tracking-widest border-l-4 border-primary pl-2">
                     Histori Transaksi
                   </p>
-                  {[1, 2, 3].map((i) => (
+                  {[1, 2].map((i) => (
                     <motion.div
                       key={i}
-                      className="flex items-center justify-between p-2 sm:p-3 bg-muted/50 rounded-lg border border-border/50"
+                      className="flex items-center justify-between p-3 bg-muted/80 rounded-xl border-2 border-border/80 shadow-sm"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
                       whileHover={{ x: 5, backgroundColor: "hsl(var(--muted))" }}
                     >
-                      <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="h-8 w-8 sm:h-10 sm:w-10 bg-background border rounded-full flex items-center justify-center text-primary font-bold text-xs sm:text-sm">
+                      <div className="flex items-center gap-3">
+                        <div className="h-10 w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-black text-sm shadow-inner">
                           P
                         </div>
                         <div>
-                          <p className="text-xs sm:text-sm font-bold">Pulsa 50rb</p>
-                          <p className="text-[9px] sm:text-[10px] text-muted-foreground">12 Jan • 14:20</p>
+                          <p className="text-sm font-black text-foreground">Pulsa 50rb</p>
+                          <p className="text-[10px] sm:text-xs text-foreground font-black opacity-80">12 Jan • 14:20</p>
                         </div>
                       </div>
-                      <p className="text-[10px] sm:text-sm font-bold text-green-600">Sukses</p>
+                      <div className="px-3 py-1 bg-green-600 dark:bg-green-500 rounded-full shadow-sm">
+                        <p className="text-[10px] sm:text-xs font-black text-white dark:text-black">Sukses</p>
+                      </div>
                     </motion.div>
                   ))}
                 </div>

@@ -9,7 +9,7 @@ export const translations = {
       register: "Daftar Sekarang",
     },
     hero: {
-      badge: "Pendaftaran Agen Gratis Selamanya",
+      badge: "Pendaftaran Gratis Selamanya - Siapapun Bisa Daftar!",
       title: "Mulai Bisnis",
       titleHighlight: "Pulsa & PPOB",
       titleEnd: "Tanpa Ribet Stok Produk.",
@@ -42,7 +42,7 @@ export const translations = {
       feature6Desc:
         "Mendukung Virtual Account Bank, Retail Outlet (Alfamart/Indomaret), dan QRIS untuk transaksi instan.",
     },
-    // <CHANGE> Added complete products section translations
+    // Added complete products section translations
     products: {
       title: "Produk Digital Terlengkap",
       description:
@@ -96,7 +96,7 @@ export const translations = {
       register: "Register Now",
     },
     hero: {
-      badge: "Free Agent Registration Forever",
+      badge: "Free Registration Forever - Anyone Can Join!",
       title: "Start Your",
       titleHighlight: "Pulse & PPOB",
       titleEnd: "Business Without Hassle.",
@@ -127,7 +127,7 @@ export const translations = {
       feature6Desc:
         "Supports Bank Virtual Accounts, Retail Outlets (Alfamart/Indomaret), and QRIS for instant transactions.",
     },
-    // <CHANGE> Added complete English translations for products section
+    // Added complete English translations for products section
     products: {
       title: "Complete Digital Products",
       description:

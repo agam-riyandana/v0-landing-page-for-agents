@@ -11,7 +11,7 @@ export function Footer() {
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com/asliagam", label: "Facebook" },
     { icon: Instagram, href: "https://instagram.com/realagam1", label: "Instagram" },
-    { icon: Twitter, href: "https://twitter.com/realagam1", label: "Twitter" },
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
     { icon: MessageCircle, href: "https://wa.me/yournumber", label: "WhatsApp" },
   ]
 
@@ -37,7 +37,6 @@ export function Footer() {
           ))}
         </div>
 
-        {/* <CHANGE> Fixed copyright to use dynamic year and proper translation */}
         <p className="text-xs sm:text-sm text-muted-foreground">
           © {currentYear} BAYARKITA Digital Solution. {t.footer.copyright}
         </p>

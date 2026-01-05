@@ -51,7 +51,7 @@ export function Navbar() {
               {t.nav.login}
             </Link>
             <Button asChild size="sm" className="rounded-full px-5 h-9 text-sm font-semibold">
-              <Link href="https://my.bayarkita.comregister">{t.nav.register}</Link>
+              <Link href="https://my.bayarkita.com/register">{t.nav.register}</Link>
             </Button>
           </div>
 
@@ -86,7 +86,7 @@ export function Navbar() {
                     <Link href="https://my.bayarkita.com/login">{t.nav.login}</Link>
                   </Button>
                   <Button asChild className="w-full rounded-full h-11 text-sm font-semibold">
-                    <Link href="https://my.bayarkita.com/register">{t.nav.register}</Link>
+                    <Link href="https:my.bayarkita.com/register">{t.nav.register}</Link>
                   </Button>
                 </div>
               </div>
