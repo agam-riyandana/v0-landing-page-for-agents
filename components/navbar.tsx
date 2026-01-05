@@ -14,8 +14,13 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="text-xl sm:text-2xl font-bold tracking-tighter text-primary">
-          BAYAR<span className="text-foreground">KITA</span>
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-primary text-primary-foreground font-black text-xl sm:text-2xl shadow-lg transition-transform group-hover:scale-105">
+            BK
+          </div>
+          <span className="text-xl sm:text-2xl font-bold tracking-tighter text-primary">
+            BAYAR<span className="text-foreground">KITA</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
