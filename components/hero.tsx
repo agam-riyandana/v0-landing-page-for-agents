@@ -160,11 +160,13 @@ export function Hero() {
                         </div>
                         <div>
                           <p className="text-sm font-black text-foreground">Pulsa 50rb</p>
-                          <p className="text-[10px] sm:text-xs text-foreground font-black opacity-80">12 Jan • 14:20</p>
+                          <p className="text-[10px] sm:text-xs text-muted-foreground font-black opacity-80">
+                            12 Jan • 14:20
+                          </p>
                         </div>
                       </div>
-                      <div className="px-3 py-1 bg-green-600 dark:bg-green-500 rounded-full shadow-sm">
-                        <p className="text-[10px] sm:text-xs font-black text-white dark:text-black">Sukses</p>
+                      <div className="px-3 py-1 bg-green-700 dark:bg-green-600 rounded-full shadow-sm">
+                        <p className="text-[10px] sm:text-xs font-black text-white">Sukses</p>
                       </div>
                     </motion.div>
                   ))}
