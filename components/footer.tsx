@@ -19,9 +19,6 @@ export function Footer() {
     <footer className="py-8 sm:py-12 border-t border-border bg-background">
       <div className="container mx-auto px-4 text-center space-y-6 sm:space-y-8">
         <div className="flex flex-col items-center gap-2">
-          <div className="flex items-center justify-center h-16 w-16 bg-primary text-primary-foreground rounded-2xl font-black text-3xl shadow-xl mb-2">
-            BK
-          </div>
           <div className="text-lg sm:text-xl font-bold tracking-tighter text-primary">
             BAYAR<span className="text-foreground">KITA</span>
           </div>
