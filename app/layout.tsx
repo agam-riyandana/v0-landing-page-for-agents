@@ -10,14 +10,14 @@ import { LanguageProvider } from "@/components/language-context"
 const _geist = Geist({
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: false,
   weight: ["400", "500", "600", "700", "800"],
   fallback: ["system-ui", "arial"],
 })
 const _geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: false,
   weight: ["400", "500", "700"],
   fallback: ["monospace"],
 })
@@ -120,7 +120,7 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning>
       <head></head>
-      <body className={`font-sans antialiased`}>
+      <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <LanguageProvider>
             {children}
