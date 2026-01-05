@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   description:
     "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline. Bisa deposit atau langsung beli tanpa deposit.",
   keywords: [
+    "bayar kita",
     "agen pulsa",
     "PPOB",
     "pulsa murah",
