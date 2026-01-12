@@ -33,15 +33,15 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+  title: "BayarKita - Distributor Pulsa & Agen PPOB Termurah Se-Indonesia",
   description:
-    "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline. Bisa deposit atau langsung beli tanpa deposit.",
+    "Platform PPOB & Server Pulsa Nasional terbaik. Gabung mitra BayarKita sekarang: Pendaftaran gratis, harga H2H bersaing, & transaksi detik. Cuan maksimal!",
   keywords: [
     "bayar kita",
-    "agen pulsa",
+    "Distributor pulsa H2H termurah 2026",
     "PPOB",
-    "pulsa murah",
-    "daftar agen gratis",
+    "Cara jadi agen PPOB modal kecil di jember",
+    "Aplikasi bayar tagihan listrik dapat cashback",
     "xl axiata",
     "axis",
     "indosat",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     "Jenggawah",
     "gratis",
     "bisnis pulsa Jember",
-    "bisnis pulsa",
+    "Server pulsa nasional transaksi 24 jam",
     "jualan pulsa",
     "pembayaran digital",
     "bisnis PPOB",
@@ -81,9 +81,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+    title: "BayarKita - Distributor Pulsa & Agen PPOB Termurah Se-Indonesia",
     description:
-      "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline.",
+      "Platform PPOB & Server Pulsa Nasional terbaik. Gabung mitra BayarKita sekarang: Pendaftaran gratis, harga H2H bersaing, & transaksi detik. Cuan maksimal!",
     url: "https://bayarkita.com",
     siteName: "BAYARKITA",
     locale: "id_ID",
@@ -91,9 +91,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BAYARKITA - Solusi Agen Pulsa & PPOB Termurah & Terpercaya",
+    title: "BayarKita - Distributor Pulsa & Agen PPOB Termurah Se-Indonesia",
     description:
-      "Daftar jadi agen pulsa gratis selamanya. Tersedia produk pulsa, PPOB, cetak struk custom, dan fitur downline.",
+      "Platform PPOB & Server Pulsa Nasional terbaik. Gabung mitra BayarKita sekarang: Pendaftaran gratis, harga H2H bersaing, & transaksi detik. Cuan maksimal!",
   },
   robots: {
     index: true,
