@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "BayarKita - Distributor Pulsa & Agen PPOB Termurah Se-Indonesia",
   description:
-    "Platform PPOB & Server Pulsa Nasional terbaik. Gabung mitra BayarKita sekarang: Pendaftaran gratis, harga H2H bersaing, & transaksi detik. Cuan maksimal!",
+    "BayarKita.com: Solusi pembayaran digital terlengkap & terpercaya. Distributor pulsa, paket data, token listrik, & agen PPOB termurah. Transaksi otomatis 24 jam!",
   keywords: [
     "bayar kita",
     "Distributor pulsa H2H termurah 2026",
