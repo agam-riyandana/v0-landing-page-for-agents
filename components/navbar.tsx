@@ -15,11 +15,13 @@ export function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-primary text-primary-foreground font-black text-xl sm:text-2xl shadow-lg transition-transform group-hover:scale-105">
-            BK
-          </div>
-          <span className="text-xl sm:text-2xl font-bold tracking-tighter text-primary">
-            BAYAR<span className="text-foreground">KITA</span>
+          <img 
+            src="/logo.png" 
+            alt="BAYARKITA Logo" 
+            className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-transform group-hover:scale-105"
+          />
+          <span className="hidden sm:inline text-lg sm:text-xl font-bold tracking-tighter text-primary">
+            BAYARKITA
           </span>
         </Link>
 
@@ -33,6 +35,9 @@ export function Navbar() {
           </Link>
           <Link href="#payment" className="text-sm font-medium hover:text-primary transition-colors">
             {t.nav.payment}
+          </Link>
+          <Link href="/tutorial" className="text-sm font-medium hover:text-primary transition-colors">
+            {t.nav.tutorial}
           </Link>
           <Link href="#faq" className="text-sm font-medium hover:text-primary transition-colors">
             {t.nav.faq}
@@ -78,6 +83,9 @@ export function Navbar() {
                 </Link>
                 <Link href="#payment" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.payment}
+                </Link>
+                <Link href="/tutorial" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
+                  {t.nav.tutorial}
                 </Link>
                 <Link href="#faq" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.faq}

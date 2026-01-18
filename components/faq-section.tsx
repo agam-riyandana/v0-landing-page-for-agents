@@ -17,6 +17,12 @@ export function FaqSection() {
     { q: t.faq.q3, a: t.faq.a3 },
     { q: t.faq.q4, a: t.faq.a4 },
     { q: t.faq.q5, a: t.faq.a5 },
+    { q: t.faq.q6, a: t.faq.a6 },
+    { q: t.faq.q7, a: t.faq.a7 },
+    { q: t.faq.q8, a: t.faq.a8 },
+    { q: t.faq.q9, a: t.faq.a9 },
+    { q: t.faq.q10, a: t.faq.a10 },
+    { q: t.faq.q11, a: t.faq.a11 },
   ]
 
   return (

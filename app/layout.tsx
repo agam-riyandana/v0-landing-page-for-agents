@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "BayarKita - Distributor Pulsa & Agen PPOB Termurah Se-Indonesia",
+  title: "BayarKita: Layanan Pulsa & PPOB Online 24 Jam Nonstop",
   description:
     "BayarKita.com: Solusi pembayaran digital terlengkap & terpercaya. Distributor pulsa, paket data, token listrik, & agen PPOB termurah. Transaksi otomatis 24 jam!",
   keywords: [
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "BayarKita - Distributor Pulsa & Agen PPOB Termurah Se-Indonesia",
+    title: "BayarKita: Layanan Pulsa & PPOB Online 24 Jam Nonstop",
     description:
       "Platform PPOB & Server Pulsa Nasional terbaik. Gabung mitra BayarKita sekarang: Pendaftaran gratis, harga H2H bersaing, & transaksi detik. Cuan maksimal!",
     url: "https://bayarkita.com",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BayarKita - Distributor Pulsa & Agen PPOB Termurah Se-Indonesia",
+    title: "BayarKita: Layanan Pulsa & PPOB Online 24 Jam Nonstop",
     description:
       "Platform PPOB & Server Pulsa Nasional terbaik. Gabung mitra BayarKita sekarang: Pendaftaran gratis, harga H2H bersaing, & transaksi detik. Cuan maksimal!",
   },

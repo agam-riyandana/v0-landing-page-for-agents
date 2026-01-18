@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const faqs = [
   {
     question: "Apakah benar pendaftaran agen gratis selamanya?",
-    answer: "Ya, pendaftaran di PULSAPRO 100% gratis tanpa biaya aktivasi atau biaya bulanan apapun selamanya.",
+    answer: "Ya, pendaftaran di BAYARKITA  100% gratis tanpa biaya aktivasi atau biaya bulanan apapun selamanya.",
   },
   {
     question: "Apakah saya harus deposit saldo terlebih dahulu untuk bertransaksi?",

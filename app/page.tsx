@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Features } from "@/components/features"
 import { ProductsSection } from "@/components/products-section"
+import { BenefitsSection } from "@/components/benefits-section"
 import { FaqSection } from "@/components/faq-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -24,6 +25,7 @@ export default function LandingPage() {
       <Hero />
       <Features />
       <ProductsSection />
+      <BenefitsSection />
       <FaqSection />
 
       {/* Pricing Teaser */}

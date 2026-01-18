@@ -18,9 +18,15 @@ export function Footer() {
   return (
     <footer className="py-8 sm:py-12 border-t border-border bg-background">
       <div className="container mx-auto px-4 text-center space-y-6 sm:space-y-8">
-        <div className="flex flex-col items-center gap-2">
-          <div className="text-lg sm:text-xl font-bold tracking-tighter text-primary">
-            BAYAR<span className="text-foreground">KITA</span>
+        <div className="flex flex-col items-center gap-4">
+          <div className="text-center space-y-2">
+            <div className="text-lg sm:text-xl font-bold tracking-tighter text-primary">
+              BAYARKITA
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              Dusun CurahRejo Wedian<br />
+              Jember, Indonesia 68171
+            </p>
           </div>
         </div>
 
