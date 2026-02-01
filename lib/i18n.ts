@@ -60,7 +60,17 @@ export const translations = {
           operators: "Telkomsel, XL, Three, Indosat, Smartfren, Axis, B.YU"
         },
         ppob: { name: "Tagihan PPOB", price: "" },
-        ewallet: { name: "E-Wallet", price: "" },
+        ewallet: { 
+          name: "E-Wallet", 
+          price: "",
+          products: "Top Up Dana, GoPay, Link Aja, OVO, SHOPEEPAY"
+        },
+        transfer: {
+          name: "Transfer Bank",
+          price: "",
+          status: "Coming Soon",
+          products: "Semua Bank"
+        },
       },
     },
     benefits: {
@@ -70,7 +80,7 @@ export const translations = {
       benefit1: "Bisa Dipakai Sendiri, Tidak Harus Berjualan",
       benefit2: "Bisa Transaksi Tanpa Perlu Isi Saldo",
       benefit3: "Bisa Sebagai Tambahan Penghasilan Kamu",
-      benefit4: "Modal Ringan Minimal 50Ribu Saja",
+      benefit4: "Modal Ringan Minimal Top Up 10Ribu Saja",
       benefit5: "Dapat Harga Termurah Langsung Server",
       benefit6: "Transaksi Mudah dan Dijamin Aman",
       benefit7: "Ada Fitur Downline Peluang Raih Bonus",
@@ -175,7 +185,17 @@ export const translations = {
           operators: "Telkomsel, XL, Three, Indosat, Smartfren, Axis, B.YU"
         },
         ppob: { name: "Bill Payment", price: "" },
-        ewallet: { name: "E-Wallet", price: "" },
+        ewallet: { 
+          name: "E-Wallet", 
+          price: "",
+          products: "Top Up Dana, GoPay, Link Aja, OVO, SHOPEEPAY"
+        },
+        transfer: {
+          name: "Bank Transfer",
+          price: "",
+          status: "Coming Soon",
+          products: "All Banks"
+        },
       },
     },
     benefits: {
@@ -185,7 +205,7 @@ export const translations = {
       benefit1: "Can Be Used Personally, No Need to Sell",
       benefit2: "Can Transact Without Needing to Fill Balance",
       benefit3: "Can Be Additional Income for You",
-      benefit4: "Light Capital Minimum Only 50K",
+      benefit4: "Light Capital Minimum Top Up Only 10K",
       benefit5: "Get Cheapest Price Direct from Server",
       benefit6: "Easy Transactions and Guaranteed Safe",
       benefit7: "Downline Feature Opportunity to Get Bonuses",
