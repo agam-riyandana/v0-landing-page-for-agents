@@ -7,6 +7,8 @@ import { LanguageSwitcher } from "@/components/language-switcher"
 import { useLanguage } from "@/components/language-context"
 import { Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { RegisterButton } from "@/components/register-button"
+import { LoginButton } from "@/components/login-button"
 
 export function Navbar() {
   const { t } = useLanguage()
@@ -33,6 +35,9 @@ export function Navbar() {
           <Link href="#products" className="text-sm font-medium hover:text-primary transition-colors">
             {t.nav.products}
           </Link>
+          <Link href="/harga" className="text-sm font-medium hover:text-primary transition-colors">
+            {t.language === "id" ? "Harga" : "Pricing"}
+          </Link>
           <Link href="#payment" className="text-sm font-medium hover:text-primary transition-colors">
             {t.nav.payment}
           </Link>
@@ -54,15 +59,17 @@ export function Navbar() {
 
           {/* Desktop Login and Register */}
           <div className="hidden sm:flex items-center gap-2 ml-2">
-            <Link
-              href="https://my.bayarkita.com/login"
+            <LoginButton
+              variant="ghost"
+              size="sm"
+              asLink
               className="hidden lg:inline-flex text-sm font-medium hover:text-primary transition-colors px-4 py-2 h-10"
-            >
-              {t.nav.login}
-            </Link>
-            <Button asChild size="sm" className="rounded-full px-6 h-10 text-sm font-semibold">
-              <Link href="https://my.bayarkita.com/register">{t.nav.register}</Link>
-            </Button>
+            />
+            <RegisterButton
+              variant="default"
+              size="sm"
+              className="rounded-full px-6 h-10 text-sm font-semibold"
+            />
           </div>
 
           {/* Mobile Menu */}
@@ -87,20 +94,23 @@ export function Navbar() {
                 <Link href="/tutorial" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.tutorial}
                 </Link>
+                <Link href="/harga" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
+                  {t.language === "id" ? "Harga" : "Pricing"}
+                </Link>
                 <Link href="#faq" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.faq}
                 </Link>
                 <div className="border-t border-border pt-6 space-y-2">
-                  <Button
-                    asChild
+                  <LoginButton
                     variant="outline"
-                    className="w-full rounded-full h-12 text-sm font-semibold bg-transparent"
-                  >
-                    <Link href="https://my.bayarkita.com/login">{t.nav.login}</Link>
-                  </Button>
-                  <Button asChild className="w-full rounded-full h-12 text-sm font-semibold">
-                    <Link href="https://my.bayarkita.com/register">{t.nav.register}</Link>
-                  </Button>
+                    size="lg"
+                    className="w-full rounded-full h-12 text-sm font-semibold"
+                  />
+                  <RegisterButton
+                    variant="default"
+                    size="lg"
+                    className="w-full rounded-full h-12 text-sm font-semibold"
+                  />
                 </div>
               </div>
             </SheetContent>

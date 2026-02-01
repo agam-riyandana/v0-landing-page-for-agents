@@ -5,6 +5,8 @@ import { CheckCircle2, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-context"
 import { motion } from "framer-motion"
+import { RegisterButton } from "@/components/register-button"
+import { LoginButton } from "@/components/login-button"
 
 export function Hero() {
   const { t } = useLanguage()
@@ -56,24 +58,20 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <Button
-                asChild
+              <RegisterButton
                 size="lg"
                 className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-semibold group"
               >
-                <Link href="https://my.bayarkita.com/register">
+                <span className="flex items-center">
                   {t.hero.cta}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button
-                asChild
+                </span>
+              </RegisterButton>
+              <LoginButton
                 size="lg"
                 variant="outline"
                 className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-semibold bg-transparent border-primary text-primary hover:bg-primary/5"
-              >
-                <Link href="https://my.bayarkita.com/login">{t.hero.loginBtn}</Link>
-              </Button>
+              />
             </motion.div>
 
             <motion.div
