@@ -18,7 +18,7 @@ export function Navbar() {
           <img 
             src="/logo.png" 
             alt="BAYARKITA Logo" 
-            className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-transform group-hover:scale-105"
+            className="h-11 w-11 sm:h-13 sm:w-13 md:h-14 md:w-14 object-contain transition-transform group-hover:scale-105"
           />
           <span className="hidden sm:inline text-lg sm:text-xl font-bold tracking-tighter text-primary">
             BAYARKITA
@@ -56,11 +56,11 @@ export function Navbar() {
           <div className="hidden sm:flex items-center gap-2 ml-2">
             <Link
               href="https://my.bayarkita.com/login"
-              className="hidden lg:inline-flex text-sm font-medium hover:text-primary transition-colors px-3 py-2"
+              className="hidden lg:inline-flex text-sm font-medium hover:text-primary transition-colors px-4 py-2 h-10"
             >
               {t.nav.login}
             </Link>
-            <Button asChild size="sm" className="rounded-full px-5 h-9 text-sm font-semibold">
+            <Button asChild size="sm" className="rounded-full px-6 h-10 text-sm font-semibold">
               <Link href="https://my.bayarkita.com/register">{t.nav.register}</Link>
             </Button>
           </div>
@@ -90,15 +90,15 @@ export function Navbar() {
                 <Link href="#faq" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.faq}
                 </Link>
-                <div className="border-t border-border pt-6 space-y-3">
+                <div className="border-t border-border pt-6 space-y-2">
                   <Button
                     asChild
                     variant="outline"
-                    className="w-full rounded-full h-11 text-sm font-semibold bg-transparent"
+                    className="w-full rounded-full h-12 text-sm font-semibold bg-transparent"
                   >
                     <Link href="https://my.bayarkita.com/login">{t.nav.login}</Link>
                   </Button>
-                  <Button asChild className="w-full rounded-full h-11 text-sm font-semibold">
+                  <Button asChild className="w-full rounded-full h-12 text-sm font-semibold">
                     <Link href="https://my.bayarkita.com/register">{t.nav.register}</Link>
                   </Button>
                 </div>

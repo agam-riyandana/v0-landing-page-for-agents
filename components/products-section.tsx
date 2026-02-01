@@ -1,6 +1,6 @@
 "use client"
 
-import { Smartphone, Zap, Gamepad2, Tv, Globe, CreditCard } from "lucide-react"
+import { Smartphone, Zap, Gamepad2, Tv, Globe, CreditCard, Wallet, Banknote } from "lucide-react"
 import { useLanguage } from "@/components/language-context"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
@@ -40,8 +40,16 @@ export function ProductsSection() {
     },
     {
       name: t.products.categories.ewallet.name,
-      icon: CreditCard,
+      icon: Wallet,
       price: t.products.categories.ewallet.price,
+      products: t.products.categories.ewallet.products,
+    },
+    {
+      name: t.products.categories.transfer.name,
+      icon: Banknote,
+      price: t.products.categories.transfer.price,
+      status: t.products.categories.transfer.status,
+      products: t.products.categories.transfer.products,
     },
   ]
 
@@ -96,10 +104,17 @@ export function ProductsSection() {
                   <cat.icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                 </motion.div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-bold text-sm sm:text-base text-foreground mb-1 line-clamp-2">{cat.name}</h3>
-                  {cat.operators && (
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="font-bold text-sm sm:text-base text-foreground mb-1">{cat.name}</h3>
+                    {cat.status && (
+                      <span className="inline-block px-2 py-0.5 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 text-xs font-semibold rounded whitespace-nowrap">
+                        {cat.status}
+                      </span>
+                    )}
+                  </div>
+                  {(cat.operators || cat.products) && (
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed break-words">
-                      {cat.operators}
+                      {cat.operators || cat.products}
                     </p>
                   )}
                 </div>

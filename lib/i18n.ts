@@ -60,7 +60,17 @@ export const translations = {
           operators: "Telkomsel, XL, Three, Indosat, Smartfren, Axis, B.YU"
         },
         ppob: { name: "Tagihan PPOB", price: "" },
-        ewallet: { name: "E-Wallet", price: "" },
+        ewallet: { 
+          name: "E-Wallet", 
+          price: "",
+          products: "Top Up Dana, GoPay, Link Aja, OVO, SHOPEEPAY"
+        },
+        transfer: {
+          name: "Transfer Bank",
+          price: "",
+          status: "Coming Soon",
+          products: "Semua Bank"
+        },
       },
     },
     benefits: {
@@ -175,7 +185,17 @@ export const translations = {
           operators: "Telkomsel, XL, Three, Indosat, Smartfren, Axis, B.YU"
         },
         ppob: { name: "Bill Payment", price: "" },
-        ewallet: { name: "E-Wallet", price: "" },
+        ewallet: { 
+          name: "E-Wallet", 
+          price: "",
+          products: "Top Up Dana, GoPay, Link Aja, OVO, SHOPEEPAY"
+        },
+        transfer: {
+          name: "Bank Transfer",
+          price: "",
+          status: "Coming Soon",
+          products: "All Banks"
+        },
       },
     },
     benefits: {
