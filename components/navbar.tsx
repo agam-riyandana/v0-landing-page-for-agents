@@ -13,12 +13,12 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-20 sm:h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <img 
             src="/logo.png" 
             alt="BAYARKITA Logo" 
-            className="h-11 w-11 sm:h-13 sm:w-13 md:h-14 md:w-14 object-contain transition-transform group-hover:scale-105"
+            className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain transition-transform group-hover:scale-105"
           />
           <span className="hidden sm:inline text-lg sm:text-xl font-bold tracking-tighter text-primary">
             BAYARKITA
