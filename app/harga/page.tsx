@@ -145,20 +145,25 @@ export default function HargaPage() {
                 key={selectedCategory}
                 className="space-y-6"
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white shadow-lg"
-                >
-                  <div className="flex items-start gap-4 mb-4">
-                    {products[selectedCategory].icon && <products[selectedCategory].icon className="h-10 w-10 flex-shrink-0" />}
-                    <div>
-                      <h3 className="text-2xl sm:text-3xl font-bold">{products[selectedCategory].title}</h3>
-                      <p className="text-white/80 text-sm mt-1">{products[selectedCategory].description}</p>
-                    </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white shadow-lg"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  {products[selectedCategory].icon && 
+                    (() => {
+                      const IconComponent = products[selectedCategory].icon
+                      return <IconComponent className="h-10 w-10 flex-shrink-0" />
+                    })()
+                  }
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-bold">{products[selectedCategory].title}</h3>
+                    <p className="text-white/80 text-sm mt-1">{products[selectedCategory].description}</p>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
