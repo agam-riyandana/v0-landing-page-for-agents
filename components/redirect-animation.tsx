@@ -12,23 +12,32 @@ interface RedirectAnimationProps {
 
 export function RedirectAnimation({ message, redirectUrl, delay = 2 }: RedirectAnimationProps) {
   const [counter, setCounter] = useState(delay)
+  const [redirected, setRedirected] = useState(false)
 
   useEffect(() => {
-    // Start countdown immediately
-    if (counter > 0) {
-      const interval = setInterval(() => {
-        setCounter((prev) => prev - 1)
-      }, 1000)
-      return () => clearInterval(interval)
-    }
-  }, [counter])
+    // Start countdown
+    const interval = setInterval(() => {
+      setCounter((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     // Redirect when counter reaches 0
-    if (counter === 0) {
-      window.location.href = redirectUrl
+    if (counter === 0 && !redirected) {
+      setRedirected(true)
+      // Use window.open for better compatibility, or direct redirect
+      if (typeof window !== "undefined") {
+        window.location.href = redirectUrl
+      }
     }
-  }, [counter, redirectUrl])
+  }, [counter, redirectUrl, redirected])
 
   return (
     <motion.div
@@ -57,9 +66,10 @@ export function RedirectAnimation({ message, redirectUrl, delay = 2 }: RedirectA
           </p>
         </div>
 
-        <div className="w-full h-1 bg-border rounded-full overflow-hidden">
+        <div className="w-full h-1.5 bg-border rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-gradient-to-r from-primary to-primary/50"
+            className="h-full bg-gradient-to-r from-primary via-primary/70 to-primary/50"
+            key={delay}
             initial={{ width: "100%" }}
             animate={{ width: "0%" }}
             transition={{ duration: delay, ease: "linear" }}
