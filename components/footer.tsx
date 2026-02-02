@@ -38,27 +38,37 @@ export function Footer() {
                 <div className="text-lg sm:text-xl font-bold tracking-tighter text-primary">
                   BAYARKITA
                 </div>
-                <p className="text-xs text-muted-foreground">Digital Payment Platform</p>
+                <p className="text-xs text-muted-foreground">{t.language === "id" ? "Platform Pembayaran Digital" : "Digital Payment Platform"}</p>
               </div>
             </Link>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-sm">
-              Solusi pembayaran digital terlengkap dan terpercaya untuk semua kebutuhan transaksi Anda.
+              {t.footer.subtitle}
             </p>
           </div>
 
           {/* Address Section */}
           <div className="space-y-4">
-            <h3 className="font-bold text-sm sm:text-base text-foreground">Alamat</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Dusun Curah Rejo Wedian<br />
-              Jember, Indonesia 68171<br />
-              Jawa Timur
-            </p>
+            <h3 className="font-bold text-sm sm:text-base text-foreground">
+              {t.language === "id" ? "Alamat" : "Address"}
+            </h3>
+            <div className="space-y-2">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                {t.footer.address}
+              </p>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                {t.language === "id" ? "Email:" : "Email:"} <a href={`mailto:${t.footer.email}`} className="text-primary hover:underline">{t.footer.email}</a>
+              </p>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                {t.language === "id" ? "Telepon:" : "Phone:"} <a href={`tel:${t.footer.phone}`} className="text-primary hover:underline">{t.footer.phone}</a>
+              </p>
+            </div>
           </div>
 
           {/* Links Section */}
           <div className="space-y-4">
-            <h3 className="font-bold text-sm sm:text-base text-foreground">Tautan Penting</h3>
+            <h3 className="font-bold text-sm sm:text-base text-foreground">
+              {t.language === "id" ? "Tautan Penting" : "Important Links"}
+            </h3>
             <div className="space-y-2">
               <Link href="/terms" className="block text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t.footer.terms}
@@ -67,7 +77,7 @@ export function Footer() {
                 {t.footer.privacy}
               </Link>
               <Link href="/tutorial" className="block text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
-                Tutorial
+                {t.language === "id" ? "Tutorial" : "Tutorial"}
               </Link>
               <Link href="#faq" className="block text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t.footer.help}
@@ -110,7 +120,10 @@ export function Footer() {
           </div>
 
           <p className="text-xs sm:text-sm text-muted-foreground">
-            © {currentYear} BAYARKITA Digital Solution. {t.footer.copyright}
+            {t.language === "id" 
+              ? `© ${currentYear} BAYARKITA. Hak Cipta Dilindungi Undang-Undang.`
+              : `© ${currentYear} BAYARKITA. All Rights Reserved.`
+            }
           </p>
         </motion.div>
       </div>
