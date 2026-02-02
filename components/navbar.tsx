@@ -15,42 +15,43 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 h-20 sm:h-24 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
+      <div className="container mx-auto px-3 sm:px-4 h-16 sm:h-20 lg:h-24 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
           <img 
             src="/logo.png" 
             alt="BAYARKITA Logo" 
-            className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain transition-transform group-hover:scale-105"
+            className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 object-contain transition-transform group-hover:scale-105"
           />
-          <span className="hidden sm:inline text-lg sm:text-xl font-bold tracking-tighter text-primary">
+          <span className="hidden sm:inline text-base sm:text-lg lg:text-xl font-bold tracking-tighter text-primary whitespace-nowrap">
             BAYARKITA
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          <Link href="#features" className="text-sm font-medium hover:text-primary transition-colors">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-8">
+          <Link href="#features" className="text-xs xl:text-sm font-medium hover:text-primary transition-colors">
             {t.nav.features}
           </Link>
-          <Link href="#products" className="text-sm font-medium hover:text-primary transition-colors">
+          <Link href="#products" className="text-xs xl:text-sm font-medium hover:text-primary transition-colors">
             {t.nav.products}
           </Link>
-          <Link href="/harga" className="text-sm font-medium hover:text-primary transition-colors">
+          <Link href="/harga" className="text-xs xl:text-sm font-medium hover:text-primary transition-colors">
             {t.language === "id" ? "Harga" : "Pricing"}
           </Link>
-          <Link href="#payment" className="text-sm font-medium hover:text-primary transition-colors">
+          <Link href="#payment" className="text-xs xl:text-sm font-medium hover:text-primary transition-colors">
             {t.nav.payment}
           </Link>
-          <Link href="/tutorial" className="text-sm font-medium hover:text-primary transition-colors">
+          <Link href="/tutorial" className="text-xs xl:text-sm font-medium hover:text-primary transition-colors">
             {t.nav.tutorial}
           </Link>
-          <Link href="#faq" className="text-sm font-medium hover:text-primary transition-colors">
+          <Link href="#faq" className="text-xs xl:text-sm font-medium hover:text-primary transition-colors">
             {t.nav.faq}
           </Link>
         </div>
 
         {/* Right Side Controls */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 ml-auto">
           {/* Theme and Language Toggles */}
           <div className="flex items-center gap-0.5">
             <LanguageSwitcher />
@@ -58,25 +59,25 @@ export function Navbar() {
           </div>
 
           {/* Desktop Login and Register */}
-          <div className="hidden sm:flex items-center gap-2 ml-2">
+          <div className="hidden md:flex items-center gap-1 lg:gap-2 ml-1 lg:ml-2">
             <LoginButton
               variant="ghost"
               size="sm"
               asLink
-              className="hidden lg:inline-flex text-sm font-medium hover:text-primary transition-colors px-4 py-2 h-10"
+              className="hidden lg:inline-flex text-xs xl:text-sm font-medium hover:text-primary transition-colors px-3 lg:px-4 py-2 h-9 lg:h-10"
             />
             <RegisterButton
               variant="default"
               size="sm"
-              className="rounded-full px-6 h-10 text-sm font-semibold"
+              className="rounded-full px-4 lg:px-6 h-9 lg:h-10 text-xs lg:text-sm font-semibold"
             />
           </div>
 
           {/* Mobile Menu */}
           <Sheet>
-            <SheetTrigger asChild className="md:hidden ml-2">
-              <Button variant="ghost" size="icon" className="h-9 w-9">
-                <Menu className="h-5 w-5" />
+            <SheetTrigger asChild className="lg:hidden ml-1">
+              <Button variant="ghost" size="icon" className="h-8 w-8 sm:h-9 sm:w-9">
+                <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
