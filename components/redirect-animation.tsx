@@ -11,26 +11,24 @@ interface RedirectAnimationProps {
 }
 
 export function RedirectAnimation({ message, redirectUrl, delay = 2 }: RedirectAnimationProps) {
-  const [isRedirecting, setIsRedirecting] = useState(false)
   const [counter, setCounter] = useState(delay)
 
   useEffect(() => {
-    if (isRedirecting) {
-      const timer = setTimeout(() => {
-        window.location.href = redirectUrl
-      }, counter * 1000)
-      return () => clearTimeout(timer)
-    }
-  }, [isRedirecting, counter, redirectUrl])
-
-  useEffect(() => {
-    if (isRedirecting && counter > 0) {
+    // Start countdown immediately
+    if (counter > 0) {
       const interval = setInterval(() => {
         setCounter((prev) => prev - 1)
       }, 1000)
       return () => clearInterval(interval)
     }
-  }, [isRedirecting, counter])
+  }, [counter])
+
+  useEffect(() => {
+    // Redirect when counter reaches 0
+    if (counter === 0) {
+      window.location.href = redirectUrl
+    }
+  }, [counter, redirectUrl])
 
   return (
     <motion.div
