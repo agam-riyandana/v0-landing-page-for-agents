@@ -19,8 +19,9 @@ export function LoginButton({ children, variant = "outline", size = "default", c
   const { t, language } = useLanguage()
   const [isRedirecting, setIsRedirecting] = useState(false)
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    e.stopPropagation()
     setIsRedirecting(true)
   }
 
