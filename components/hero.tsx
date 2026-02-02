@@ -35,42 +35,42 @@ export function Hero() {
             </motion.div>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1]"
-              initial={{ opacity: 0, y: 20 }}
+              className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.05] bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
             >
               {t.hero.title} <span className="text-primary">{t.hero.titleHighlight}</span> {t.hero.titleEnd}
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg text-muted-foreground max-w-[540px] leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              className="text-lg sm:text-xl text-muted-foreground max-w-[580px] leading-relaxed"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
             >
               {t.hero.description}
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
               <RegisterButton
                 size="lg"
-                className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-semibold group"
+                className="rounded-full h-12 sm:h-13 px-8 sm:px-10 text-base sm:text-lg font-bold group shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-primary to-primary/90 hover:scale-105"
               >
-                <span className="flex items-center">
+                <span className="flex items-center justify-center">
                   {t.hero.cta}
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </RegisterButton>
               <LoginButton
                 size="lg"
                 variant="outline"
-                className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-semibold bg-transparent border-primary text-primary hover:bg-primary/5"
+                className="rounded-full h-12 sm:h-13 px-8 sm:px-10 text-base sm:text-lg font-bold bg-transparent border-2 border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all"
               />
             </motion.div>
 
@@ -95,14 +95,19 @@ export function Hero() {
             </motion.div>
 
             <motion.div
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 mt-4 sm:mt-6"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border border-green-300 dark:border-green-700 mt-6 sm:mt-8 shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.5 }}
+              whileHover={{ y: -2 }}
             >
-              <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">
-                Terdaftar di PSE Komdigi
+              <motion.div
+                className="h-2 w-2 rounded-full bg-green-500"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              ></motion.div>
+              <span className="text-xs sm:text-sm font-bold text-green-700 dark:text-green-300">
+                {t.language === "id" ? "Terdaftar di PSE Komdigi" : "Registered with Komdigi PSE"}
               </span>
             </motion.div>
           </motion.div>
