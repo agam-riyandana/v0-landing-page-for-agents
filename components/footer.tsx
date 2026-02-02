@@ -58,9 +58,6 @@ export function Footer() {
               <p className="text-xs sm:text-sm text-muted-foreground">
                 {t.language === "id" ? "Email:" : "Email:"} <a href={`mailto:${t.footer.email}`} className="text-primary hover:underline">{t.footer.email}</a>
               </p>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                {t.language === "id" ? "Telepon:" : "Phone:"} <a href={`tel:${t.footer.phone}`} className="text-primary hover:underline">{t.footer.phone}</a>
-              </p>
             </div>
           </div>
 
