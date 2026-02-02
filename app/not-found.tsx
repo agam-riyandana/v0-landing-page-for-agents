@@ -213,7 +213,7 @@ export default function NotFound() {
               variant="outline"
               className="rounded-full h-12 sm:h-13 px-8 sm:px-10 text-sm sm:text-base font-bold bg-transparent group"
             >
-              <Link href="#features">
+              <Link href="https://my.bayarkita.com">
                 <ArrowLeft className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 {language === "id" ? "Lihat Fitur" : "View Features"}
               </Link>
