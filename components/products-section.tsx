@@ -5,6 +5,7 @@ import { useLanguage } from "@/components/language-context"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import Link from "next/link"
 
 export function ProductsSection() {
   const { t } = useLanguage()
@@ -134,16 +135,18 @@ export function ProductsSection() {
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
                       {product.description}
                     </p>
-                    <motion.div
-                      className="inline-flex items-center text-primary font-semibold text-sm"
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      <span>Pelajari Selengkapnya</span>
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </motion.div>
+                    <Link href="https://my.bayarkita.com">
+                      <motion.div
+                        className="inline-flex items-center text-primary font-semibold text-sm hover:gap-2 transition-all cursor-pointer"
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        <span>{t.language === "id" ? "Pelajari Selengkapnya" : "Learn More"}</span>
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </motion.div>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
