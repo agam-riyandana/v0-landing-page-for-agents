@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "BayarKita: Platform Agen Pulsa & PPOB Terpercaya - Daftar Gratis 2024",
+  title: "BAYAR KITA: Platform Agen Pulsa & PPOB Terpercaya - Daftar Gratis",
   description:
     "Bergabunglah dengan BayarKita - Platform agen pulsa & PPOB #1 di Indonesia. ✓ Daftar gratis selamanya ✓ Harga H2H termurah ✓ Transaksi instan 24 jam ✓ Tanpa deposit ✓ Komisi downline unlimited. Mulai bisnis pulsa & PPOB Anda sekarang juga!",
   keywords: [
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "BayarKita: Pulsa & PPOB Terpercaya - Daftar Gratis Sekarang",
+    title: "BAYAR KITA: Pulsa & PPOB Terpercaya - Daftar Gratis Sekarang",
     description:
       "Platform #1 untuk agen pulsa & PPOB. Transaksi cepat, harga termurah, gratis selamanya, komisi unlimited. Raih penghasilan tambahan atau bisnis utama Anda!",
     url: "https://bayarkita.com",
@@ -104,7 +104,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BayarKita: Pulsa & PPOB Terpercaya - Daftar Gratis",
+    title: "Bayar Kita: Pulsa & PPOB Terpercaya - Daftar Gratis",
     description: "Bisnis pulsa & PPOB dari rumah. Gratis daftar, harga termurah, support 24/7. Mulai sekarang!",
     creator: "@bayarkita",
   },
