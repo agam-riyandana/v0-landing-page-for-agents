@@ -33,21 +33,20 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "BAYAR KITA: Platform Agen Pulsa & PPOB Terpercaya - Daftar Gratis",
+  title: "BAYARKITA: Platform Agen Pulsa & PPOB Terpercaya #1 Indonesia - Daftar Gratis Selamanya 2024",
   description:
-    "Bergabunglah dengan BayarKita - Platform agen pulsa & PPOB #1 di Indonesia. ✓ Daftar gratis selamanya ✓ Harga H2H termurah ✓ Transaksi instan 24 jam ✓ Tanpa deposit ✓ Komisi downline unlimited. Mulai bisnis pulsa & PPOB Anda sekarang juga!",
+    "BayarKita.com - Platform PPOB & agen pulsa terpercaya nasional. Gratis daftar selamanya, harga H2H termurah, transaksi instan, komisi downline unlimited. Mulai bisnis pulsa dari Rp 10rb. Support 24/7. Terdaftar PSE Komdigi.",
   keywords: [
-    "agen pulsa terpercaya",
-    "agen PPOB online",
-    "distributor pulsa termurah Indonesia",
-    "pulsa H2H murah",
-    "bayarkita",
-    "bayar kita",
-    "aplikasi PPOB terbaik",
-    "jual pulsa online gratis",
-    "bisnis agen pulsa 2024",
-    "harga pulsa termurah",
-    "server pulsa nasional",
+    "agen pulsa terpercaya nasional",
+    "agen PPOB online indonesia",
+    "distributor pulsa H2H termurah",
+    "pulsa murah harga server",
+    "bayarkita bayarkita.com",
+    "aplikasi PPOB lengkap",
+    "jual pulsa online gratis modal",
+    "bisnis agen pulsa 2024 2025",
+    "harga pulsa termurah nasional",
+    "server PPOB pulsa terpercaya resmi",
     "token listrik PLN online",
     "bayar tagihan listrik online",
     "agen top up Dana Gopay OVO",
@@ -132,15 +131,48 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BAYARKITA",
+    "url": "https://bayarkita.com",
+    "logo": "https://bayarkita.com/logo.png",
+    "description": "Platform PPOB & agen pulsa terpercaya dengan harga termurah dan transaksi instan 24 jam",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dusun Curah Rejo Wedian",
+      "addressLocality": "Jember",
+      "postalCode": "68171",
+      "addressRegion": "Jawa Timur",
+      "addressCountry": "ID"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+62-812-3456-7890",
+      "contactType": "Customer Support",
+      "email": "support@bayarkita.com"
+    },
+    "sameAs": [
+      "https://www.facebook.com/bayarkita",
+      "https://www.twitter.com/bayarkita",
+      "https://www.instagram.com/bayarkita"
+    ]
+  }
+
   return (
     <html lang="id" suppressHydrationWarning>
-      <head></head>
-      <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <head>
+        <Analytics />
+        <SpeedInsights />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </head>
+      <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <LanguageProvider>
             {children}
-            <SpeedInsights />
-            <Analytics />
           </LanguageProvider>
         </ThemeProvider>
       </body>
