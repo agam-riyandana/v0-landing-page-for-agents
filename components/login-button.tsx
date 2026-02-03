@@ -28,7 +28,7 @@ export function LoginButton({ children, variant = "outline", size = "default", c
   if (isRedirecting) {
     return (
       <RedirectAnimation
-        message={language === "id" ? "Tunggu kami akan mengarahkan ke halaman login" : "Wait we will direct you to the login page"}
+        message={t.common.redirectingLogin}
         redirectUrl="https://my.bayarkita.com/login"
         delay={2}
       />

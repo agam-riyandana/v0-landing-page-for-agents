@@ -27,7 +27,7 @@ export function RegisterButton({ children, variant = "default", size = "default"
   if (isRedirecting) {
     return (
       <RedirectAnimation
-        message={language === "id" ? "Tunggu kami akan mengarahkan ke halaman register" : "Wait we will direct you to the registration page"}
+        message={t.common.redirectingRegister}
         redirectUrl="https://my.bayarkita.com/register"
         delay={2}
       />

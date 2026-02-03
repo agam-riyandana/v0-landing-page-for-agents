@@ -107,7 +107,7 @@ export function Hero() {
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               ></motion.div>
               <span className="text-xs sm:text-sm font-bold text-green-700 dark:text-green-300">
-                {t.language === "id" ? "Terdaftar di PSE Komdigi" : "Registered with Komdigi PSE"}
+                {t.hero.badge}
               </span>
             </motion.div>
           </motion.div>
@@ -174,7 +174,7 @@ export function Hero() {
                           P
                         </div>
                         <div>
-                          <p className="text-sm font-black text-foreground">{t.language === "id" ? "Pulsa 50rb" : "Pulse 50k"}</p>
+                          <p className="text-sm font-black text-foreground">{t.language === "id" ? "Pulsa 50rb" : t.hero.pulse}</p>
                           <p className="text-[10px] sm:text-xs text-muted-foreground font-black opacity-80">
                             12 Jan • 14:20
                           </p>
