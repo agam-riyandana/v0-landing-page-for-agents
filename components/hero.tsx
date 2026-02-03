@@ -22,15 +22,20 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary text-primary-foreground font-black uppercase tracking-wider text-[10px] sm:text-xs md:text-sm border-2 border-primary shadow-lg"
+              className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-primary/90 to-primary text-primary-foreground font-black uppercase tracking-wider text-[10px] sm:text-xs md:text-sm border-2 border-primary shadow-lg hover:shadow-xl transition-shadow"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.4 }}
+              whileHover={{ scale: 1.05 }}
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-              </span>
+              <motion.span 
+                className="relative flex h-2.5 w-2.5"
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              >
+                <span className="absolute inline-flex h-full w-full rounded-full bg-white/80 animate-pulse"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white shadow-lg"></span>
+              </motion.span>
               <span className="leading-tight drop-shadow-sm">{t.hero.badge}</span>
             </motion.div>
 
@@ -94,22 +99,7 @@ export function Hero() {
               ))}
             </motion.div>
 
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border border-green-300 dark:border-green-700 mt-6 sm:mt-8 shadow-sm"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1, duration: 0.5 }}
-              whileHover={{ y: -2 }}
-            >
-              <motion.div
-                className="h-2 w-2 rounded-full bg-green-500"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              ></motion.div>
-              <span className="text-xs sm:text-sm font-bold text-green-700 dark:text-green-300">
-                {t.language === "id" ? "Terdaftar di PSE Komdigi" : "Registered with Komdigi PSE"}
-              </span>
-            </motion.div>
+
           </motion.div>
 
           <motion.div
@@ -174,7 +164,7 @@ export function Hero() {
                           P
                         </div>
                         <div>
-                          <p className="text-sm font-black text-foreground">{t.language === "id" ? "Pulsa 50rb" : "Pulse 50k"}</p>
+                          <p className="text-sm font-black text-foreground">{t.language === "id" ? "Pulsa 50rb" : t.hero.pulse}</p>
                           <p className="text-[10px] sm:text-xs text-muted-foreground font-black opacity-80">
                             12 Jan • 14:20
                           </p>

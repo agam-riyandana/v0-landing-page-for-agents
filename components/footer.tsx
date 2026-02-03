@@ -38,7 +38,7 @@ export function Footer() {
                 <div className="text-lg sm:text-xl font-bold tracking-tighter text-primary">
                   BAYARKITA
                 </div>
-                <p className="text-xs text-muted-foreground">{t.language === "id" ? "Platform Pembayaran Digital" : "Digital Payment Platform"}</p>
+                <p className="text-xs text-muted-foreground">{t.footer.platformName}</p>
               </div>
             </Link>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-sm">
@@ -49,14 +49,14 @@ export function Footer() {
           {/* Address Section */}
           <div className="space-y-4">
             <h3 className="font-bold text-sm sm:text-base text-foreground">
-              {t.language === "id" ? "Alamat" : "Address"}
+              {t.common.address}
             </h3>
             <div className="space-y-2">
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {t.footer.address}
               </p>
               <p className="text-xs sm:text-sm text-muted-foreground">
-                {t.language === "id" ? "Email:" : "Email:"} <a href={`mailto:${t.footer.email}`} className="text-primary hover:underline">{t.footer.email}</a>
+                {t.common.email} <a href={`mailto:${t.footer.email}`} className="text-primary hover:underline">{t.footer.email}</a>
               </p>
             </div>
           </div>
@@ -64,7 +64,7 @@ export function Footer() {
           {/* Links Section */}
           <div className="space-y-4">
             <h3 className="font-bold text-sm sm:text-base text-foreground">
-              {t.language === "id" ? "Tautan Penting" : "Important Links"}
+              {t.footer.importantLinks}
             </h3>
             <div className="space-y-2">
               <Link href="/terms" className="block text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -74,7 +74,7 @@ export function Footer() {
                 {t.footer.privacy}
               </Link>
               <Link href="/tutorial" className="block text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
-                {t.language === "id" ? "Tutorial" : "Tutorial"}
+                {t.footer.tutorial}
               </Link>
               <Link href="#faq" className="block text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t.footer.help}
@@ -119,7 +119,7 @@ export function Footer() {
           <p className="text-xs sm:text-sm text-muted-foreground">
             {t.language === "id" 
               ? `© ${currentYear} BAYARKITA. Hak Cipta Dilindungi Undang-Undang.`
-              : `© ${currentYear} BAYARKITA. All Rights Reserved.`
+              : `© ${currentYear} ${t.footer.copyright.split(" ").slice(2).join(" ")}`
             }
           </p>
         </motion.div>

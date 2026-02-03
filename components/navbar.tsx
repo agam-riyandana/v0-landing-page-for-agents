@@ -37,7 +37,7 @@ export function Navbar() {
             {t.nav.products}
           </Link>
           <Link href="/harga" className="text-xs xl:text-sm font-medium hover:text-primary transition-colors">
-            {t.language === "id" ? "Harga" : "Pricing"}
+            {t.language === "id" ? "Harga" : t.nav.pricing}
           </Link>
           <Link href="#payment" className="text-xs xl:text-sm font-medium hover:text-primary transition-colors">
             {t.nav.payment}
@@ -96,7 +96,7 @@ export function Navbar() {
                   {t.nav.tutorial}
                 </Link>
                 <Link href="/harga" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
-                  {t.language === "id" ? "Harga" : "Pricing"}
+                  {t.language === "id" ? "Harga" : t.nav.pricing}
                 </Link>
                 <Link href="#faq" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.faq}
