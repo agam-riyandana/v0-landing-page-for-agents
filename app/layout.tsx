@@ -36,6 +36,12 @@ export const metadata: Metadata = {
   title: "BAYARKITA: Platform Agen Pulsa & PPOB Terpercaya #1 Indonesia - Daftar Gratis Selamanya 2024",
   description:
     "BayarKita.com - Platform PPOB & agen pulsa terpercaya nasional. Gratis daftar selamanya, harga H2H termurah, transaksi instan, komisi downline unlimited. Mulai bisnis pulsa dari Rp 10rb. Support 24/7. Terdaftar PSE Komdigi.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "BAYARKITA",
+  },
   keywords: [
     "agen pulsa terpercaya nasional",
     "agen PPOB online indonesia",
@@ -164,6 +170,12 @@ export default function RootLayout({
       <head>
         <Analytics />
         <SpeedInsights />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="mobile-web-app-title" content="BAYARKITA" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
@@ -175,6 +187,17 @@ export default function RootLayout({
             {children}
           </LanguageProvider>
         </ThemeProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js').catch(err => {
+                  console.log('Service Worker registration failed:', err);
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   )
