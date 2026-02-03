@@ -22,7 +22,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white font-black uppercase tracking-wider text-[10px] sm:text-xs md:text-sm border-2 border-blue-600 shadow-lg"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary text-primary-foreground font-black uppercase tracking-wider text-[10px] sm:text-xs md:text-sm border-2 border-primary shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.4 }}
@@ -138,7 +138,7 @@ export function Hero() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <motion.div
-                    className="p-4 bg-blue-600 text-white rounded-xl space-y-1.5 shadow-md"
+                    className="p-4 bg-primary text-primary-foreground rounded-xl space-y-1.5 shadow-md"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -146,18 +146,18 @@ export function Hero() {
                     <p className="text-xl sm:text-2xl font-black">Rp 2.5jt</p>
                   </motion.div>
                   <motion.div
-                    className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl space-y-1.5 border-2 border-blue-600 shadow-md"
+                    className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl space-y-1.5 border-2 border-primary shadow-md"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
                     <p className="text-[11px] sm:text-xs text-slate-700 dark:text-slate-200 font-black uppercase tracking-wider">
                       {t.language === "id" ? "Poin Agen" : "Agent Points"}
                     </p>
-                    <p className="text-xl sm:text-2xl font-black text-blue-600 dark:text-blue-400">1.250</p>
+                    <p className="text-xl sm:text-2xl font-black text-primary">1.250</p>
                   </motion.div>
                 </div>
                 <div className="space-y-3">
-                  <p className="text-[11px] sm:text-xs font-black text-foreground uppercase tracking-widest border-l-4 border-blue-600 pl-2">
+                  <p className="text-[11px] sm:text-xs font-black text-foreground uppercase tracking-widest border-l-4 border-primary pl-2">
                     {t.language === "id" ? "Histori Transaksi" : "Transaction History"}
                   </p>
                   {[1, 2].map((i) => (
@@ -170,7 +170,7 @@ export function Hero() {
                       whileHover={{ x: 5, backgroundColor: "hsl(var(--muted))" }}
                     >
                       <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-black text-sm shadow-inner">
+                        <div className="h-10 w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-black text-sm shadow-inner">
                           P
                         </div>
                         <div>
