@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "BAYARKITA: Platform Agen Pulsa & PPOB Terpercaya #1 Indonesia - Daftar Gratis Selamanya 2024",
+  title: "BAYARKITA: Platform Agen Pulsa & PPOB Terpercaya #1 Indonesia - Daftar Gratis Selamanya",
   description:
     "BayarKita.com - Platform PPOB & agen pulsa terpercaya nasional. Gratis daftar selamanya, harga H2H termurah, transaksi instan, komisi downline unlimited. Mulai bisnis pulsa dari Rp 10rb. Support 24/7. Terdaftar PSE Komdigi.",
   manifest: "/manifest.json",
