@@ -142,7 +142,7 @@ export function Hero() {
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-[11px] sm:text-xs font-black uppercase tracking-wider opacity-100">{t.language === "id" ? "Saldo Anda" : "Your Balance"}</p>
+                    <p className="text-[11px] sm:text-xs font-black uppercase tracking-wider opacity-100">{t.hero.yourBalance}</p>
                     <p className="text-xl sm:text-2xl font-black">Rp 2.5jt</p>
                   </motion.div>
                   <motion.div
@@ -151,14 +151,14 @@ export function Hero() {
                     transition={{ duration: 0.2 }}
                   >
                     <p className="text-[11px] sm:text-xs text-slate-700 dark:text-slate-200 font-black uppercase tracking-wider">
-                      {t.language === "id" ? "Poin Agen" : "Agent Points"}
+                      {t.hero.agentPoints}
                     </p>
                     <p className="text-xl sm:text-2xl font-black text-primary">1.250</p>
                   </motion.div>
                 </div>
                 <div className="space-y-3">
                   <p className="text-[11px] sm:text-xs font-black text-foreground uppercase tracking-widest border-l-4 border-primary pl-2">
-                    {t.language === "id" ? "Histori Transaksi" : "Transaction History"}
+                    {t.hero.transactionHistory}
                   </p>
                   {[1, 2].map((i) => (
                     <motion.div
@@ -181,7 +181,7 @@ export function Hero() {
                         </div>
                       </div>
                       <div className="px-3 py-1 bg-emerald-600 dark:bg-emerald-700 rounded-full shadow-sm">
-                        <p className="text-[10px] sm:text-xs font-black text-white">{t.language === "id" ? "Sukses" : "Success"}</p>
+                        <p className="text-[10px] sm:text-xs font-black text-white">{t.hero.success}</p>
                       </div>
                     </motion.div>
                   ))}
