@@ -5,7 +5,7 @@ export const translations = {
       products: "Produk Kami",
       payment: "Metode Pembayaran",
       tutorial: "Tutorial Lengkap",
-      harga: "Harga"
+      harga: "Harga",
       faq: "Tanya Jawab",
       login: "Masuk",
       register: "Daftar Sekarang",
