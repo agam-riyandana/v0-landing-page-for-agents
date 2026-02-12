@@ -168,6 +168,7 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-3345566781682408">
         <Analytics />
         <SpeedInsights />
         <link rel="manifest" href="/manifest.json" />
