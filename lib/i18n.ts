@@ -26,6 +26,10 @@ export const translations = {
       agentPoints: "Poin Agen",
       transactionHistory: "Riwayat Transaksi",
       success: "Berhasil",
+      downloadNow: "Download Sekarang",
+      downloadApp: "Download Aplikasi Mobile",
+      downloadDesc: "Dapatkan pengalaman terbaik dengan menggunakan aplikasi mobile BAYARKITA. Akses semua fitur dengan mudah di mana pun Anda berada.",
+      downloadClickHere: "Klik di sini untuk download",
     },
     features: {
       title: "Fitur Unggulan Untuk Agen Kami",
@@ -182,6 +186,10 @@ export const translations = {
       transactionHistory: "Transaction History",
       success: "Success",
       pulse: "Pulse 50k",
+      downloadNow: "Download Now",
+      downloadApp: "Download Mobile App",
+      downloadDesc: "Get the best experience with BAYARKITA mobile app. Access all features easily wherever you are.",
+      downloadClickHere: "Click here to download",
     },
     features: {
       title: "Premium Features For Our Agents",

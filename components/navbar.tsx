@@ -83,22 +83,22 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] sm:w-[320px]">
               <div className="flex flex-col gap-6 mt-8">
-                <Link href="#features" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
+                <Link href="#features" className="text-base text-foreground font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.features}
                 </Link>
-                <Link href="#products" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
+                <Link href="#products" className="text-base text-foreground font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.products}
                 </Link>
-                <Link href="#payment" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
+                <Link href="#payment" className="text-base text-foreground font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.payment}
                 </Link>
-                <Link href="/tutorial" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
+                <Link href="/tutorial" className="text-base text-foreground font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.tutorial}
                 </Link>
-                <Link href="/harga" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
+                <Link href="/harga" className="text-base text-foreground font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.language === "id" ? "Harga" : t.nav.pricing}
                 </Link>
-                <Link href="#faq" className="text-base font-medium hover:text-primary transition-colors px-2 py-1">
+                <Link href="#faq" className="text-base text-foreground font-medium hover:text-primary transition-colors px-2 py-1">
                   {t.nav.faq}
                 </Link>
                 <div className="border-t border-border pt-6 space-y-2">
