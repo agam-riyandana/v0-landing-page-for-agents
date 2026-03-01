@@ -168,7 +168,7 @@ export default function RootLayout({
 
   return (
     <html lang="id" suppressHydrationWarning>
-      <head suppressHydrationWarning>
+      <head>
         <Analytics />
         <SpeedInsights />
         <link rel="manifest" href="/manifest.json" />
@@ -181,7 +181,6 @@ export default function RootLayout({
           id="json-ld-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-          suppressHydrationWarning
         />
         <Script
           id="service-worker-register"
@@ -196,9 +195,25 @@ export default function RootLayout({
             `,
           }}
         />
+        <Script
+          id="theme-script"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
-      <body suppressHydrationWarning className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem suppressHydrationWarning>
+      <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LanguageProvider>
             {children}
           </LanguageProvider>
