@@ -26,10 +26,6 @@ export const translations = {
       agentPoints: "Poin Agen",
       transactionHistory: "Riwayat Transaksi",
       success: "Berhasil",
-      downloadNow: "Download Sekarang",
-      downloadApp: "Download Aplikasi Mobile",
-      downloadDesc: "Dapatkan pengalaman terbaik dengan menggunakan aplikasi mobile BAYARKITA. Akses semua fitur dengan mudah di mana pun Anda berada.",
-      downloadClickHere: "Klik di sini untuk download",
     },
     features: {
       title: "Fitur Unggulan Untuk Agen Kami",
@@ -186,10 +182,6 @@ export const translations = {
       transactionHistory: "Transaction History",
       success: "Success",
       pulse: "Pulse 50k",
-      downloadNow: "Download Now",
-      downloadApp: "Download Mobile App",
-      downloadDesc: "Get the best experience with BAYARKITA mobile app. Access all features easily wherever you are.",
-      downloadClickHere: "Click here to download",
     },
     features: {
       title: "Premium Features For Our Agents",
@@ -291,6 +283,20 @@ export const translations = {
         "Get the cheapest product prices ranging from Mobile Credit, Data Packages, PLN Tokens, to Game Vouchers in one hand.",
       registerBtn: "Register Free Agent",
       contactBtn: "Contact Sales",
+    },
+    download: {
+      title: "Download Now",
+      subtitle: "Our Application",
+      description: "Download the BAYARKITA application for convenient access anywhere, anytime.",
+      cta: "Click Here",
+      available: "Available on",
+    },
+    download: {
+      title: "Download Sekarang",
+      subtitle: "Aplikasi Kami",
+      description: "Unduh aplikasi BAYARKITA untuk kemudahan akses di mana saja, kapan saja.",
+      cta: "Klik Disini",
+      available: "Tersedia di",
     },
     footer: {
       copyright: "© 2024 BAYARKITA. All Rights Reserved.",
