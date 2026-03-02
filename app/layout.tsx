@@ -187,13 +187,7 @@ export default function RootLayout({
           id="service-worker-register"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js').catch(err => {
-                  console.log('Service Worker registration failed:', err);
-                });
-              }
-            `,
+            __html: "if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(err => { console.log('Service Worker registration failed:', err); }); }",
           }}
         />
         <Script
