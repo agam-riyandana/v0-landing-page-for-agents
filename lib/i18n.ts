@@ -130,6 +130,13 @@ export const translations = {
       registerBtn: "Daftar Agen Gratis",
       contactBtn: "Hubungi Sales",
     },
+    download: {
+      title: "Download Sekarang",
+      subtitle: "Aplikasi Kami",
+      description: "Unduh aplikasi BAYARKITA untuk kemudahan akses di mana saja, kapan saja.",
+      cta: "Klik Disini",
+      available: "Tersedia di",
+    },
     footer: {
       copyright: "© 2024 BAYARKITA. Hak Cipta Dilindungi Undang-Undang.",
       terms: "Syarat & Ketentuan",
@@ -283,6 +290,13 @@ export const translations = {
         "Get the cheapest product prices ranging from Mobile Credit, Data Packages, PLN Tokens, to Game Vouchers in one hand.",
       registerBtn: "Register Free Agent",
       contactBtn: "Contact Sales",
+    },
+    download: {
+      title: "Download Now",
+      subtitle: "Our Application",
+      description: "Download the BAYARKITA application for convenient access anywhere, anytime.",
+      cta: "Click Here",
+      available: "Available on",
     },
     footer: {
       copyright: "© 2024 BAYARKITA. All Rights Reserved.",

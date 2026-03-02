@@ -6,6 +6,7 @@ import { Features } from "@/components/features"
 import { ProductsSection } from "@/components/products-section"
 import { BenefitsSection } from "@/components/benefits-section"
 import { FaqSection } from "@/components/faq-section"
+import { DownloadSection } from "@/components/download-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-context"
@@ -28,6 +29,7 @@ export default function LandingPage() {
       <Features />
       <ProductsSection />
       <BenefitsSection />
+      <DownloadSection />
       <FaqSection />
 
       {/* CTA Section - "Siap Menjadi Bos Digital?" */}

@@ -143,7 +143,7 @@ export function Hero() {
                     <p className="text-[11px] sm:text-xs text-slate-700 dark:text-slate-200 font-black uppercase tracking-wider">
                       {t.hero.agentPoints}
                     </p>
-                    <p className="text-xl sm:text-2xl font-black text-primary">1.250</p>
+                    <p className="text-xl sm:text-2xl font-black text-foreground">1.250</p>
                   </motion.div>
                 </div>
                 <div className="space-y-3">
