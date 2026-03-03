@@ -12,7 +12,7 @@ export function DownloadSection() {
     // Download APK from public folder
     const link = document.createElement("a")
     link.href = "/app-release.apk"
-    link.download = "app-release.apk"
+    link.download = "/app-release.apk"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
