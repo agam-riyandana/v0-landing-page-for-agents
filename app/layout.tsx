@@ -187,17 +187,19 @@ export default function RootLayout({
         <Script
           id="theme-script"
           strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: 'try { const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); if (theme === "dark") { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); } } catch (e) {}',
+          }}
           suppressHydrationWarning
-        >
-          {`try { const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); if (theme === "dark") { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); } } catch (e) {}`}
-        </Script>
+        />
         <Script
           id="service-worker-register"
           strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: 'if ("serviceWorker" in navigator) { navigator.serviceWorker.register("/sw.js").catch(err => { console.log("Service Worker registration failed:", err); }); }',
+          }}
           suppressHydrationWarning
-        >
-          {`if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(err => { console.log('Service Worker registration failed:', err); }); }`}
-        </Script>
+        />
       </head>
       <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
