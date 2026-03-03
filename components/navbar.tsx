@@ -14,62 +14,77 @@ export function Navbar() {
   const { t } = useLanguage()
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-3 sm:px-4 h-16 sm:h-20 lg:h-24 flex items-center justify-between">
+    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border">
+      <div className="container mx-auto px-2 sm:px-4 h-14 sm:h-16 md:h-20 flex items-center justify-between gap-2">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
+        <Link href="/" className="flex items-center gap-1.5 sm:gap-2.5 group flex-shrink-0 min-w-0">
           <img 
             src="/logo.png" 
             alt="BAYARKITA Logo" 
-            className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 object-contain transition-transform group-hover:scale-105"
+            className="h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14 object-contain transition-transform group-hover:scale-110 flex-shrink-0"
           />
-          <span className="hidden sm:inline text-base sm:text-lg lg:text-xl font-bold tracking-tighter text-primary whitespace-nowrap">
+          <span className="hidden xs:inline text-sm sm:text-base md:text-lg font-bold tracking-tight text-primary whitespace-nowrap overflow-hidden text-ellipsis">
             BAYARKITA
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-8">
-          <Link href="#features" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-6">
+          <Link href="#features" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
             {t?.nav?.features || "Features"}
           </Link>
-          <Link href="#products" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="#products" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
             {t?.nav?.products || "Products"}
           </Link>
-          <Link href="/harga" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="/harga" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
             {t?.language === "id" ? "Harga" : t?.nav?.pricing || "Pricing"}
           </Link>
-          <Link href="#payment" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="#payment" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
             {t?.nav?.payment || "Payment"}
           </Link>
-          <Link href="/tutorial" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="/tutorial" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
             {t?.nav?.tutorial || "Tutorial"}
           </Link>
-          <Link href="#faq" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="#faq" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
             {t?.nav?.faq || "FAQ"}
           </Link>
         </div>
 
         {/* Right Side Controls */}
-        <div className="flex items-center gap-1 sm:gap-2 ml-auto">
+        <div className="flex items-center gap-0.5 sm:gap-1 ml-auto">
+          {/* Download Button - Prominent */}
+          <Button
+            onClick={() => {
+              const link = document.createElement("a")
+              link.href = "/app-release.apk"
+              link.download = "app-release.apk"
+              document.body.appendChild(link)
+              link.click()
+              document.body.removeChild(link)
+            }}
+            className="hidden sm:inline-flex rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-lg h-8 sm:h-9 md:h-10 px-3 sm:px-4 md:px-5 text-xs sm:text-sm font-bold text-white transition-all hover:scale-105"
+          >
+            {t?.download?.cta || "Download"}
+          </Button>
+
           {/* Theme and Language Toggles */}
-          <div className="flex items-center gap-0.5">
+          <div className="flex items-center gap-0.5 sm:gap-1">
             <LanguageSwitcher />
             <ModeToggle />
           </div>
 
           {/* Desktop Login and Register */}
-          <div className="hidden md:flex items-center gap-1 lg:gap-2 ml-1 lg:ml-2">
+          <div className="hidden md:flex items-center gap-0.5 lg:gap-1 ml-0.5 lg:ml-1">
             <LoginButton
               variant="ghost"
               size="sm"
               asLink
-              className="hidden lg:inline-flex text-xs xl:text-sm font-medium hover:text-primary transition-colors px-3 lg:px-4 py-2 h-9 lg:h-10"
+              className="hidden lg:inline-flex text-xs xl:text-sm font-medium hover:text-primary transition-colors px-2 lg:px-3 py-2 h-8 lg:h-9"
             />
             <RegisterButton
               variant="default"
               size="sm"
-              className="rounded-full px-4 lg:px-6 h-9 lg:h-10 text-xs lg:text-sm font-semibold"
+              className="rounded-full px-3 lg:px-5 h-8 lg:h-9 text-xs lg:text-sm font-semibold"
             />
           </div>
 
@@ -81,8 +96,23 @@ export function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[320px]">
-              <div className="flex flex-col gap-6 mt-8">
+            <SheetContent side="right" className="w-[280px] sm:w-[320px] flex flex-col">
+              <div className="flex flex-col gap-4 mt-8 flex-1">
+                {/* Download Button - Mobile Prominent */}
+                <Button
+                  onClick={() => {
+                    const link = document.createElement("a")
+                    link.href = "/app-release.apk"
+                    link.download = "app-release.apk"
+                    document.body.appendChild(link)
+                    link.click()
+                    document.body.removeChild(link)
+                  }}
+                  className="w-full rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-lg h-10 text-sm font-bold text-white transition-all hover:scale-105 sm:hidden"
+                >
+                  {t?.download?.cta || "Download App"}
+                </Button>
+
                 <Link href="#features" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
                   {t?.nav?.features || "Features"}
                 </Link>
