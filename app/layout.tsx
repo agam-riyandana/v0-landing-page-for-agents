@@ -169,7 +169,7 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-3345566781682408">
+        <meta name="google-adsense-account" content="ca-pub-3345566781682408" />
         <Analytics />
         <SpeedInsights />
         <link rel="manifest" href="/manifest.json" />
@@ -178,7 +178,6 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="mobile-web-app-title" content="BAYARKITA" />
-
       </head>
       <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
