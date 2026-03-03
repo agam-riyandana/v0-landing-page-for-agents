@@ -169,7 +169,7 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-3345566781682408">
+        <meta name="google-adsense-account" content="ca-pub-3345566781682408" />
         <Analytics />
         <SpeedInsights />
         <link rel="manifest" href="/manifest.json" />
@@ -178,40 +178,6 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="mobile-web-app-title" content="BAYARKITA" />
-        <Script
-          id="json-ld-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
-        <Script
-          id="service-worker-register"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js').catch(err => {
-                  console.log('Service Worker registration failed:', err);
-                });
-              }
-            `,
-          }}
-        />
-        <Script
-          id="theme-script"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                if (theme === 'dark') {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
       </head>
       <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
