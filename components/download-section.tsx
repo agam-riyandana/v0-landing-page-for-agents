@@ -9,9 +9,13 @@ export function DownloadSection() {
   const { t } = useLanguage()
 
   const handleDownload = () => {
-    // Direct download from GitHub
-    const downloadUrl = "https://github.com/bayarkita/app/releases/download/latest/bayarkita.apk"
-    window.location.href = downloadUrl
+    // Download APK from public folder
+    const link = document.createElement("a")
+    link.href = "/app-release.apk"
+    link.download = "app-release.apk"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   return (
