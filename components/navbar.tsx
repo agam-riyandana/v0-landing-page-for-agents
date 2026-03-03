@@ -31,22 +31,22 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-4 xl:gap-8">
           <Link href="#features" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
-            {t.nav.features}
+            {t?.nav?.features || "Features"}
           </Link>
           <Link href="#products" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
-            {t.nav.products}
+            {t?.nav?.products || "Products"}
           </Link>
           <Link href="/harga" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
-            {t.language === "id" ? "Harga" : t.nav.pricing}
+            {t?.language === "id" ? "Harga" : t?.nav?.pricing || "Pricing"}
           </Link>
           <Link href="#payment" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
-            {t.nav.payment}
+            {t?.nav?.payment || "Payment"}
           </Link>
           <Link href="/tutorial" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
-            {t.nav.tutorial}
+            {t?.nav?.tutorial || "Tutorial"}
           </Link>
           <Link href="#faq" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors">
-            {t.nav.faq}
+            {t?.nav?.faq || "FAQ"}
           </Link>
         </div>
 
@@ -84,22 +84,22 @@ export function Navbar() {
             <SheetContent side="right" className="w-[280px] sm:w-[320px]">
               <div className="flex flex-col gap-6 mt-8">
                 <Link href="#features" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t.nav.features}
+                  {t?.nav?.features || "Features"}
                 </Link>
                 <Link href="#products" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t.nav.products}
+                  {t?.nav?.products || "Products"}
                 </Link>
                 <Link href="#payment" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t.nav.payment}
+                  {t?.nav?.payment || "Payment"}
                 </Link>
                 <Link href="/tutorial" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t.nav.tutorial}
+                  {t?.nav?.tutorial || "Tutorial"}
                 </Link>
                 <Link href="/harga" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t.language === "id" ? "Harga" : t.nav.pricing}
+                  {t?.language === "id" ? "Harga" : t?.nav?.pricing || "Pricing"}
                 </Link>
                 <Link href="#faq" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t.nav.faq}
+                  {t?.nav?.faq || "FAQ"}
                 </Link>
                 <div className="border-t border-border pt-6 space-y-2">
                   <LoginButton
