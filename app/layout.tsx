@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import Script from "next/script"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
@@ -138,34 +137,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BAYARKITA",
-    "url": "https://bayarkita.com",
-    "logo": "https://bayarkita.com/logo.png",
-    "description": "Platform PPOB & agen pulsa terpercaya dengan harga termurah dan transaksi instan 24 jam",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Dusun Curah Rejo Wedian",
-      "addressLocality": "Jember",
-      "postalCode": "68171",
-      "addressRegion": "Jawa Timur",
-      "addressCountry": "ID"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+62-812-3456-7890",
-      "contactType": "Customer Support",
-      "email": "support@bayarkita.com"
-    },
-    "sameAs": [
-      "https://www.facebook.com/bayarkita",
-      "https://www.twitter.com/bayarkita",
-      "https://www.instagram.com/bayarkita"
-    ]
-  }
-
   return (
     <html lang="id" suppressHydrationWarning>
       <head>

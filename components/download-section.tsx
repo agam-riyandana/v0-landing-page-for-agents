@@ -8,14 +8,29 @@ import { motion } from "framer-motion"
 export function DownloadSection() {
   const { t } = useLanguage()
 
-  const handleDownload = () => {
-    // Download APK from public folder
-    const link = document.createElement("a")
-    link.href = "/app-release.apk"
-    link.download = "app-release.apk"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const handleDownload = async () => {
+    try {
+      const response = await fetch("/app-release.apk")
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      
+      const blob = await response.blob()
+      const fileSizeInMB = (blob.size / (1024 * 1024)).toFixed(2)
+      console.log(`[v0] APK file size: ${fileSizeInMB}MB`)
+      
+      const url = window.URL.createObjectURL(blob)
+      const link = document.createElement("a")
+      link.href = url
+      link.download = "app-release.apk"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      window.URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error("[v0] Download error:", error)
+      alert("Download failed. Please check your connection and try again.")
+    }
   }
 
   return (
