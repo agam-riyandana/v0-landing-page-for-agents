@@ -8,30 +8,7 @@ import { motion } from "framer-motion"
 export function DownloadSection() {
   const { t } = useLanguage()
 
-  const handleDownload = async () => {
-    try {
-      const response = await fetch("/app-release.apk")
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-      
-      const blob = await response.blob()
-      const fileSizeInMB = (blob.size / (1024 * 1024)).toFixed(2)
-      console.log(`[v0] APK file size: ${fileSizeInMB}MB`)
-      
-      const url = window.URL.createObjectURL(blob)
-      const link = document.createElement("a")
-      link.href = url
-      link.download = "app-release.apk"
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-      window.URL.revokeObjectURL(url)
-    } catch (error) {
-      console.error("[v0] Download error:", error)
-      alert("Download failed. Please check your connection and try again.")
-    }
-  }
+
 
   return (
     <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
@@ -71,16 +48,16 @@ export function DownloadSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <Button
-                onClick={handleDownload}
-                size="lg"
-                className="rounded-full h-12 sm:h-13 px-8 sm:px-10 text-base sm:text-lg font-bold group shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-primary to-primary/90 hover:scale-105"
+              <a
+                href="/app-release.apk"
+                download="app-release.apk"
+                className="rounded-full h-12 sm:h-13 px-8 sm:px-10 text-base sm:text-lg font-bold group shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-primary to-primary/90 hover:scale-105 inline-flex items-center justify-center"
               >
                 <span className="flex items-center justify-center">
                   {t.download.cta}
                   <Download className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
                 </span>
-              </Button>
+              </a>
             </motion.div>
 
             <motion.p
