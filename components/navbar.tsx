@@ -53,29 +53,13 @@ export function Navbar() {
         {/* Right Side Controls */}
         <div className="flex items-center gap-0.5 sm:gap-1 ml-auto">
           {/* Download Button - Prominent */}
-          <Button
-            onClick={async () => {
-              try {
-                const response = await fetch("/app-release.apk")
-                if (!response.ok) throw new Error("Download failed")
-                const blob = await response.blob()
-                const url = window.URL.createObjectURL(blob)
-                const link = document.createElement("a")
-                link.href = url
-                link.download = "app-release.apk"
-                document.body.appendChild(link)
-                link.click()
-                document.body.removeChild(link)
-                window.URL.revokeObjectURL(url)
-              } catch (error) {
-                console.error("[v0] Download error:", error)
-                alert("Download failed. Please try again.")
-              }
-            }}
-            className="hidden sm:inline-flex rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-lg h-8 sm:h-9 md:h-10 px-3 sm:px-4 md:px-5 text-xs sm:text-sm font-bold text-white transition-all hover:scale-105"
+          <a
+            href="/app-release.apk"
+            download="app-release.apk"
+            className="hidden sm:inline-flex rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-lg h-8 sm:h-9 md:h-10 px-3 sm:px-4 md:px-5 text-xs sm:text-sm font-bold text-white transition-all hover:scale-105 items-center justify-center"
           >
             {t?.download?.cta || "Download"}
-          </Button>
+          </a>
 
           {/* Theme and Language Toggles */}
           <div className="flex items-center gap-0.5 sm:gap-1">
@@ -109,29 +93,13 @@ export function Navbar() {
             <SheetContent side="right" className="w-[280px] sm:w-[320px] flex flex-col">
               <div className="flex flex-col gap-4 mt-8 flex-1">
                 {/* Download Button - Mobile Prominent */}
-                <Button
-                  onClick={async () => {
-                    try {
-                      const response = await fetch("/app-release.apk")
-                      if (!response.ok) throw new Error("Download failed")
-                      const blob = await response.blob()
-                      const url = window.URL.createObjectURL(blob)
-                      const link = document.createElement("a")
-                      link.href = url
-                      link.download = "app-release.apk"
-                      document.body.appendChild(link)
-                      link.click()
-                      document.body.removeChild(link)
-                      window.URL.revokeObjectURL(url)
-                    } catch (error) {
-                      console.error("[v0] Download error:", error)
-                      alert("Download failed. Please try again.")
-                    }
-                  }}
-                  className="w-full rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-lg h-10 text-sm font-bold text-white transition-all hover:scale-105 sm:hidden"
+                <a
+                  href="/app-release.apk"
+                  download="app-release.apk"
+                  className="w-full rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-lg h-10 text-sm font-bold text-white transition-all hover:scale-105 sm:hidden flex items-center justify-center"
                 >
                   {t?.download?.cta || "Download App"}
-                </Button>
+                </a>
 
                 <Link href="#features" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
                   {t?.nav?.features || "Features"}
