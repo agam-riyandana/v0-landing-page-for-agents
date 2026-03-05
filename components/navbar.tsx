@@ -92,15 +92,6 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] sm:w-[320px] flex flex-col">
               <div className="flex flex-col gap-4 mt-8 flex-1">
-                {/* Download Button - Mobile Prominent */}
-                <a
-                  href="/app-release.apk"
-                  download="app-release.apk"
-                  className="w-full rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-lg h-10 text-sm font-bold text-white transition-all hover:scale-105 sm:hidden flex items-center justify-center"
-                >
-                  {t?.download?.cta || "Download App"}
-                </a>
-
                 <Link href="#features" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
                   {t?.nav?.features || "Features"}
                 </Link>
