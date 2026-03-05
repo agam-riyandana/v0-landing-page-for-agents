@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import { getBlogPosts } from '@/lib/markdown'
 import { BlogCard } from '@/components/blog-card'
-import { AdSense } from '@/components/AdSense'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -29,13 +28,6 @@ export default async function BlogPage() {
         </div>
       </div>
 
-      {/* Ad Unit */}
-      <div className="border-b border-border bg-background/50 py-6">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AdSense slotId="2222222222" format="horizontal" className="w-full" />
-        </div>
-      </div>
-
       {/* Posts Grid */}
       <div className="py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -59,13 +51,6 @@ export default async function BlogPage() {
               ))}
             </div>
           )}
-        </div>
-      </div>
-
-      {/* Ad Unit - Bottom */}
-      <div className="border-t border-border bg-background/50 py-6">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AdSense slotId="3333333333" format="horizontal" className="w-full" />
         </div>
       </div>
 

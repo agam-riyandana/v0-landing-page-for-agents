@@ -1,7 +1,6 @@
 import { format } from 'date-fns'
 import Link from 'next/link'
 import { Clock, User, ArrowLeft } from 'lucide-react'
-import { AdSense } from './AdSense'
 
 interface BlogPostLayoutProps {
   title: string
@@ -57,13 +56,6 @@ export function BlogPostLayout({
         </div>
       </div>
 
-      {/* Ad Unit - Top */}
-      <div className="border-b border-border bg-background/50 py-6">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <AdSense slotId="1234567890" format="horizontal" className="w-full" />
-        </div>
-      </div>
-
       {/* Content */}
       <div className="py-12">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -86,12 +78,6 @@ export function BlogPostLayout({
 
             {/* Sidebar */}
             <aside className="hidden space-y-6 lg:block">
-              {/* Ad Unit - Sidebar */}
-              <div className="rounded-lg border border-border bg-card p-4">
-                <p className="mb-4 text-xs font-semibold text-muted-foreground uppercase">Advertisement</p>
-                <AdSense slotId="0987654321" format="vertical" />
-              </div>
-
               {/* Quick Links */}
               <div className="rounded-lg border border-border bg-card p-6">
                 <h3 className="mb-4 font-bold">Quick Links</h3>
@@ -118,12 +104,6 @@ export function BlogPostLayout({
         </div>
       </div>
 
-      {/* Ad Unit - Bottom */}
-      <div className="border-t border-border bg-background/50 py-6">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <AdSense slotId="1111111111" format="horizontal" className="w-full" />
-        </div>
-      </div>
     </article>
   )
 }
