@@ -77,8 +77,10 @@ export function BlogPostLayout({
                   prose-pre:bg-muted prose-pre:p-4 prose-pre:overflow-x-auto
                   prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic
                   prose-img:rounded-lg prose-img:shadow-md"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
+                suppressHydrationWarning
+              >
+                <div dangerouslySetInnerHTML={{ __html: html }} />
+              </div>
               {children}
             </div>
 
