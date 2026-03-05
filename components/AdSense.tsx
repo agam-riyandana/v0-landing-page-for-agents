@@ -11,7 +11,7 @@ interface AdSenseProps {
 }
 
 export function AdSense({
-  clientId = 'ca-pub-xxxxxxxxxxxxxxxx',
+  clientId = 'ca-pub-3345566781682408',
   slotId,
   format = 'auto',
   responsive = true,
