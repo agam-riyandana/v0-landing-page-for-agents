@@ -42,6 +42,9 @@ export function Navbar() {
           <Link href="#payment" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
             {t?.nav?.payment || "Payment"}
           </Link>
+          <Link href="/blog" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
+            {t?.nav?.blog || "Blog"}
+          </Link>
           <Link href="/tutorial" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
             {t?.nav?.tutorial || "Tutorial"}
           </Link>
@@ -100,6 +103,9 @@ export function Navbar() {
                 </Link>
                 <Link href="#payment" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
                   {t?.nav?.payment || "Payment"}
+                </Link>
+                <Link href="/blog" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
+                  {t?.nav?.blog || "Blog"}
                 </Link>
                 <Link href="/tutorial" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
                   {t?.nav?.tutorial || "Tutorial"}
