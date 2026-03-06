@@ -16,15 +16,20 @@ interface BlogPostLayoutProps {
 function sanitizeHtml(html: string): string {
   let sanitized = html
   
-  // Remove script tags and their content (including variations)
+  // Remove script tags and their content (greedy and with multiple patterns)
+  sanitized = sanitized.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+  sanitized = sanitized.replace(/<script[^>]*\/>/gi, '')
   sanitized = sanitized.replace(/<\s*script[^>]*>[\s\S]*?<\s*\/\s*script\s*>/gi, '')
-  sanitized = sanitized.replace(/<\s*script[^>]*\/\s*>/gi, '')
+  
+  // Remove any remaining <script variations
+  sanitized = sanitized.replace(/script\s*</gi, '')
   
   // Remove on* event handlers in attributes
-  sanitized = sanitized.replace(/\s*on\w+\s*=\s*["']([^"'])*["']/gi, '')
-  sanitized = sanitized.replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '')
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '')
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*[^\s>]+/gi, '')
   
   // Remove style tags with potentially problematic content
+  sanitized = sanitized.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
   sanitized = sanitized.replace(/<\s*style[^>]*>[\s\S]*?<\s*\/\s*style\s*>/gi, '')
   
   // Remove javascript: protocol
@@ -35,6 +40,7 @@ function sanitizeHtml(html: string): string {
   sanitized = sanitized.replace(/vbscript:/gi, '')
   
   // Remove iframe tags
+  sanitized = sanitized.replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '')
   sanitized = sanitized.replace(/<\s*iframe[^>]*>[\s\S]*?<\s*\/\s*iframe\s*>/gi, '')
   
   return sanitized
