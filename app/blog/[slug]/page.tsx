@@ -11,13 +11,13 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs()
+  const slugs = await getAllPostSlugs()
   return slugs
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
-    const post = getBlogPostBySlug(params.slug)
+    const post = await getBlogPostBySlug(params.slug)
     return {
       title: `${post.title} | BAYARKITA Blog`,
       description: post.description,
@@ -27,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         type: 'article',
       },
     }
-  } catch {
+  } catch (error) {
+    console.error('[v0] Error generating metadata for post:', params.slug, error)
     return {
       title: 'Blog Post | BAYARKITA',
     }
@@ -38,8 +39,9 @@ export default async function BlogPostPage({ params }: Props) {
   let post
 
   try {
-    post = getBlogPostBySlug(params.slug)
-  } catch {
+    post = await getBlogPostBySlug(params.slug)
+  } catch (error) {
+    console.error('[v0] Error loading blog post:', params.slug, error)
     notFound()
   }
 

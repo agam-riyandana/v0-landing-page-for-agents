@@ -12,6 +12,12 @@ interface BlogPostLayoutProps {
   children?: React.ReactNode
 }
 
+// Sanitize HTML to remove script tags
+function sanitizeHtml(html: string): string {
+  // Remove script tags and their content
+  return html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+}
+
 export function BlogPostLayout({
   title,
   date,
@@ -21,6 +27,8 @@ export function BlogPostLayout({
   html,
   children,
 }: BlogPostLayoutProps) {
+  const sanitizedHtml = sanitizeHtml(html)
+
   return (
     <article className="min-h-screen bg-background">
       {/* Back Button */}
@@ -71,7 +79,7 @@ export function BlogPostLayout({
                   prose-img:rounded-lg prose-img:shadow-md"
                 suppressHydrationWarning
               >
-                <div dangerouslySetInnerHTML={{ __html: html }} />
+                <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
               </div>
               {children}
             </div>
