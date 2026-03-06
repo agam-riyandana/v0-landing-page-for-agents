@@ -12,10 +12,32 @@ interface BlogPostLayoutProps {
   children?: React.ReactNode
 }
 
-// Sanitize HTML to remove script tags
+// Sanitize HTML to remove problematic patterns
 function sanitizeHtml(html: string): string {
-  // Remove script tags and their content
-  return html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+  let sanitized = html
+  
+  // Remove script tags and their content (including variations)
+  sanitized = sanitized.replace(/<\s*script[^>]*>[\s\S]*?<\s*\/\s*script\s*>/gi, '')
+  sanitized = sanitized.replace(/<\s*script[^>]*\/\s*>/gi, '')
+  
+  // Remove on* event handlers in attributes
+  sanitized = sanitized.replace(/\s*on\w+\s*=\s*["']([^"'])*["']/gi, '')
+  sanitized = sanitized.replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '')
+  
+  // Remove style tags with potentially problematic content
+  sanitized = sanitized.replace(/<\s*style[^>]*>[\s\S]*?<\s*\/\s*style\s*>/gi, '')
+  
+  // Remove javascript: protocol
+  sanitized = sanitized.replace(/javascript:/gi, '')
+  
+  // Remove data: protocol variants
+  sanitized = sanitized.replace(/data:text\/html[^,]*,/gi, '')
+  sanitized = sanitized.replace(/vbscript:/gi, '')
+  
+  // Remove iframe tags
+  sanitized = sanitized.replace(/<\s*iframe[^>]*>[\s\S]*?<\s*\/\s*iframe\s*>/gi, '')
+  
+  return sanitized
 }
 
 export function BlogPostLayout({
@@ -78,9 +100,8 @@ export function BlogPostLayout({
                   prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic
                   prose-img:rounded-lg prose-img:shadow-md"
                 suppressHydrationWarning
-              >
-                <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
-              </div>
+                dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+              />
               {children}
             </div>
 
