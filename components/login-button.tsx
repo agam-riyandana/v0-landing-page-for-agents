@@ -3,6 +3,7 @@
 import React from "react"
 
 import { useState } from "react"
+import { LogIn } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { RedirectAnimation } from "@/components/redirect-animation"
 import { useLanguage } from "@/components/language-context"
@@ -42,6 +43,7 @@ export function LoginButton({ children, variant = "outline", size = "default", c
       size={size}
       className={asLink ? "p-0 h-auto font-normal" : className}
     >
+      <LogIn className="mr-1.5 h-4 w-4" />
       {children || t.nav.login}
     </Button>
   )

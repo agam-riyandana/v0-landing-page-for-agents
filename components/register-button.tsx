@@ -3,6 +3,7 @@
 import React from "react"
 
 import { useState } from "react"
+import { UserPlus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { RedirectAnimation } from "@/components/redirect-animation"
 import { useLanguage } from "@/components/language-context"
@@ -41,6 +42,7 @@ export function RegisterButton({ children, variant = "default", size = "default"
       size={size}
       className={className}
     >
+      <UserPlus className="mr-1.5 h-4 w-4" />
       {children || t.nav.register}
     </Button>
   )
