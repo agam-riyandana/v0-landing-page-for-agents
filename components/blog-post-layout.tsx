@@ -12,10 +12,27 @@ interface BlogPostLayoutProps {
   children?: React.ReactNode
 }
 
-// Sanitize HTML to remove script tags
+// Sanitize HTML to remove problematic patterns
 function sanitizeHtml(html: string): string {
+  let sanitized = html
+  
   // Remove script tags and their content
-  return html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+  sanitized = sanitized.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+  
+  // Remove on* event handlers
+  sanitized = sanitized.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '')
+  sanitized = sanitized.replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '')
+  
+  // Remove style tags with potentially problematic content
+  sanitized = sanitized.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+  
+  // Remove javascript: protocol
+  sanitized = sanitized.replace(/javascript:/gi, '')
+  
+  // Remove data: protocol (potential XSS vector)
+  sanitized = sanitized.replace(/data:text\/html/gi, '')
+  
+  return sanitized
 }
 
 export function BlogPostLayout({

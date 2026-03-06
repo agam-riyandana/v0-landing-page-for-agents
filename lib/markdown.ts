@@ -3,6 +3,12 @@ import matter from 'gray-matter'
 import { promises as fs } from 'fs'
 import path from 'path'
 
+// Configure marked to be safe and consistent
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+})
+
 export interface BlogPost {
   slug: string
   title: string
@@ -42,7 +48,14 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost> {
     const fileContents = await fs.readFile(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
-    const html = marked(content) as string
+    // Convert markdown to HTML
+    let html = marked(content) as string
+    
+    // Post-process HTML to remove any potentially problematic content
+    html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    html = html.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '')
+    html = html.replace(/javascript:/gi, '')
+    
     const readingTime = Math.ceil(content.split(/\s+/).length / 200)
 
     return {
