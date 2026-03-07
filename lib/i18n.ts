@@ -31,23 +31,23 @@ export const translations = {
     features: {
       title: "Fitur Unggulan Untuk Agen Kami",
       description:
-        "Kami membangun ekosistem digital yang memudahkan siapapun untuk memulai bisnis PPOB dengan fitur paling lengkap di kelasnya.",
-      feature1Title: "Produk Sudah Tersedia",
+        "Platform terlengkap dengan teknologi terdepan — semua yang Anda butuhkan untuk sukses jual pulsa, PPOB, dan voucher game dalam satu dashboard super praktis!",
+      feature1Title: "Stok Tak Terbatas, 0 Repot",
       feature1Desc:
-        "Tidak perlu memarkirkan produk digital, semua stok sudah kami sediakan untuk Anda jual secara langsung.",
-      feature2Title: "Custom Label Struk",
-      feature2Desc: "Edit harga jual di struk sesuka hati untuk atur keuntungan dan tambahkan label toko Anda sendiri.",
-      feature3Title: "Histori Transaksi",
-      feature3Desc: "Lacak semua aktivitas penjualan Anda dengan fitur riwayat transaksi yang detail dan transparan.",
-      feature4Title: "Sistem Downline",
+        "Lupakan kekhawatiran stok! Semua produk digital langsung dari server nasional — Anda tinggal jual, kami urus sisanya.",
+      feature2Title: "Custom Label Struk + Margin Fleksibel",
+      feature2Desc: "Atur harga jual sesuka Anda, tampilkan logo toko Anda di setiap struk, dan raih margin keuntungan maksimal.",
+      feature3Title: "Dashboard Analitik Lengkap",
+      feature3Desc: "Pantau setiap transaksi real-time, tracking performa penjualan, dan analisis profit dengan detail yang akurat.",
+      feature4Title: "Passive Income via Downline",
       feature4Desc:
-        "Ajak orang lain bergabung menjadi agen di bawah jaringan Anda dan dapatkan komisi dari setiap transaksi mereka.",
-      feature5Title: "Deposit & Langsung Beli",
+        "Ajak teman, keluarga, atau pelanggan jadi downline Anda dan terima komisi otomatis dari setiap transaksi mereka selamanya!",
+      feature5Title: "2 Pilihan Cara Transaksi",
       feature5Desc:
-        "Pilihan fleksibel: isi saldo deposit untuk kemudahan atau beli produk langsung tanpa harus deposit.",
-      feature6Title: "Metode Bayar Lengkap",
+        "Fleksibel sekali: pakai deposit untuk kemudahan transaksi berulang, atau bayar per transaksi tanpa perlu deposit.",
+      feature6Title: "Semua Metode Pembayaran",
       feature6Desc:
-        "Mendukung Virtual Account Bank, Retail Outlet (Alfamart/Indomaret), dan QRIS untuk transaksi instan.",
+        "VA Bank, QRIS, Alfamart, Indomaret — cara bayar apa pun yang Anda suka, semua kami dukung untuk kemudahan Anda.",
     },
     // Added complete products section translations
     products: {
