@@ -92,17 +92,17 @@ export function BlogPostLayout({
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <div
-                className="prose prose-sm dark:prose-invert sm:prose-base max-w-none
+              <div className="prose prose-sm dark:prose-invert sm:prose-base max-w-none
                   prose-headings:font-bold prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                   prose-code:rounded prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:text-xs
                   prose-pre:bg-muted prose-pre:p-4 prose-pre:overflow-x-auto
                   prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic
-                  prose-img:rounded-lg prose-img:shadow-md"
-                suppressHydrationWarning
-                dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
-                // Suppress React's script tag detection since we explicitly sanitize the HTML
-              />
+                  prose-img:rounded-lg prose-img:shadow-md">
+                <div
+                  suppressHydrationWarning
+                  dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+                />
+              </div>
               {children}
             </div>
 
