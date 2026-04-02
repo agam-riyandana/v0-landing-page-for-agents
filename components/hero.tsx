@@ -12,11 +12,27 @@ export function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <section className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+      {/* Batik Indonesia Pattern Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <svg className="absolute top-0 left-0 w-full h-full opacity-5 dark:opacity-10" viewBox="0 0 1200 800">
+          <pattern id="batik" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="2"/>
+            <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="1"/>
+            <circle cx="100" cy="100" r="40" fill="currentColor" opacity="0.3"/>
+            <path d="M 100 20 Q 140 60 100 100 Q 60 60 100 20" fill="currentColor" opacity="0.2"/>
+            <path d="M 20 100 Q 60 60 100 100 Q 60 140 20 100" fill="currentColor" opacity="0.2"/>
+            <path d="M 100 180 Q 140 140 100 100 Q 140 60 100 20" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.3"/>
+          </pattern>
+          <rect x="0" y="0" width="1200" height="800" fill="url(#batik)"/>
+        </svg>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:via-transparent dark:to-accent/10"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           <motion.div
-            className="space-y-6 sm:space-y-8"
+            className="space-y-4 sm:space-y-6 md:space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -40,7 +56,7 @@ export function Hero() {
             </motion.div>
 
             <motion.h1
-              className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.05] bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-tight sm:leading-[1.1] md:leading-[1.05] bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -49,7 +65,7 @@ export function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-lg sm:text-xl text-muted-foreground max-w-[580px] leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-[580px] leading-relaxed"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
@@ -58,29 +74,29 @@ export function Hero() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
               <RegisterButton
                 size="lg"
-                className="rounded-full h-12 sm:h-13 px-8 sm:px-10 text-base sm:text-lg font-bold group shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-primary to-primary/90 hover:scale-105"
+                className="rounded-full h-10 sm:h-12 md:h-13 px-6 sm:px-8 md:px-10 text-xs sm:text-sm md:text-base lg:text-lg font-bold group shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-primary to-primary/90 hover:scale-105 w-full sm:w-auto"
               >
-                <span className="flex items-center justify-center">
+                <span className="flex items-center justify-center gap-1.5 sm:gap-2">
                   {t.hero.cta}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </RegisterButton>
               <LoginButton
                 size="lg"
                 variant="outline"
-                className="rounded-full h-12 sm:h-13 px-8 sm:px-10 text-base sm:text-lg font-bold bg-transparent border-2 border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all"
+                className="rounded-full h-10 sm:h-12 md:h-13 px-6 sm:px-8 md:px-10 text-xs sm:text-sm md:text-base lg:text-lg font-bold bg-transparent border-2 border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all w-full sm:w-auto"
               />
             </motion.div>
 
             <motion.div
-              className="flex flex-wrap gap-4 sm:gap-6 pt-2 sm:pt-4"
+              className="flex flex-col xs:flex-row flex-wrap gap-2 sm:gap-3 md:gap-4 lg:gap-6 pt-2 sm:pt-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
@@ -88,12 +104,12 @@ export function Hero() {
               {[t.hero.check1, t.hero.check2, t.hero.check3].map((text, i) => (
                 <motion.div
                   key={text}
-                  className="flex items-center gap-2 text-xs sm:text-sm font-medium"
+                  className="flex items-center gap-2 text-xs sm:text-sm md:text-base font-medium"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.9 + i * 0.1, duration: 0.4 }}
                 >
-                  <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
                   <span className="leading-tight">{text}</span>
                 </motion.div>
               ))}
@@ -103,14 +119,14 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            className="relative mt-8 lg:mt-0"
+            className="relative mt-6 sm:mt-8 lg:mt-0 hidden sm:block"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
           >
             <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-50 animate-pulse"></div>
             <motion.div
-              className="relative bg-card dark:bg-card rounded-2xl border border-border shadow-2xl p-4 sm:p-5 overflow-hidden"
+              className="relative bg-card dark:bg-card rounded-lg sm:rounded-xl lg:rounded-2xl border border-border shadow-lg sm:shadow-xl lg:shadow-2xl p-3 sm:p-4 md:p-5 overflow-hidden"
               animate={{
                 y: [0, -15, 0],
               }}
@@ -121,57 +137,57 @@ export function Hero() {
               }}
               whileHover={{ scale: 1.02, y: -20 }}
             >
-              <div className="space-y-4 sm:space-y-5">
-                <div className="flex justify-between items-center pb-4 border-b border-border">
-                  <div className="h-6 sm:h-8 w-24 sm:w-32 bg-muted rounded"></div>
-                  <div className="h-6 sm:h-8 w-6 sm:w-8 bg-primary/20 rounded-full"></div>
+              <div className="space-y-3 sm:space-y-4 md:space-y-5">
+                <div className="flex justify-between items-center pb-3 sm:pb-4 border-b border-border">
+                  <div className="h-5 sm:h-6 md:h-8 w-20 sm:w-24 md:w-32 bg-muted rounded"></div>
+                  <div className="h-5 sm:h-6 md:h-8 w-5 sm:w-6 md:w-8 bg-primary/20 rounded-full"></div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                   <motion.div
-                    className="p-4 bg-primary text-primary-foreground rounded-xl space-y-1.5 shadow-md"
+                    className="p-3 sm:p-4 bg-primary text-primary-foreground rounded-lg sm:rounded-xl space-y-1 sm:space-y-1.5 shadow-md"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-[11px] sm:text-xs font-black uppercase tracking-wider opacity-100">{t.hero.yourBalance}</p>
-                    <p className="text-xl sm:text-2xl font-black">Rp 2.5jt</p>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs font-black uppercase tracking-wider opacity-100">{t.hero.yourBalance}</p>
+                    <p className="text-lg sm:text-xl md:text-2xl font-black">Rp 2.5jt</p>
                   </motion.div>
                   <motion.div
-                    className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl space-y-1.5 border-2 border-primary shadow-md"
+                    className="p-3 sm:p-4 bg-slate-50 dark:bg-slate-800 rounded-lg sm:rounded-xl space-y-1 sm:space-y-1.5 border-2 border-primary shadow-md"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-[11px] sm:text-xs text-slate-700 dark:text-slate-200 font-black uppercase tracking-wider">
+                    <p className="text-[9px] sm:text-[10px] md:text-xs text-slate-700 dark:text-slate-200 font-black uppercase tracking-wider">
                       {t.hero.agentPoints}
                     </p>
-                    <p className="text-xl sm:text-2xl font-black text-foreground">1.250</p>
+                    <p className="text-lg sm:text-xl md:text-2xl font-black text-foreground">1.250</p>
                   </motion.div>
                 </div>
-                <div className="space-y-3">
-                  <p className="text-[11px] sm:text-xs font-black text-foreground uppercase tracking-widest border-l-4 border-primary pl-2">
+                <div className="space-y-2 sm:space-y-3">
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-black text-foreground uppercase tracking-widest border-l-4 border-primary pl-2">
                     {t.hero.transactionHistory}
                   </p>
                   {[1, 2].map((i) => (
                     <motion.div
                       key={i}
-                      className="flex items-center justify-between p-3 bg-muted/80 rounded-xl border-2 border-border/80 shadow-sm"
+                      className="flex items-center justify-between p-2 sm:p-3 bg-muted/80 rounded-lg sm:rounded-xl border-2 border-border/80 shadow-sm"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
                       whileHover={{ x: 5, backgroundColor: "hsl(var(--muted))" }}
                     >
-                      <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-black text-sm shadow-inner">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="h-8 w-8 sm:h-10 sm:w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-black text-xs sm:text-sm shadow-inner">
                           P
                         </div>
-                        <div>
-                          <p className="text-sm font-black text-foreground">{t.language === "id" ? "Pulsa 50rb" : t.hero.pulse}</p>
-                          <p className="text-[10px] sm:text-xs text-muted-foreground font-black opacity-80">
+                        <div className="min-w-0">
+                          <p className="text-xs sm:text-sm font-black text-foreground truncate">{t.language === "id" ? "Pulsa 50rb" : t.hero.pulse}</p>
+                          <p className="text-[8px] sm:text-[10px] md:text-xs text-muted-foreground font-black opacity-80">
                             12 Jan • 14:20
                           </p>
                         </div>
                       </div>
-                      <div className="px-3 py-1 bg-emerald-600 dark:bg-emerald-700 rounded-full shadow-sm">
-                        <p className="text-[10px] sm:text-xs font-black text-white">{t.hero.success}</p>
+                      <div className="px-2 sm:px-3 py-1 bg-emerald-600 dark:bg-emerald-700 rounded-full shadow-sm flex-shrink-0">
+                        <p className="text-[8px] sm:text-[10px] md:text-xs font-black text-white whitespace-nowrap">{t.hero.success}</p>
                       </div>
                     </motion.div>
                   ))}
