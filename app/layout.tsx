@@ -138,7 +138,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html suppressHydrationWarning lang="en" className={isDark ? 'dark' : ''}>
+    <html suppressHydrationWarning lang="en">
       <head>
         <meta name="google-adsense-account" content="ca-pub-3345566781682408" />
         <Analytics />
