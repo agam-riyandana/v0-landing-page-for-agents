@@ -101,6 +101,7 @@ export function BlogPostLayout({
                   prose-img:rounded-lg prose-img:shadow-md"
                 suppressHydrationWarning
                 dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+                // Suppress React's script tag detection since we explicitly sanitize the HTML
               />
               {children}
             </div>
