@@ -138,7 +138,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="id" suppressHydrationWarning>
+    <html suppressHydrationWarning lang="en">
       <head>
         <meta name="google-adsense-account" content="ca-pub-3345566781682408" />
         <Analytics />
@@ -150,7 +150,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="mobile-web-app-title" content="BAYARKITA" />
       </head>
-      <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
+      <body suppressHydrationWarning className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LanguageProvider>
             {children}
