@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useLanguage } from "@/components/language-context"
-import { Menu } from "lucide-react"
+import { Menu, Download, X } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { RegisterButton } from "@/components/register-button"
 import { LoginButton } from "@/components/login-button"
@@ -115,12 +115,13 @@ export function Navbar() {
               <a
                 href="/app-release.apk"
                 download="app-release.apk"
-                className={`hidden sm:inline-flex rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-2xl font-bold text-white transition-all hover:scale-110 hover:-translate-y-0.5 items-center justify-center whitespace-nowrap ${
+                className={`hidden sm:inline-flex rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-2xl font-bold text-white transition-all hover:scale-110 hover:-translate-y-0.5 items-center justify-center gap-2 whitespace-nowrap ${
                   isScrolled 
                     ? "h-8 sm:h-9 px-3 sm:px-4 text-xs sm:text-sm" 
                     : "h-9 sm:h-10 md:h-11 px-4 sm:px-5 md:px-6 text-sm sm:text-base"
                 }`}
               >
+                <Download className={isScrolled ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4 sm:h-5 sm:w-5"} />
                 {t?.download?.cta || "Download"}
               </a>
 
@@ -160,8 +161,23 @@ export function Navbar() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0 bg-transparent border-0 shadow-none">
-                  <div className="h-full flex flex-col p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-border/40 shadow-2xl mt-16 gap-6">
-                    {/* Close button area - implicit via sheet */}
+                  <div className="h-full flex flex-col p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-border/40 shadow-2xl mt-16 gap-6 relative">
+                    {/* Custom Close Button */}
+                    <div className="absolute -top-14 right-0 sm:right-2">
+                      <button
+                        onClick={() => {
+                          // Close the sheet by clicking the trigger
+                          const closeButton = document.querySelector('[data-close-sheet]')
+                          if (closeButton instanceof HTMLElement) {
+                            closeButton.click()
+                          }
+                        }}
+                        className="inline-flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-background/80 backdrop-blur-xl border border-border/40 hover:bg-primary hover:text-primary-foreground transition-all duration-200 hover:shadow-lg"
+                        aria-label="Close menu"
+                      >
+                        <X className="h-5 w-5 sm:h-6 sm:w-6" />
+                      </button>
+                    </div>
                     <div className="flex flex-col gap-1 flex-1">
                       {/* Navigation Links */}
                       <nav className="space-y-1">
@@ -197,19 +213,20 @@ export function Navbar() {
                       <a
                         href="/app-release.apk"
                         download="app-release.apk"
-                        className="block w-full bg-background hover:bg-background/80 border border-border text-center text-sm font-semibold text-foreground rounded-2xl px-4 py-3 transition-all duration-200 hover:border-primary hover:text-primary hover:shadow-md"
+                        className="flex items-center justify-center gap-2 w-full bg-background hover:bg-background/80 border border-border text-center text-sm font-semibold text-foreground rounded-xl px-4 py-3 transition-all duration-200 hover:border-primary hover:text-primary hover:shadow-md"
                       >
+                        <Download className="h-4 w-4" />
                         {t?.download?.cta || "Download"}
                       </a>
                       <LoginButton
                         variant="outline"
                         size="lg"
-                        className="w-full rounded-2xl h-12 text-sm font-semibold transition-all hover:bg-background/80 hover:border-primary hover:text-primary"
+                        className="w-full rounded-xl h-11 text-sm font-semibold transition-all hover:bg-background/80 hover:border-primary hover:text-primary hover:shadow-md"
                       />
                       <RegisterButton
                         variant="default"
                         size="lg"
-                        className="w-full rounded-2xl h-12 text-sm font-semibold transition-all hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
+                        className="w-full rounded-xl h-11 text-sm font-semibold transition-all hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl"
                       />
                     </div>
 
