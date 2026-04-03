@@ -159,42 +159,67 @@ export function Navbar() {
                     <span className="sr-only">Toggle menu</span>
                   </Button>
                 </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[320px] flex flex-col">
-              <div className="flex flex-col gap-4 mt-8 flex-1">
-                <Link href="#features" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t?.nav?.features || "Features"}
-                </Link>
-                <Link href="#products" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t?.nav?.products || "Products"}
-                </Link>
-                <Link href="#payment" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t?.nav?.payment || "Payment"}
-                </Link>
-                <Link href="/blog" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t?.nav?.blog || "Blog"}
-                </Link>
-                <Link href="/tutorial" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t?.nav?.tutorial || "Tutorial"}
-                </Link>
-                <Link href="/harga" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t?.language === "id" ? "Harga" : t?.nav?.pricing || "Pricing"}
-                </Link>
-                <Link href="#faq" className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-1">
-                  {t?.nav?.faq || "FAQ"}
-                </Link>
-                <div className="border-t border-border pt-6 space-y-2">
-                  <LoginButton
-                    variant="outline"
-                    size="lg"
-                    className="w-full rounded-full h-12 text-sm font-semibold"
-                  />
-                  <RegisterButton
-                    variant="default"
-                    size="lg"
-                    className="w-full rounded-full h-12 text-sm font-semibold"
-                  />
-                </div>
-              </div>
+                <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0 bg-transparent border-0 shadow-none">
+                  <div className="h-full flex flex-col p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-border/40 shadow-2xl mt-16 gap-6">
+                    {/* Close button area - implicit via sheet */}
+                    <div className="flex flex-col gap-1 flex-1">
+                      {/* Navigation Links */}
+                      <nav className="space-y-1">
+                        <Link href="#features" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
+                          {t?.nav?.features || "Features"}
+                        </Link>
+                        <Link href="#products" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
+                          {t?.nav?.products || "Products"}
+                        </Link>
+                        <Link href="#payment" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
+                          {t?.nav?.payment || "Payment"}
+                        </Link>
+                        <Link href="/blog" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
+                          {t?.nav?.blog || "Blog"}
+                        </Link>
+                        <Link href="/tutorial" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
+                          {t?.nav?.tutorial || "Tutorial"}
+                        </Link>
+                        <Link href="/harga" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
+                          {t?.language === "id" ? "Harga" : t?.nav?.pricing || "Pricing"}
+                        </Link>
+                        <Link href="#faq" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
+                          {t?.nav?.faq || "FAQ"}
+                        </Link>
+                      </nav>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+
+                    {/* Action Buttons */}
+                    <div className="space-y-3">
+                      <a
+                        href="/app-release.apk"
+                        download="app-release.apk"
+                        className="block w-full bg-background hover:bg-background/80 border border-border text-center text-sm font-semibold text-foreground rounded-2xl px-4 py-3 transition-all duration-200 hover:border-primary hover:text-primary hover:shadow-md"
+                      >
+                        {t?.download?.cta || "Download"}
+                      </a>
+                      <LoginButton
+                        variant="outline"
+                        size="lg"
+                        className="w-full rounded-2xl h-12 text-sm font-semibold transition-all hover:bg-background/80 hover:border-primary hover:text-primary"
+                      />
+                      <RegisterButton
+                        variant="default"
+                        size="lg"
+                        className="w-full rounded-2xl h-12 text-sm font-semibold transition-all hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
+                      />
+                    </div>
+
+                    {/* Theme and Language Toggles */}
+                    <div className="flex items-center gap-2 justify-center pt-2 border-t border-border/30">
+                      <span className="text-xs font-medium text-foreground/60 mr-auto">Settings:</span>
+                      <LanguageSwitcher />
+                      <ModeToggle />
+                    </div>
+                  </div>
                 </SheetContent>
               </Sheet>
             </div>
