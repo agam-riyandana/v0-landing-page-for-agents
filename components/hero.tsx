@@ -13,21 +13,10 @@ export function Hero() {
 
   return (
     <section className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
-      {/* Batik Indonesia Pattern Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg className="absolute top-0 left-0 w-full h-full opacity-5 dark:opacity-10" viewBox="0 0 1200 800">
-          <pattern id="batik" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="2"/>
-            <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="1"/>
-            <circle cx="100" cy="100" r="40" fill="currentColor" opacity="0.3"/>
-            <path d="M 100 20 Q 140 60 100 100 Q 60 60 100 20" fill="currentColor" opacity="0.2"/>
-            <path d="M 20 100 Q 60 60 100 100 Q 60 140 20 100" fill="currentColor" opacity="0.2"/>
-            <path d="M 100 180 Q 140 140 100 100 Q 140 60 100 20" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.3"/>
-          </pattern>
-          <rect x="0" y="0" width="1200" height="800" fill="url(#batik)"/>
-        </svg>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:via-transparent dark:to-accent/10"></div>
-      </div>
+      {/* Batik Indonesia Pattern Background - CSS Based */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:via-transparent dark:to-accent/10" style={{
+        backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(var(--primary), 0.02) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(var(--accent), 0.02) 0%, transparent 50%)'
+      }}></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
