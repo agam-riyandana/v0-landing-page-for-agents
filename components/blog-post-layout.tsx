@@ -17,15 +17,15 @@ function sanitizeHtml(html: string): string {
   let sanitized = html
   
   // Remove script tags and their content (including variations)
-  sanitized = sanitized.replace(/<\s*script[^>]*>[\s\S]*?<\s*\/\s*script\s*>/gi, '')
-  sanitized = sanitized.replace(/<\s*script[^>]*\/\s*>/gi, '')
+  sanitized = sanitized.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+  sanitized = sanitized.replace(/<script[^>]*\/>/gi, '')
   
   // Remove on* event handlers in attributes
-  sanitized = sanitized.replace(/\s*on\w+\s*=\s*["']([^"'])*["']/gi, '')
-  sanitized = sanitized.replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '')
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '')
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*[^\s>]+/gi, '')
   
-  // Remove style tags with potentially problematic content
-  sanitized = sanitized.replace(/<\s*style[^>]*>[\s\S]*?<\s*\/\s*style\s*>/gi, '')
+  // Remove style tags
+  sanitized = sanitized.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
   
   // Remove javascript: protocol
   sanitized = sanitized.replace(/javascript:/gi, '')
@@ -35,7 +35,7 @@ function sanitizeHtml(html: string): string {
   sanitized = sanitized.replace(/vbscript:/gi, '')
   
   // Remove iframe tags
-  sanitized = sanitized.replace(/<\s*iframe[^>]*>[\s\S]*?<\s*\/\s*iframe\s*>/gi, '')
+  sanitized = sanitized.replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '')
   
   return sanitized
 }
