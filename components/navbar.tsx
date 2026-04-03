@@ -160,24 +160,8 @@ export function Navbar() {
                     <span className="sr-only">Toggle menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0 bg-transparent border-0 shadow-none">
-                  <div className="h-full flex flex-col p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-border/40 shadow-2xl mt-16 gap-6 relative">
-                    {/* Custom Close Button */}
-                    <div className="absolute -top-14 right-0 sm:right-2">
-                      <button
-                        onClick={() => {
-                          // Close the sheet by clicking the trigger
-                          const closeButton = document.querySelector('[data-close-sheet]')
-                          if (closeButton instanceof HTMLElement) {
-                            closeButton.click()
-                          }
-                        }}
-                        className="inline-flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-background/80 backdrop-blur-xl border border-border/40 hover:bg-primary hover:text-primary-foreground transition-all duration-200 hover:shadow-lg"
-                        aria-label="Close menu"
-                      >
-                        <X className="h-5 w-5 sm:h-6 sm:w-6" />
-                      </button>
-                    </div>
+                <SheetContent side="right" className="w-[280px] sm:w-[320px] p-6 bg-background/80 backdrop-blur-xl border border-border/40 shadow-2xl rounded-3xl">
+                  <div className="h-full flex flex-col gap-6">
                     <div className="flex flex-col gap-1 flex-1">
                       {/* Navigation Links */}
                       <nav className="space-y-1">

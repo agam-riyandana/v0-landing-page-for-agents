@@ -70,10 +70,6 @@ export function Footer() {
                 <span className="text-muted-foreground">{t.common.email}</span> 
                 <a href={`mailto:${t.footer.email}`} className="text-primary hover:text-primary/80 transition-colors font-semibold ml-1">{t.footer.email}</a>
               </p>
-              <p className="text-xs sm:text-sm">
-                <span className="text-muted-foreground">Telepon: </span> 
-                <a href={`tel:${t.footer.phone}`} className="text-primary hover:text-primary/80 transition-colors font-semibold ml-1">{t.footer.phone}</a>
-              </p>
             </div>
           </div>
 
