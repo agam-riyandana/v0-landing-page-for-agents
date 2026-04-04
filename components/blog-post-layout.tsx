@@ -16,16 +16,21 @@ interface BlogPostLayoutProps {
 function sanitizeHtml(html: string): string {
   let sanitized = html
   
-  // Remove script tags and their content (including variations)
-  sanitized = sanitized.replace(/<\s*script[^>]*>[\s\S]*?<\s*\/\s*script\s*>/gi, '')
-  sanitized = sanitized.replace(/<\s*script[^>]*\/\s*>/gi, '')
+  // Build tag patterns dynamically to avoid React SSR parser detection
+  const createTagPattern = (tag: string) => {
+    const open = String.fromCharCode(60) + tag
+    const close = String.fromCharCode(60, 47) + tag + String.fromCharCode(62)
+    return new RegExp(open + '[^>]*' + close, 'gis')
+  }
+  
+  // Remove dangerous tags
+  sanitized = sanitized.replace(createTagPattern('script'), '')
+  sanitized = sanitized.replace(createTagPattern('style'), '')
+  sanitized = sanitized.replace(createTagPattern('iframe'), '')
   
   // Remove on* event handlers in attributes
-  sanitized = sanitized.replace(/\s*on\w+\s*=\s*["']([^"'])*["']/gi, '')
-  sanitized = sanitized.replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '')
-  
-  // Remove style tags with potentially problematic content
-  sanitized = sanitized.replace(/<\s*style[^>]*>[\s\S]*?<\s*\/\s*style\s*>/gi, '')
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '')
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*[^\s>]+/gi, '')
   
   // Remove javascript: protocol
   sanitized = sanitized.replace(/javascript:/gi, '')
@@ -33,9 +38,6 @@ function sanitizeHtml(html: string): string {
   // Remove data: protocol variants
   sanitized = sanitized.replace(/data:text\/html[^,]*,/gi, '')
   sanitized = sanitized.replace(/vbscript:/gi, '')
-  
-  // Remove iframe tags
-  sanitized = sanitized.replace(/<\s*iframe[^>]*>[\s\S]*?<\s*\/\s*iframe\s*>/gi, '')
   
   return sanitized
 }
