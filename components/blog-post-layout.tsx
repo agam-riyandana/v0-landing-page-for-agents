@@ -1,6 +1,7 @@
 import { format } from 'date-fns'
 import Link from 'next/link'
 import { Clock, User, ArrowLeft } from 'lucide-react'
+import { sanitizeHtml } from '@/lib/sanitize-html'
 
 interface BlogPostLayoutProps {
   title: string
@@ -10,36 +11,6 @@ interface BlogPostLayoutProps {
   readingTime: number
   html: string
   children?: React.ReactNode
-}
-
-// Sanitize HTML to remove problematic patterns
-function sanitizeHtml(html: string): string {
-  let sanitized = html
-  
-  // Build tag patterns dynamically to avoid React SSR parser detection
-  const createTagPattern = (tag: string) => {
-    const open = String.fromCharCode(60) + tag
-    const close = String.fromCharCode(60, 47) + tag + String.fromCharCode(62)
-    return new RegExp(open + '[^>]*' + close, 'gis')
-  }
-  
-  // Remove dangerous tags
-  sanitized = sanitized.replace(createTagPattern('script'), '')
-  sanitized = sanitized.replace(createTagPattern('style'), '')
-  sanitized = sanitized.replace(createTagPattern('iframe'), '')
-  
-  // Remove on* event handlers in attributes
-  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '')
-  sanitized = sanitized.replace(/\s+on\w+\s*=\s*[^\s>]+/gi, '')
-  
-  // Remove javascript: protocol
-  sanitized = sanitized.replace(/javascript:/gi, '')
-  
-  // Remove data: protocol variants
-  sanitized = sanitized.replace(/data:text\/html[^,]*,/gi, '')
-  sanitized = sanitized.replace(/vbscript:/gi, '')
-  
-  return sanitized
 }
 
 export function BlogPostLayout({
