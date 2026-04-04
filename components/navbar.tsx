@@ -53,7 +53,6 @@ export function Navbar() {
           <div className={`flex items-center justify-between gap-2 transition-all duration-300 ${
             isScrolled ? "px-4 sm:px-6 h-14 sm:h-16" : "px-4 sm:px-6 h-16 sm:h-20 md:h-24"
           }`}>
-      <div className="container mx-auto px-2 sm:px-4 h-14 sm:h-16 md:h-20 flex items-center justify-between gap-2">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-1.5 sm:gap-2 lg:gap-3 group flex-shrink-0 min-w-0">
               <div className={`transition-all duration-300 ${isScrolled ? "h-8 w-8 sm:h-10 sm:w-10" : "h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14"}`}>
