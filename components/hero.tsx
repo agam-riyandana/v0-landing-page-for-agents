@@ -14,9 +14,7 @@ export function Hero() {
   return (
     <section suppressHydrationWarning className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
       {/* Batik Indonesia Pattern Background - CSS Based */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:via-transparent dark:to-accent/10" style={{
-        backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(var(--primary), 0.02) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(var(--accent), 0.02) 0%, transparent 50%)'
-      }}></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:via-transparent dark:to-accent/10"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
