@@ -12,9 +12,20 @@ export function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section suppressHydrationWarning className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
-      {/* Batik Indonesia Pattern Background - CSS Based */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:via-transparent dark:to-accent/10"></div>
+    <section suppressHydrationWarning className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 dark:to-primary/10">
+      {/* Animated gradient background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -top-40 -right-40 w-80 h-80 bg-primary/30 rounded-full blur-3xl opacity-60"
+          animate={{ y: [0, 40, 0], x: [0, 30, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute -bottom-32 -left-32 w-72 h-72 bg-accent/25 rounded-full blur-3xl opacity-50"
+          animate={{ y: [0, -40, 0], x: [0, -30, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
@@ -43,12 +54,14 @@ export function Hero() {
             </motion.div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-tight sm:leading-[1.1] md:leading-[1.05] bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-[1] sm:leading-[1.05] md:leading-[1.1]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              {t.hero.title} <span className="text-primary">{t.hero.titleHighlight}</span> {t.hero.titleEnd}
+              <span className="block text-foreground">{t.hero.title}</span>
+              <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">{t.hero.titleHighlight}</span>
+              <span className="block text-foreground">{t.hero.titleEnd}</span>
             </motion.h1>
 
             <motion.p
@@ -61,24 +74,29 @@ export function Hero() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
               <RegisterButton
                 size="lg"
-                className="rounded-full h-10 sm:h-12 md:h-13 px-6 sm:px-8 md:px-10 text-xs sm:text-sm md:text-base lg:text-lg font-bold group shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-primary to-primary/90 hover:scale-105 w-full sm:w-auto"
+                className="rounded-full h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-bold group shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-r from-primary via-primary to-accent hover:scale-110 hover:-translate-y-1 relative overflow-hidden"
               >
-                <span className="flex items-center justify-center gap-1.5 sm:gap-2">
+                <span className="relative flex items-center justify-center gap-2">
                   {t.hero.cta}
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                  <motion.span
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+                  </motion.span>
                 </span>
               </RegisterButton>
               <LoginButton
                 size="lg"
                 variant="outline"
-                className="rounded-full h-10 sm:h-12 md:h-13 px-6 sm:px-8 md:px-10 text-xs sm:text-sm md:text-base lg:text-lg font-bold bg-transparent border-2 border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all w-full sm:w-auto"
+                className="rounded-full h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-bold bg-white/80 dark:bg-slate-900/80 border-2 border-foreground/20 hover:border-primary hover:bg-primary/10 hover:scale-110 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm"
               />
             </motion.div>
 
@@ -106,23 +124,27 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            className="relative mt-6 sm:mt-8 lg:mt-0 hidden sm:block"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            className="relative mt-6 sm:mt-8 lg:mt-0 hidden sm:block perspective"
+            initial={{ opacity: 0, x: 50, rotateY: 20 }}
+            animate={{ opacity: 1, x: 0, rotateY: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
           >
-            <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-50 animate-pulse"></div>
             <motion.div
-              className="relative bg-card dark:bg-card rounded-lg sm:rounded-xl lg:rounded-2xl border border-border shadow-lg sm:shadow-xl lg:shadow-2xl p-3 sm:p-4 md:p-5 overflow-hidden"
+              className="absolute -inset-6 bg-gradient-to-r from-primary via-accent to-primary blur-2xl rounded-3xl opacity-40"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            />
+            <motion.div
+              className="relative bg-gradient-to-br from-white/95 to-white/80 dark:from-slate-800/95 dark:to-slate-900/80 rounded-2xl lg:rounded-3xl border-2 border-white/40 dark:border-slate-700/40 shadow-2xl lg:shadow-3xl p-4 sm:p-6 md:p-8 overflow-hidden backdrop-blur-xl"
               animate={{
-                y: [0, -15, 0],
+                y: [0, -20, 0],
               }}
               transition={{
                 duration: 6,
                 repeat: Number.POSITIVE_INFINITY,
                 ease: "easeInOut",
               }}
-              whileHover={{ scale: 1.02, y: -20 }}
+              whileHover={{ scale: 1.05, y: -25 }}
             >
               <div className="space-y-3 sm:space-y-4 md:space-y-5">
                 <div className="flex justify-between items-center pb-3 sm:pb-4 border-b border-border">
