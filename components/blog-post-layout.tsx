@@ -4,6 +4,7 @@ import { format } from 'date-fns'
 import Link from 'next/link'
 import { Clock, User, ArrowLeft } from 'lucide-react'
 import { sanitizeHtml } from '@/lib/sanitize-html'
+import { HTMLContent } from '@/components/html-content'
 
 interface BlogPostLayoutProps {
   title: string
@@ -107,16 +108,5 @@ export function BlogPostLayout({
       </div>
 
     </article>
-  )
-}
-
-// Separate component to isolate dangerouslySetInnerHTML
-function HTMLContent({ html }: { html: string }) {
-  return (
-    <div
-      suppressHydrationWarning
-      // @ts-ignore - dangerouslySetInnerHTML is intentional for sanitized HTML
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
   )
 }
