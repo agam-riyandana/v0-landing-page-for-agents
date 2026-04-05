@@ -1,7 +1,10 @@
+'use client'
+
 import { format } from 'date-fns'
 import Link from 'next/link'
 import { Clock, User, ArrowLeft } from 'lucide-react'
 import { sanitizeHtml } from '@/lib/sanitize-html'
+import { HTMLContent } from '@/components/html-content'
 
 interface BlogPostLayoutProps {
   title: string
@@ -71,10 +74,7 @@ export function BlogPostLayout({
                   prose-pre:bg-muted prose-pre:p-4 prose-pre:overflow-x-auto
                   prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic
                   prose-img:rounded-lg prose-img:shadow-md">
-                <div
-                  suppressHydrationWarning
-                  dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
-                />
+                <HTMLContent html={sanitizedHtml} />
               </div>
               {children}
             </div>
