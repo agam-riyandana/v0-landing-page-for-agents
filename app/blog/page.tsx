@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { getBlogPosts } from '@/lib/markdown'
 import { BlogCard } from '@/components/blog-card'
+import { Navbar } from '@/components/navbar'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -12,7 +13,9 @@ export default async function BlogPage() {
   const posts = await getBlogPosts()
 
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-background">
       {/* Header */}
       <div className="border-b border-border bg-card py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -72,5 +75,6 @@ export default async function BlogPage() {
         </div>
       </div>
     </main>
+    </>
   )
 }

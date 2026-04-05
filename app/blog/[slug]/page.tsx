@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getBlogPostBySlug, getAllPostSlugs, getBlogPosts } from '@/lib/markdown'
 import { BlogPostLayout } from '@/components/blog-post-layout'
 import { BlogCard } from '@/components/blog-card'
+import { Navbar } from '@/components/navbar'
 
 interface Props {
   params: {
@@ -53,6 +54,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <Navbar />
       <BlogPostLayout
         title={post.title}
         date={post.date}
