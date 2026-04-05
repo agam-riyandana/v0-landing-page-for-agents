@@ -73,10 +73,7 @@ export function BlogPostLayout({
                   prose-pre:bg-muted prose-pre:p-4 prose-pre:overflow-x-auto
                   prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic
                   prose-img:rounded-lg prose-img:shadow-md">
-                <div
-                  suppressHydrationWarning
-                  dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
-                />
+                <HTMLContent html={sanitizedHtml} />
               </div>
               {children}
             </div>
@@ -110,5 +107,16 @@ export function BlogPostLayout({
       </div>
 
     </article>
+  )
+}
+
+// Separate component to isolate dangerouslySetInnerHTML
+function HTMLContent({ html }: { html: string }) {
+  return (
+    <div
+      suppressHydrationWarning
+      // @ts-ignore - dangerouslySetInnerHTML is intentional for sanitized HTML
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   )
 }
