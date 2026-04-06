@@ -153,30 +153,6 @@ export default function RootLayout({
         <meta name="author" content="BAYARKITA Team" />
         <meta name="Copyright" content="BAYARKITA" />
         <meta name="reply-to" content="support@bayarkita.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "BAYARKITA",
-              "url": "https://bayarkita.com",
-              "logo": "https://bayarkita.com/logo.png",
-              "description": "Platform PPOB & agen pulsa terpercaya #1 Indonesia",
-              "sameAs": [
-                "https://facebook.com/bayarkita",
-                "https://twitter.com/bayarkita",
-                "https://instagram.com/bayarkita"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+62-800-0000",
-                "contactType": "Customer Service",
-                "availableLanguage": ["id", "en"]
-              }
-            })
-          }}
-        />
       </head>
       <body suppressHydrationWarning className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
