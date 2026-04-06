@@ -91,11 +91,6 @@ export function Navbar() {
               }`}>
                 {t?.nav?.payment || "Payment"}
               </Link>
-              <Link href="/blog" className={`font-medium text-foreground/80 hover:text-primary transition-all duration-200 px-3 py-2 rounded-lg hover:bg-primary/10 ${
-                isScrolled ? "text-xs xl:text-sm" : "text-sm xl:text-base"
-              }`}>
-                {t?.nav?.blog || "Blog"}
-              </Link>
               <Link href="/tutorial" className={`font-medium text-foreground/80 hover:text-primary transition-all duration-200 px-3 py-2 rounded-lg hover:bg-primary/10 ${
                 isScrolled ? "text-xs xl:text-sm" : "text-sm xl:text-base"
               }`}>
@@ -172,9 +167,6 @@ export function Navbar() {
                         </Link>
                         <Link href="#payment" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
                           {t?.nav?.payment || "Payment"}
-                        </Link>
-                        <Link href="/blog" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
-                          {t?.nav?.blog || "Blog"}
                         </Link>
                         <Link href="/tutorial" className="block text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all duration-200 px-4 py-3 rounded-xl">
                           {t?.nav?.tutorial || "Tutorial"}
