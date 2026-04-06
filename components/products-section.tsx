@@ -54,27 +54,27 @@ export function ProductsSection() {
     },
   ]
 
-  // Highlight the main three products
+  // Highlight the main three products - focused on PPOB/Pulsa value
   const mainProducts = [
     {
-      title: "PULSA & PAKET DATA",
-      description: t.products.categories.pulsa.name,
+      title: "PULSA & DATA",
+      description: "Semua operator tersedia dengan harga termurah",
       icon: Smartphone,
-      color: "from-blue-500 to-blue-600",
+      color: "from-blue-500 to-cyan-600",
       index: 0,
     },
     {
-      title: "TAGIHAN PPOB",
-      description: t.products.categories.pln.name,
+      title: "TAGIHAN & PEMBAYARAN",
+      description: "Bayar listrik, air, internet dengan mudah",
       icon: Zap,
-      color: "from-amber-500 to-amber-600",
+      color: "from-amber-500 to-orange-600",
       index: 1,
     },
     {
-      title: "VOUCHER GAME & TOPUP ONLINE",
-      description: t.products.categories.game.name,
-      icon: Gamepad2,
-      color: "from-purple-500 to-purple-600",
+      title: "E-WALLET & TOPUP",
+      description: "Isi saldo semua platform digital populer",
+      icon: Wallet,
+      color: "from-green-500 to-emerald-600",
       index: 2,
     },
   ]
