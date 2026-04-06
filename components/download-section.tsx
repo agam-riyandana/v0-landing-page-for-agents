@@ -11,8 +11,16 @@ export function DownloadSection() {
 
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="relative py-16 sm:py-20 lg:py-28 overflow-hidden bg-gradient-to-br from-background via-secondary/30 to-background">
+      {/* Decorative background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -bottom-40 -right-40 w-80 h-80 bg-accent/20 rounded-full blur-3xl"
+          animate={{ y: [0, 50, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Side - Content */}
           <motion.div
