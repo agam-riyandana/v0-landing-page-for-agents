@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "BAYARKITA: Platform Agen Pulsa & PPOB Terpercaya #1 Indonesia - Daftar Gratis Selamanya",
   description:
-    "BayarKita.com - Platform PPOB & agen pulsa terpercaya nasional. Gratis daftar selamanya, harga H2H termurah, transaksi instan, komisi downline unlimited. Mulai bisnis pulsa dari Rp 10rb. Support 24/7. Terdaftar PSE Komdigi.",
+    "BAYARKITA - Platform PPOB & agen pulsa terpercaya #1 Indonesia. Daftar gratis selamanya, harga H2H termurah, transaksi instan, komisi downline unlimited, support 24/7. Bergabunglah dengan 100+ ribu agen sukses!",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -149,6 +149,34 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="mobile-web-app-title" content="BAYARKITA" />
+        <meta name="language" content="id, en" />
+        <meta name="author" content="BAYARKITA Team" />
+        <meta name="Copyright" content="BAYARKITA" />
+        <meta name="reply-to" content="support@bayarkita.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "BAYARKITA",
+              "url": "https://bayarkita.com",
+              "logo": "https://bayarkita.com/logo.png",
+              "description": "Platform PPOB & agen pulsa terpercaya #1 Indonesia",
+              "sameAs": [
+                "https://facebook.com/bayarkita",
+                "https://twitter.com/bayarkita",
+                "https://instagram.com/bayarkita"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+62-800-0000",
+                "contactType": "Customer Service",
+                "availableLanguage": ["id", "en"]
+              }
+            })
+          }}
+        />
       </head>
       <body suppressHydrationWarning className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>

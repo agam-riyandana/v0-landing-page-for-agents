@@ -153,12 +153,12 @@ export function Hero() {
                 </div>
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                   <motion.div
-                    className="p-3 sm:p-4 bg-primary text-primary-foreground rounded-lg sm:rounded-xl space-y-1 sm:space-y-1.5 shadow-md"
+                    className="p-3 sm:p-4 bg-primary text-white rounded-lg sm:rounded-xl space-y-1 sm:space-y-1.5 shadow-md"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-[9px] sm:text-[10px] md:text-xs font-black uppercase tracking-wider opacity-100">{t.hero.yourBalance}</p>
-                    <p className="text-lg sm:text-xl md:text-2xl font-black">Rp 2.5jt</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-wider">{t.hero.yourBalance}</p>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-black">Rp 2.5jt</p>
                   </motion.div>
                   <motion.div
                     className="p-3 sm:p-4 bg-slate-50 dark:bg-slate-800 rounded-lg sm:rounded-xl space-y-1 sm:space-y-1.5 border-2 border-primary shadow-md"
@@ -195,8 +195,8 @@ export function Hero() {
                           </p>
                         </div>
                       </div>
-                      <div className="px-2 sm:px-3 py-1 bg-emerald-600 dark:bg-emerald-700 rounded-full shadow-sm flex-shrink-0">
-                        <p className="text-[8px] sm:text-[10px] md:text-xs font-black text-white whitespace-nowrap">{t.hero.success}</p>
+                      <div className="px-3 sm:px-4 py-1.5 bg-emerald-600 dark:bg-emerald-700 rounded-full shadow-sm flex-shrink-0">
+                        <p className="text-[10px] sm:text-xs md:text-sm font-black text-white whitespace-nowrap">{t.hero.success}</p>
                       </div>
                     </motion.div>
                   ))}
