@@ -62,25 +62,25 @@ export default function NotFound() {
     <>
       <Navbar />
       <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background dark:via-background dark:to-primary/20 relative overflow-hidden flex items-center justify-center px-4 py-12 pt-32 sm:pt-40">
-      {/* Animated background elements */}
-      <motion.div
-        className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl"
-        animate={{ y: [0, 50, 0], x: [0, 30, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"
-        animate={{ y: [0, -50, 0], x: [0, -30, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      <div className="relative z-10 w-full max-w-2xl">
+        {/* Animated background elements */}
         <motion.div
-          className="text-center space-y-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+          className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl"
+          animate={{ y: [0, 50, 0], x: [0, 30, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"
+          animate={{ y: [0, -50, 0], x: [0, -30, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <div className="relative z-10 w-full max-w-2xl">
+          <motion.div
+            className="text-center space-y-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
           {/* 404 Text Animation */}
           <motion.div
             className="space-y-4"
@@ -303,7 +303,8 @@ export default function NotFound() {
               </p>
             </div>
           </motion.div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </>
   )
