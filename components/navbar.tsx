@@ -42,28 +42,28 @@ export function Navbar() {
       isVisible ? "translate-y-0" : "-translate-y-full"
     }`}>
       {/* Floating container with glassmorphism */}
-      <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-3 md:mt-4 transition-all duration-300 ${
-        isScrolled ? "max-w-6xl" : ""
+      <div className={`mx-auto px-2 sm:px-4 lg:px-8 mt-2 sm:mt-3 md:mt-4 transition-all duration-300 max-w-full lg:max-w-7xl ${
+        isScrolled ? "lg:max-w-6xl" : ""
       }`}>
-        <div className={`rounded-2xl md:rounded-3xl backdrop-blur-xl transition-all duration-300 ${
+        <div className={`rounded-xl sm:rounded-2xl lg:rounded-3xl backdrop-blur-xl transition-all duration-300 ${
           isScrolled 
             ? "bg-background/80 border border-border/40 shadow-2xl" 
             : "bg-background/60 border border-border/20 shadow-xl hover:shadow-2xl"
         }`}>
-          <div className={`flex items-center justify-between gap-2 transition-all duration-300 ${
-            isScrolled ? "px-4 sm:px-6 h-14 sm:h-16" : "px-4 sm:px-6 h-16 sm:h-20 md:h-24"
+          <div className={`flex items-center justify-between gap-1 sm:gap-2 transition-all duration-300 ${
+            isScrolled ? "px-3 sm:px-4 lg:px-6 h-12 sm:h-14 lg:h-16" : "px-3 sm:px-4 lg:px-6 h-14 sm:h-16 lg:h-20 xl:h-24"
           }`}>
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-1.5 sm:gap-2 lg:gap-3 group flex-shrink-0 min-w-0">
-              <div className={`transition-all duration-300 ${isScrolled ? "h-8 w-8 sm:h-10 sm:w-10" : "h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14"}`}>
+            <Link href="/" className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 group flex-shrink-0 min-w-0">
+              <div className={`transition-all duration-300 ${isScrolled ? "h-7 w-7 sm:h-8 sm:w-8" : "h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12"}`}>
                 <img 
                   src="/logo.png" 
                   alt="BAYARKITA Logo" 
                   className="h-full w-full object-contain transition-transform group-hover:scale-110 group-hover:drop-shadow-lg flex-shrink-0"
                 />
               </div>
-              <span className={`hidden xs:inline font-bold tracking-tight text-primary whitespace-nowrap overflow-hidden text-ellipsis transition-all duration-300 ${
-                isScrolled ? "text-sm sm:text-base" : "text-base sm:text-lg md:text-xl"
+              <span className={`hidden sm:inline font-bold tracking-tight text-primary whitespace-nowrap overflow-hidden text-ellipsis transition-all duration-300 ${
+                isScrolled ? "text-xs sm:text-sm" : "text-sm sm:text-base lg:text-lg"
               }`}>
                 BAYARKITA
               </span>
@@ -109,14 +109,15 @@ export function Navbar() {
               <a
                 href="/app-release.apk"
                 download="app-release.apk"
-                className={`hidden sm:inline-flex rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-2xl font-bold text-white transition-all hover:scale-110 hover:-translate-y-0.5 items-center justify-center gap-2 whitespace-nowrap ${
+                className={`hidden md:inline-flex rounded-full bg-gradient-to-r from-primary to-primary/90 hover:shadow-2xl font-bold text-white transition-all hover:scale-105 hover:-translate-y-0.5 items-center justify-center gap-1.5 lg:gap-2 whitespace-nowrap flex-shrink-0 ${
                   isScrolled 
-                    ? "h-8 sm:h-9 px-3 sm:px-4 text-xs sm:text-sm" 
-                    : "h-9 sm:h-10 md:h-11 px-4 sm:px-5 md:px-6 text-sm sm:text-base"
+                    ? "h-8 px-3 lg:px-4 text-xs lg:text-sm" 
+                    : "h-9 lg:h-10 px-3 lg:px-5 text-xs lg:text-sm"
                 }`}
               >
-                <Download className={isScrolled ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4 sm:h-5 sm:w-5"} />
-                {t?.download?.cta || "Download"}
+                <Download className={isScrolled ? "h-3.5 w-3.5" : "h-4 w-4 lg:h-5 lg:w-5"} />
+                <span className="hidden lg:inline">{t?.download?.cta || "Download"}</span>
+                <span className="lg:hidden">DL</span>
               </a>
 
               {/* Theme and Language Toggles */}

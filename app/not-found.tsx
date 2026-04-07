@@ -3,11 +3,25 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { Home, ArrowLeft, Search } from "lucide-react"
+import { Home, ArrowLeft, Search, Smartphone, Globe, Radio } from "lucide-react"
 import { useLanguage } from "@/components/language-context"
+import { Navbar } from "@/components/navbar"
+import { useEffect, useState } from "react"
+import { getUserInfo, type UserInfo } from "@/lib/user-info"
 
 export default function NotFound() {
   const { t, language } = useLanguage()
+  const [userInfo, setUserInfo] = useState<UserInfo | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      const info = await getUserInfo()
+      setUserInfo(info)
+      setLoading(false)
+    }
+    fetchUserInfo()
+  }, [])
 
   const floatingVariants = {
     animate: {
@@ -45,7 +59,9 @@ export default function NotFound() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background dark:via-background dark:to-primary/20 relative overflow-hidden flex items-center justify-center px-4 py-12">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background dark:via-background dark:to-primary/20 relative overflow-hidden flex items-center justify-center px-4 py-12 pt-32 sm:pt-40">
       {/* Animated background elements */}
       <motion.div
         className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl"
@@ -220,6 +236,57 @@ export default function NotFound() {
             </Button>
           </motion.div>
 
+          {/* User Information Card */}
+          {!loading && userInfo && (
+            <motion.div
+              variants={itemVariants}
+              className="pt-6 sm:pt-8 w-full"
+            >
+              <div className="inline-block w-full max-w-md px-4 sm:px-6 py-4 sm:py-5 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/30 backdrop-blur-sm">
+                <p className="text-sm font-semibold text-primary mb-3 text-center">
+                  {language === "id" ? "📍 Informasi Anda" : "📍 Your Information"}
+                </p>
+                <div className="space-y-2.5">
+                  {/* IP Address */}
+                  <div className="flex items-center justify-between bg-background/50 rounded-lg p-2.5 sm:p-3">
+                    <div className="flex items-center gap-2">
+                      <Smartphone className="h-4 w-4 text-primary/60" />
+                      <span className="text-xs sm:text-sm text-muted-foreground font-medium">IP</span>
+                    </div>
+                    <span className="text-xs sm:text-sm font-mono font-semibold text-foreground">{userInfo.ip}</span>
+                  </div>
+
+                  {/* Location */}
+                  <div className="flex items-center justify-between bg-background/50 rounded-lg p-2.5 sm:p-3">
+                    <div className="flex items-center gap-2">
+                      <Globe className="h-4 w-4 text-primary/60" />
+                      <span className="text-xs sm:text-sm text-muted-foreground font-medium">
+                        {language === "id" ? "Lokasi" : "Location"}
+                      </span>
+                    </div>
+                    <span className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-foreground">
+                      <span className="text-lg">{userInfo.flag}</span>
+                      {userInfo.country}
+                    </span>
+                  </div>
+
+                  {/* Operator */}
+                  <div className="flex items-center justify-between bg-background/50 rounded-lg p-2.5 sm:p-3">
+                    <div className="flex items-center gap-2">
+                      <Radio className="h-4 w-4 text-primary/60" />
+                      <span className="text-xs sm:text-sm text-muted-foreground font-medium">
+                        {language === "id" ? "Operator" : "Provider"}
+                      </span>
+                    </div>
+                    <span className="text-xs sm:text-sm font-semibold text-foreground truncate max-w-[150px] text-right">
+                      {userInfo.operator}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* Fun fact */}
           <motion.div
             variants={itemVariants}
@@ -238,6 +305,6 @@ export default function NotFound() {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </>
   )
 }
