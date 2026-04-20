@@ -17,23 +17,13 @@ export function Footer() {
   ]
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background dark:from-background dark:via-primary/10 dark:to-background border-t border-border/50">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl opacity-40 dark:opacity-20"></div>
-        <div className="absolute -top-20 -left-20 w-60 h-60 bg-accent/10 rounded-full blur-3xl opacity-40 dark:opacity-20"></div>
-      </div>
-      
-      <div className="container relative mx-auto px-4 py-12 sm:py-16 lg:py-20">
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+    <footer className="relative overflow-hidden bg-white dark:bg-background border-t-4 border-black pt-12 sm:pt-16 lg:pt-20">
+      <div className="container relative mx-auto px-4 py-12 sm:py-16">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12"
         >
           {/* Brand Section */}
-          <div className="flex flex-col items-start gap-4">
+          <div className="flex flex-col items-start gap-4 p-4 sm:p-6 border-4 border-black rounded-lg" style={{backgroundColor: '#FFFFFF'}}>
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:bg-primary/30 transition-all duration-300"></div>
@@ -57,12 +47,11 @@ export function Footer() {
           </div>
 
           {/* Address Section */}
-          <div className="space-y-4">
-            <h3 className="font-bold text-sm sm:text-base text-foreground flex items-center gap-2">
-              <span className="h-2 w-2 bg-primary rounded-full"></span>
+          <div className="space-y-4 p-4 sm:p-6 border-4 border-black rounded-lg" style={{backgroundColor: '#FFFFFF'}}>
+            <h3 className="font-black text-sm sm:text-base text-foreground" style={{fontSize: '1.1rem', fontWeight: 800}}>
               {t.common.address}
             </h3>
-            <div className="space-y-3 pl-4 border-l-2 border-primary/30">
+            <div className="space-y-3 pl-4 border-l-4 border-black">
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed hover:text-foreground transition-colors">
                 {t.footer.address}
               </p>
@@ -74,9 +63,8 @@ export function Footer() {
           </div>
 
           {/* Links Section */}
-          <div className="space-y-4">
-            <h3 className="font-bold text-sm sm:text-base text-foreground flex items-center gap-2">
-              <span className="h-2 w-2 bg-accent rounded-full"></span>
+          <div className="space-y-4 p-4 sm:p-6 border-4 border-black rounded-lg" style={{backgroundColor: '#FFFFFF'}}>
+            <h3 className="font-black text-sm sm:text-base text-foreground" style={{fontSize: '1.1rem', fontWeight: 800}}>
               {t.footer.importantLinks}
             </h3>
             <div className="space-y-2">
@@ -146,7 +134,7 @@ export function Footer() {
                   >
                     <social.icon className="h-5 w-5" />
                   </Link>
-                </motion.div>
+        </div>
               ))}
             </div>
           </div>

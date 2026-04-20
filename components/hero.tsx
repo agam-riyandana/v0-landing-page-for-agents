@@ -12,7 +12,7 @@ export function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section suppressHydrationWarning className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 dark:to-primary/10">
+    <section suppressHydrationWarning className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden bg-blue-600" style={{backgroundColor: '#1D4ED8'}}>
       {/* Animated gradient background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -54,21 +54,22 @@ export function Hero() {
             </motion.div>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-[1] sm:leading-[1.05] md:leading-[1.1]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1] sm:leading-[1.05] md:leading-[1.1]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <span className="block text-foreground">{t.hero.title}</span>
-              <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">{t.hero.titleHighlight}</span>
-              <span className="block text-foreground">{t.hero.titleEnd}</span>
+              <span className="block text-white" style={{fontSize: '3.5rem'}}>{t.hero.title}</span>
+              <span className="block text-yellow-300" style={{fontSize: '3.5rem', fontWeight: 800}}>{t.hero.titleHighlight}</span>
+              <span className="block text-white" style={{fontSize: '3.5rem'}}>{t.hero.titleEnd}</span>
             </motion.h1>
 
             <motion.p
-              className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-[580px] leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-xl max-w-[580px] leading-relaxed"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
+              style={{color: '#FFFFFF'}}
             >
               {t.hero.description}
             </motion.p>
@@ -81,7 +82,22 @@ export function Hero() {
             >
               <RegisterButton
                 size="lg"
-                className="rounded-full h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-bold group shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-r from-primary via-primary to-accent hover:scale-110 hover:-translate-y-1 relative overflow-hidden"
+                className="h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-black group transition-all duration-200 relative overflow-hidden"
+                style={{
+                  backgroundColor: '#FACC15',
+                  color: '#000000',
+                  border: '3px solid #000000',
+                  boxShadow: '5px 5px 0px rgba(0,0,0,1)',
+                  borderRadius: '10px'
+                }}
+                onMouseDown={(e) => {
+                  e.currentTarget.style.transform = 'translate(5px, 5px)';
+                  e.currentTarget.style.boxShadow = '0px 0px 0px rgba(0,0,0,0)';
+                }}
+                onMouseUp={(e) => {
+                  e.currentTarget.style.transform = 'translate(0, 0)';
+                  e.currentTarget.style.boxShadow = '5px 5px 0px rgba(0,0,0,1)';
+                }}
               >
                 <span className="relative flex items-center justify-center gap-2">
                   {t.hero.cta}
@@ -95,8 +111,22 @@ export function Hero() {
               </RegisterButton>
               <LoginButton
                 size="lg"
-                variant="outline"
-                className="rounded-full h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-bold bg-white/80 dark:bg-slate-900/80 border-2 border-foreground/20 hover:border-primary hover:bg-primary/10 hover:scale-110 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm"
+                className="h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-black transition-all duration-200"
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  color: '#000000',
+                  border: '3px solid #000000',
+                  boxShadow: '5px 5px 0px rgba(0,0,0,1)',
+                  borderRadius: '10px'
+                }}
+                onMouseDown={(e) => {
+                  e.currentTarget.style.transform = 'translate(5px, 5px)';
+                  e.currentTarget.style.boxShadow = '0px 0px 0px rgba(0,0,0,0)';
+                }}
+                onMouseUp={(e) => {
+                  e.currentTarget.style.transform = 'translate(0, 0)';
+                  e.currentTarget.style.boxShadow = '5px 5px 0px rgba(0,0,0,1)';
+                }}
               />
             </motion.div>
 
