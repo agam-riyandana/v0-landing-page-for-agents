@@ -4,72 +4,73 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #000000;
+  /* Neo-Brutalism Color Palette: Bold, raw, architectural */
+  --background: #FAFAFA;
+  --foreground: #1A1A1A;
   --card: #FFFFFF;
-  --card-foreground: #000000;
+  --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
-  --popover-foreground: #000000;
-  --primary: #1D4ED8;
+  --popover-foreground: #1A1A1A;
+  --primary: #000000;
   --primary-foreground: #FFFFFF;
-  --secondary: #F3F4F6;
-  --secondary-foreground: #000000;
-  --muted: #E5E7EB;
-  --muted-foreground: #6B7280;
-  --accent: #FACC15;
-  --accent-foreground: #000000;
-  --destructive: #EF4444;
+  --secondary: #E8E8E8;
+  --secondary-foreground: #1A1A1A;
+  --muted: #D4D4D4;
+  --muted-foreground: #5A5A5A;
+  --accent: #FF6B35;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #000000;
-  --input: #F9FAFB;
-  --ring: #1D4ED8;
-  --chart-1: #1D4ED8;
-  --chart-2: #FACC15;
-  --chart-3: #10B981;
-  --chart-4: #F97316;
-  --chart-5: #8B5CF6;
-  --radius: 0.5rem;
+  --border: #1A1A1A;
+  --input: #F5F5F5;
+  --ring: #000000;
+  --chart-1: #000000;
+  --chart-2: #FF6B35;
+  --chart-3: #1A1A1A;
+  --chart-4: #D4D4D4;
+  --chart-5: #5A5A5A;
+  --radius: 0rem;
   --sidebar: #FFFFFF;
-  --sidebar-foreground: #000000;
-  --sidebar-primary: #1D4ED8;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #000000;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #FACC15;
-  --sidebar-accent-foreground: #000000;
-  --sidebar-border: #000000;
-  --sidebar-ring: #1D4ED8;
+  --sidebar-accent: #FF6B35;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #1A1A1A;
+  --sidebar-ring: #000000;
 }
 
 .dark {
-  --background: #1A1A1A;
-  --foreground: #FFFFFF;
-  --card: #262626;
-  --card-foreground: #FFFFFF;
-  --primary: #2563EB;
-  --primary-foreground: #FFFFFF;
-  --secondary: #374151;
-  --secondary-foreground: #FFFFFF;
-  --muted: #4B5563;
-  --muted-foreground: #D1D5DB;
-  --accent: #FBBF24;
+  --background: #0F0F0F;
+  --foreground: #FAFAFA;
+  --card: #1A1A1A;
+  --card-foreground: #FAFAFA;
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  --secondary: #2D2D2D;
+  --secondary-foreground: #FAFAFA;
+  --muted: #4A4A4A;
+  --muted-foreground: #B0B0B0;
+  --accent: #FF6B35;
   --accent-foreground: #000000;
   --destructive: #F87171;
   --destructive-foreground: #000000;
-  --border: #FFFFFF;
-  --input: #3F3F3F;
-  --ring: #2563EB;
-  --chart-1: #2563EB;
-  --chart-2: #FBBF24;
-  --chart-3: #34D399;
-  --chart-4: #FB923C;
-  --chart-5: #A78BFA;
-  --sidebar: #1F2937;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #2563EB;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #FBBF24;
+  --border: #FAFAFA;
+  --input: #2D2D2D;
+  --ring: #FFFFFF;
+  --chart-1: #FFFFFF;
+  --chart-2: #FF6B35;
+  --chart-3: #2D2D2D;
+  --chart-4: #4A4A4A;
+  --chart-5: #B0B0B0;
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #FAFAFA;
+  --sidebar-primary: #FFFFFF;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #FF6B35;
   --sidebar-accent-foreground: #000000;
-  --sidebar-border: #FFFFFF;
-  --sidebar-ring: #2563EB;
+  --sidebar-border: #FAFAFA;
+  --sidebar-ring: #FFFFFF;
 }
 
 @theme inline {
@@ -119,46 +120,88 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-primary;
+    letter-spacing: -0.02em;
   }
   
-  /* Neo-Brutalism: Hard Shadows */
+  /* Neo-Brutalism: Bold, Raw Typography with Hard Shadows */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+    @apply font-black tracking-tight;
     font-family: var(--font-lexend, "Lexend");
+    letter-spacing: -0.03em;
   }
   
   h1 {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-black;
-    font-weight: 800;
-    text-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    @apply text-4xl sm:text-5xl lg:text-7xl font-black;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-shadow: 8px 8px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .dark h1 {
+    text-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);
   }
   
   h2 {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-black;
-    font-weight: 800;
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+    @apply text-3xl sm:text-4xl lg:text-5xl font-black;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dark h2 {
+    text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.6);
   }
   
   h3 {
-    @apply text-xl sm:text-2xl font-bold;
-    font-weight: 700;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.6);
+    @apply text-2xl sm:text-3xl font-black;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
   
-  /* Neo-Brutalism: Hard outlines and shadows on buttons */
+  /* Neo-Brutalism: Hard borders and shadows */
   button, [role="button"] {
-    border: 2px solid currentColor;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
-    transition: all 0.1s ease;
+    border: 3px solid currentColor;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  
+  .dark button, .dark [role="button"] {
+    box-shadow: 6px 6px 0px rgba(255, 255, 255, 0.2);
   }
   
   button:active, [role="button"]:active {
-    transform: translate(4px, 4px);
+    transform: translate(6px, 6px);
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   }
   
-  button:hover:not(:active) {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
+  button:hover:not(:active), [role="button"]:hover:not(:active) {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px rgba(0, 0, 0, 0.4);
+  }
+  
+  .dark button:hover:not(:active), .dark [role="button"]:hover:not(:active) {
+    box-shadow: 9px 9px 0px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Neo-Brutalism: Bold lines and sections */
+  hr {
+    @apply border-foreground border-t-2;
+  }
+  
+  input, textarea, select {
+    border: 2px solid currentColor;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+  }
+  
+  .dark input:focus, .dark textarea:focus, .dark select:focus {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
   }
 }

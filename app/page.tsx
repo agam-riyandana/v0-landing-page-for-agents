@@ -33,24 +33,19 @@ export default function LandingPage() {
       <FaqSection />
 
       {/* CTA Section - "Siap Menjadi Bos Digital?" */}
-      <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-background via-primary/8 to-accent/10 dark:via-background dark:to-primary/15 relative overflow-hidden" ref={ctaRef}>
-        {/* Decorative elements with enhanced animations */}
+      <section className="py-20 sm:py-24 lg:py-32 bg-background border-t-8 border-b-8 border-foreground relative overflow-hidden" ref={ctaRef}>
+        {/* Neo-Brutalism: Bold grid lines and geometric elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            className="absolute -top-60 -right-60 w-96 h-96 bg-gradient-to-br from-primary/40 to-accent/30 rounded-full blur-3xl"
-            animate={{ y: [0, 50, 0], x: [0, 30, 0], scale: [1, 1.1, 1] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute -bottom-60 -left-60 w-96 h-96 bg-gradient-to-tr from-accent/30 to-primary/20 rounded-full blur-3xl"
-            animate={{ y: [0, -50, 0], x: [0, -30, 0], scale: [1, 1.15, 1] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          />
-          <motion.div
-            className="absolute top-1/2 left-1/3 w-64 h-64 bg-primary/10 rounded-full blur-2xl"
-            animate={{ opacity: [0.3, 0.8, 0.3] }}
-            transition={{ duration: 6, repeat: Infinity }}
-          />
+          <svg className="absolute inset-0 w-full h-full opacity-[0.05]" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M 100 0 L 0 0 0 100" fill="none" stroke="currentColor" strokeWidth="2"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+          <div className="absolute top-10 right-20 w-32 h-32 border-8 border-foreground/20 opacity-20"></div>
+          <div className="absolute bottom-20 left-10 w-48 h-48 border-8 border-foreground/10 opacity-10"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -108,18 +103,18 @@ export default function LandingPage() {
               ].map((feature, i) => (
                 <motion.div
                   key={i}
-                  className="flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-white/70 to-white/50 dark:from-slate-800/70 dark:to-slate-800/50 backdrop-blur-xl border border-white/40 dark:border-slate-700/40 shadow-lg hover:shadow-xl transition-all"
+                  className="flex flex-col items-center gap-3 p-4 sm:p-6 bg-card border-3 border-foreground shadow-[4px_4px_0_rgba(0,0,0,0.2)] transition-all"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.3, delay: 0.35 + i * 0.06 }}
                   whileHover={{ y: -8, scale: 1.05 }}
                 >
                   <motion.div
-                    className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20"
+                    className="p-3 bg-foreground border-2 border-foreground"
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.1 }}
                   >
-                    <feature.icon className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
+                    <feature.icon className="h-7 w-7 sm:h-8 sm:w-8 text-background" />
                   </motion.div>
                   <p className="text-xs sm:text-sm font-bold text-center text-foreground">{feature.label}</p>
                 </motion.div>
@@ -135,13 +130,13 @@ export default function LandingPage() {
             >
               <RegisterButton
                 size="lg"
-                className="rounded-full h-13 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-14 text-sm sm:text-base lg:text-lg font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-r from-primary via-primary to-accent hover:scale-110 hover:-translate-y-2 relative overflow-hidden"
+                className="h-13 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-14 text-sm sm:text-base lg:text-lg font-black bg-accent text-accent-foreground border-3 border-foreground"
               />
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full h-13 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-14 text-sm sm:text-base lg:text-lg font-bold bg-white/80 dark:bg-slate-900/80 border-2 border-foreground/20 hover:border-primary hover:bg-primary/10 hover:scale-110 hover:-translate-y-2 transition-all duration-300 backdrop-blur-sm"
+                className="h-13 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-14 text-sm sm:text-base lg:text-lg font-black bg-card text-foreground border-3 border-foreground"
               >
                 <Link href="mailto:admin@agamofficial.my.id" className="flex items-center gap-2">
                   {t.cta.contactBtn}
