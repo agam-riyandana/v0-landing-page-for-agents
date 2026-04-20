@@ -74,7 +74,7 @@ export default function TutorialPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 sm:pb-20 lg:pb-24 px-4 bg-secondary">
+      <section className="pt-32 pb-16 sm:pb-20 lg:pb-24 px-4 bg-background border-b-4 border-foreground">
         <div className="container mx-auto">
           <motion.div
             className="text-center space-y-4 sm:space-y-6 max-w-3xl mx-auto"
@@ -117,7 +117,7 @@ export default function TutorialPage() {
                 <div className="flex gap-6 sm:gap-8">
                   {/* Step Number */}
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-primary text-white font-bold text-lg sm:text-xl shadow-lg relative z-10">
+                    <div className="flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 bg-foreground text-background font-black text-lg sm:text-xl border-3 border-foreground shadow-[3px_3px_0_rgba(0,0,0,0.2)] relative z-10">
                       {step.number}
                     </div>
                   </div>
@@ -130,7 +130,7 @@ export default function TutorialPage() {
                     </p>
 
                     {/* Details */}
-                    <div className="bg-secondary rounded-xl p-4 sm:p-6 border border-border space-y-3">
+                    <div className="bg-secondary border-3 border-foreground p-4 sm:p-6 space-y-3 shadow-[3px_3px_0_rgba(0,0,0,0.1)]">
                       {step.details.map((detail, i) => (
                         <div key={i} className="flex gap-3 items-start">
                           <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -146,7 +146,7 @@ export default function TutorialPage() {
 
           {/* CTA */}
           <motion.div
-            className="mt-16 sm:mt-20 p-6 sm:p-8 bg-primary rounded-2xl text-white text-center space-y-4"
+            className="mt-16 sm:mt-20 p-6 sm:p-8 bg-foreground text-background text-center space-y-4 border-4 border-foreground shadow-[6px_6px_0_rgba(0,0,0,0.3)]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -162,7 +162,7 @@ export default function TutorialPage() {
             </p>
             <Link
               href="https://my.bayarkita.com/register"
-              className="inline-flex items-center gap-2 bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:bg-white/90 transition-colors text-sm sm:text-base"
+              className="inline-flex items-center gap-2 bg-background text-foreground px-6 sm:px-8 py-3 sm:py-4 font-black border-3 border-background shadow-[4px_4px_0_rgba(255,255,255,0.3)] hover:shadow-[6px_6px_0_rgba(255,255,255,0.4)] transition-all text-sm sm:text-base"
             >
               {language === "id" ? "Daftar Sekarang" : "Register Now"}
               <ArrowRight className="h-4 w-4" />

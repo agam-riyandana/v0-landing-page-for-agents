@@ -12,19 +12,14 @@ export function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section suppressHydrationWarning className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden bg-blue-600" style={{backgroundColor: '#1D4ED8'}}>
-      {/* Animated gradient background elements */}
+    <section suppressHydrationWarning className="relative pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden bg-background border-b-8 border-foreground">
+      {/* Neo-Brutalism: Bold grid and geometric elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-primary/30 rounded-full blur-3xl opacity-60"
-          animate={{ y: [0, 40, 0], x: [0, 30, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -bottom-32 -left-32 w-72 h-72 bg-accent/25 rounded-full blur-3xl opacity-50"
-          animate={{ y: [0, -40, 0], x: [0, -30, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(0deg,transparent_24%,rgba(0,0,0,.05)_25%,rgba(0,0,0,.05)_26%,transparent_27%,transparent_74%,rgba(0,0,0,.05)_75%,rgba(0,0,0,.05)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(0,0,0,.05)_25%,rgba(0,0,0,.05)_26%,transparent_27%,transparent_74%,rgba(0,0,0,.05)_75%,rgba(0,0,0,.05)_76%,transparent_77%,transparent)] bg-[length:50px_50px]"></div>
+        <svg className="absolute top-0 right-0 w-96 h-96 opacity-10" viewBox="0 0 200 200">
+          <rect x="10" y="10" width="180" height="180" fill="none" stroke="currentColor" strokeWidth="8"/>
+          <rect x="30" y="30" width="140" height="140" fill="none" stroke="currentColor" strokeWidth="4"/>
+        </svg>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -36,11 +31,11 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.div
-              className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-primary/90 to-primary text-primary-foreground font-black uppercase tracking-wider text-[10px] sm:text-xs md:text-sm border-2 border-primary shadow-lg hover:shadow-xl transition-shadow"
+              className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 bg-foreground text-background font-black uppercase tracking-wider text-[10px] sm:text-xs md:text-sm border-3 border-foreground shadow-[4px_4px_0_rgba(0,0,0,0.2)]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.4 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
             >
               <motion.span 
                 className="relative flex h-2.5 w-2.5"
@@ -54,22 +49,21 @@ export function Hero() {
             </motion.div>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1] sm:leading-[1.05] md:leading-[1.1]"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.95] sm:leading-[1] md:leading-[1.05] letter-spacing-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <span className="block text-white" style={{fontSize: '3.5rem'}}>{t.hero.title}</span>
-              <span className="block text-yellow-300" style={{fontSize: '3.5rem', fontWeight: 800}}>{t.hero.titleHighlight}</span>
-              <span className="block text-white" style={{fontSize: '3.5rem'}}>{t.hero.titleEnd}</span>
+              <span className="block text-foreground">{t.hero.title}</span>
+              <span className="block text-accent font-black">{t.hero.titleHighlight}</span>
+              <span className="block text-foreground">{t.hero.titleEnd}</span>
             </motion.h1>
 
             <motion.p
-              className="text-sm sm:text-base md:text-lg lg:text-xl max-w-[580px] leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-xl max-w-[580px] leading-relaxed font-semibold text-muted-foreground"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              style={{color: '#FFFFFF'}}
             >
               {t.hero.description}
             </motion.p>
@@ -82,22 +76,7 @@ export function Hero() {
             >
               <RegisterButton
                 size="lg"
-                className="h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-black group transition-all duration-200 relative overflow-hidden"
-                style={{
-                  backgroundColor: '#FACC15',
-                  color: '#000000',
-                  border: '3px solid #000000',
-                  boxShadow: '5px 5px 0px rgba(0,0,0,1)',
-                  borderRadius: '10px'
-                }}
-                onMouseDown={(e) => {
-                  e.currentTarget.style.transform = 'translate(5px, 5px)';
-                  e.currentTarget.style.boxShadow = '0px 0px 0px rgba(0,0,0,0)';
-                }}
-                onMouseUp={(e) => {
-                  e.currentTarget.style.transform = 'translate(0, 0)';
-                  e.currentTarget.style.boxShadow = '5px 5px 0px rgba(0,0,0,1)';
-                }}
+                className="h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-black group transition-all duration-200 relative overflow-hidden bg-accent text-accent-foreground border-3 border-foreground"
               >
                 <span className="relative flex items-center justify-center gap-2">
                   {t.hero.cta}
@@ -111,22 +90,7 @@ export function Hero() {
               </RegisterButton>
               <LoginButton
                 size="lg"
-                className="h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-black transition-all duration-200"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  color: '#000000',
-                  border: '3px solid #000000',
-                  boxShadow: '5px 5px 0px rgba(0,0,0,1)',
-                  borderRadius: '10px'
-                }}
-                onMouseDown={(e) => {
-                  e.currentTarget.style.transform = 'translate(5px, 5px)';
-                  e.currentTarget.style.boxShadow = '0px 0px 0px rgba(0,0,0,0)';
-                }}
-                onMouseUp={(e) => {
-                  e.currentTarget.style.transform = 'translate(0, 0)';
-                  e.currentTarget.style.boxShadow = '5px 5px 0px rgba(0,0,0,1)';
-                }}
+                className="h-12 sm:h-14 lg:h-16 px-8 sm:px-10 lg:px-12 text-sm sm:text-base lg:text-lg font-black transition-all duration-200 bg-card text-foreground border-3 border-foreground"
               />
             </motion.div>
 
@@ -155,35 +119,30 @@ export function Hero() {
 
           <motion.div
             className="relative mt-6 sm:mt-8 lg:mt-0 hidden sm:block perspective"
-            initial={{ opacity: 0, x: 50, rotateY: 20 }}
-            animate={{ opacity: 1, x: 0, rotateY: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
           >
             <motion.div
-              className="absolute -inset-6 bg-gradient-to-r from-primary via-accent to-primary blur-2xl rounded-3xl opacity-40"
-              animate={{ opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            />
-            <motion.div
-              className="relative bg-gradient-to-br from-white/95 to-white/80 dark:from-slate-800/95 dark:to-slate-900/80 rounded-2xl lg:rounded-3xl border-2 border-white/40 dark:border-slate-700/40 shadow-2xl lg:shadow-3xl p-4 sm:p-6 md:p-8 overflow-hidden backdrop-blur-xl"
+              className="relative bg-card border-4 border-foreground shadow-[8px_8px_0_rgba(0,0,0,0.3)] p-4 sm:p-6 md:p-8 overflow-hidden"
               animate={{
-                y: [0, -20, 0],
+                y: [0, -12, 0],
               }}
               transition={{
                 duration: 6,
                 repeat: Number.POSITIVE_INFINITY,
                 ease: "easeInOut",
               }}
-              whileHover={{ scale: 1.05, y: -25 }}
+              whileHover={{ scale: 1.02, y: -15 }}
             >
               <div className="space-y-3 sm:space-y-4 md:space-y-5">
-                <div className="flex justify-between items-center pb-3 sm:pb-4 border-b border-border">
-                  <div className="h-5 sm:h-6 md:h-8 w-20 sm:w-24 md:w-32 bg-muted rounded"></div>
-                  <div className="h-5 sm:h-6 md:h-8 w-5 sm:w-6 md:w-8 bg-primary/20 rounded-full"></div>
+                <div className="flex justify-between items-center pb-3 sm:pb-4 border-b-3 border-foreground">
+                  <div className="h-5 sm:h-6 md:h-8 w-20 sm:w-24 md:w-32 bg-muted"></div>
+                  <div className="h-5 sm:h-6 md:h-8 w-5 sm:w-6 md:w-8 bg-foreground/20"></div>
                 </div>
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                   <motion.div
-                    className="p-3 sm:p-4 bg-primary text-white rounded-lg sm:rounded-xl space-y-1 sm:space-y-1.5 shadow-md"
+                    className="p-3 sm:p-4 bg-primary text-primary-foreground space-y-1 sm:space-y-1.5 shadow-[4px_4px_0_rgba(0,0,0,0.3)] border-3 border-foreground"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -191,31 +150,31 @@ export function Hero() {
                     <p className="text-xl sm:text-2xl md:text-3xl font-black">Rp 2.5jt</p>
                   </motion.div>
                   <motion.div
-                    className="p-3 sm:p-4 bg-slate-50 dark:bg-slate-800 rounded-lg sm:rounded-xl space-y-1 sm:space-y-1.5 border-2 border-primary shadow-md"
+                    className="p-3 sm:p-4 bg-secondary space-y-1 sm:space-y-1.5 border-3 border-foreground shadow-[4px_4px_0_rgba(0,0,0,0.2)]"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-slate-700 dark:text-slate-200 font-black uppercase tracking-wider">
+                    <p className="text-[9px] sm:text-[10px] md:text-xs font-black uppercase tracking-wider">
                       {t.hero.agentPoints}
                     </p>
                     <p className="text-lg sm:text-xl md:text-2xl font-black text-foreground">1.250</p>
                   </motion.div>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-black text-foreground uppercase tracking-widest border-l-4 border-primary pl-2">
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-black text-foreground uppercase tracking-widest border-l-4 border-foreground pl-2">
                     {t.hero.transactionHistory}
                   </p>
                   {[1, 2].map((i) => (
                     <motion.div
                       key={i}
-                      className="flex items-center justify-between p-2 sm:p-3 bg-muted/80 rounded-lg sm:rounded-xl border-2 border-border/80 shadow-sm"
+                      className="flex items-center justify-between p-2 sm:p-3 bg-secondary border-2 border-foreground shadow-[3px_3px_0_rgba(0,0,0,0.1)]"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
-                      whileHover={{ x: 5, backgroundColor: "hsl(var(--muted))" }}
+                      whileHover={{ x: 5 }}
                     >
                       <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="h-8 w-8 sm:h-10 sm:w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-black text-xs sm:text-sm shadow-inner">
+                        <div className="h-8 w-8 sm:h-10 sm:w-10 bg-foreground text-background flex items-center justify-center font-black text-xs sm:text-sm border-2 border-foreground">
                           P
                         </div>
                         <div className="min-w-0">
@@ -225,8 +184,8 @@ export function Hero() {
                           </p>
                         </div>
                       </div>
-                      <div className="px-3 sm:px-4 py-1.5 bg-emerald-600 dark:bg-emerald-700 rounded-full shadow-sm flex-shrink-0">
-                        <p className="text-[10px] sm:text-xs md:text-sm font-black text-white whitespace-nowrap">{t.hero.success}</p>
+                      <div className="px-3 sm:px-4 py-1.5 bg-foreground text-background font-black text-[10px] sm:text-xs md:text-sm border-2 border-foreground flex-shrink-0">
+                        <p className="whitespace-nowrap">{t.hero.success}</p>
                       </div>
                     </motion.div>
                   ))}

@@ -70,7 +70,7 @@ export default function HargaPage() {
       <Navbar />
       <main className="min-h-screen pt-28 sm:pt-32">
         {/* Header */}
-        <section className="py-12 sm:py-16 bg-gradient-to-b from-primary/10 to-background">
+        <section className="py-12 sm:py-16 bg-background border-b-4 border-foreground">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center space-y-3"
@@ -109,10 +109,10 @@ export default function HargaPage() {
                     <motion.button
                       key={i}
                       onClick={() => setSelectedCategory(i)}
-                      className={`w-full p-4 rounded-xl border-2 transition-all text-left group ${
+                      className={`w-full p-4 border-3 transition-all text-left group ${
                         selectedCategory === i
-                          ? "border-primary bg-primary/10"
-                          : "border-border hover:border-primary/50"
+                          ? "border-foreground bg-foreground/5 shadow-[3px_3px_0_rgba(0,0,0,0.2)]"
+                          : "border-foreground/30 hover:border-foreground/60"
                       }`}
                       whileHover={{ x: 4 }}
                       whileTap={{ scale: 0.98 }}
@@ -145,12 +145,12 @@ export default function HargaPage() {
                 key={selectedCategory}
                 className="space-y-6"
               >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white shadow-lg"
-              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="overflow-hidden bg-foreground text-background p-8 shadow-[4px_4px_0_rgba(0,0,0,0.3)] border-3 border-foreground"
+                >
                 <div className="flex items-start gap-4 mb-4">
                   {products[selectedCategory].icon && 
                     (() => {
@@ -181,7 +181,7 @@ export default function HargaPage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.05 }}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50 border border-border"
+                        className="flex items-start gap-3 p-3 bg-background/20 border-2 border-background/50"
                       >
                         <ChevronDown className="h-4 w-4 text-primary flex-shrink-0 mt-0.5 rotate-180" />
                         <span className="text-sm text-foreground">{detail}</span>
@@ -211,7 +211,7 @@ export default function HargaPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-background to-primary/5">
+        <section className="py-16 sm:py-20 bg-background border-t-4 border-foreground">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl font-bold text-center mb-10">
               {language === "id" ? "Pertanyaan Umum" : "Common Questions"}
@@ -237,7 +237,7 @@ export default function HargaPage() {
                     : "Contact our CS team to learn about loyalty programs and special discounts for agent partners with high transaction volumes.",
                 },
               ].map((item, i) => (
-                <AccordionItem key={i} value={`item-${i}`} className="rounded-lg border px-4">
+                <AccordionItem key={i} value={`item-${i}`} className="border-2 border-foreground px-4">
                   <AccordionTrigger>{item.q}</AccordionTrigger>
                   <AccordionContent>{item.a}</AccordionContent>
                 </AccordionItem>
