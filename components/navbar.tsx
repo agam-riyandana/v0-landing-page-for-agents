@@ -41,15 +41,13 @@ export function Navbar() {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ease-out ${
       isVisible ? "translate-y-0" : "-translate-y-full"
     }`}>
-      {/* Floating container with glassmorphism */}
-      <div className={`mx-auto px-2 sm:px-4 lg:px-8 mt-2 sm:mt-3 md:mt-4 transition-all duration-300 max-w-full lg:max-w-7xl ${
-        isScrolled ? "lg:max-w-6xl" : ""
-      }`}>
-        <div className={`rounded-xl sm:rounded-2xl lg:rounded-3xl backdrop-blur-xl transition-all duration-300 ${
+      {/* Neo-Brutalism Navbar */}
+      <div className={`mx-auto px-3 sm:px-4 lg:px-8 transition-all duration-300 max-w-full lg:max-w-7xl`}>
+        <div className={`bg-white dark:bg-background border-4 border-black transition-all duration-300 ${
           isScrolled 
-            ? "bg-background/80 border border-border/40 shadow-2xl" 
-            : "bg-background/60 border border-border/20 shadow-xl hover:shadow-2xl"
-        }`}>
+            ? "shadow-[4px_4px_0px_rgba(0,0,0,1)]" 
+            : "shadow-[6px_6px_0px_rgba(0,0,0,1)]"
+        }`} style={{borderRadius: '10px'}}>
           <div className={`flex items-center justify-between gap-1 sm:gap-2 transition-all duration-300 ${
             isScrolled ? "px-3 sm:px-4 lg:px-6 h-12 sm:h-14 lg:h-16" : "px-3 sm:px-4 lg:px-6 h-14 sm:h-16 lg:h-20 xl:h-24"
           }`}>
