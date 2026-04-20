@@ -157,7 +157,7 @@ export default function RootLayout({
         <meta name="Copyright" content="BAYARKITA" />
         <meta name="reply-to" content="support@bayarkita.com" />
       </head>
-      <body suppressHydrationWarning className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased text-foreground`}>
+      <body suppressHydrationWarning className="font-sans antialiased text-foreground">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LanguageProvider>
             {children}
