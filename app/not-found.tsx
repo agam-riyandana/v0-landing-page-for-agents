@@ -81,12 +81,12 @@ export default function NotFound() {
             initial="hidden"
             animate="visible"
           >
-          {/* 404 Text Animation */}
-          <motion.div
-            className="space-y-4"
-            variants={itemVariants}
-          >
-            <div className="flex items-center justify-center gap-4">
+            {/* 404 Text Animation */}
+            <motion.div
+              className="space-y-4"
+              variants={itemVariants}
+            >
+              <div className="flex items-center justify-center gap-4">
               <motion.div
                 variants={floatingVariants}
                 animate="animate"
@@ -301,8 +301,27 @@ export default function NotFound() {
                   ? "Pastikan URL sudah benar atau gunakan menu navigasi untuk menemukan apa yang Anda cari."
                   : "Make sure the URL is correct or use the navigation menu to find what you're looking for."}
               </p>
+              </div>
             </div>
           </motion.div>
+
+          {/* Fun fact */}
+          <motion.div
+            variants={itemVariants}
+            className="pt-6 sm:pt-8"
+          >
+            <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-primary/10 border border-primary/20">
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                <span className="font-semibold text-primary">
+                  {language === "id" ? "💡 Tip:" : "💡 Tip:"}
+                </span>{" "}
+                {language === "id"
+                  ? "Pastikan URL sudah benar atau gunakan menu navigasi untuk menemukan apa yang Anda cari."
+                  : "Make sure the URL is correct or use the navigation menu to find what you're looking for."}
+              </p>
+            </div>
+          </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

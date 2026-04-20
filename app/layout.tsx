@@ -1,25 +1,28 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Lexend, Plus_Jakarta_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-context"
 
-const _geist = Geist({
+const _lexend = Lexend({
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  weight: ["700", "800"],
+  fallback: ["system-ui", "sans-serif"],
+  variable: "--font-lexend",
+})
+
+const _plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   preload: false,
   weight: ["400", "500", "600", "700", "800"],
-  fallback: ["system-ui", "arial"],
-})
-const _geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  preload: false,
-  weight: ["400", "500", "700"],
-  fallback: ["monospace"],
+  fallback: ["system-ui", "sans-serif"],
+  variable: "--font-plus-jakarta",
 })
 
 export const viewport: Viewport = {
@@ -138,7 +141,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="en" className={`${_lexend.variable} ${_plusJakartaSans.variable}`}>
       <head>
         <meta name="google-adsense-account" content="ca-pub-3345566781682408" />
         <Analytics />
