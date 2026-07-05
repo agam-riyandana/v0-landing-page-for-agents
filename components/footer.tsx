@@ -86,7 +86,7 @@ export function Footer() {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-border/50 to-transparent mb-8"></div>
@@ -134,7 +134,7 @@ export function Footer() {
                   >
                     <social.icon className="h-5 w-5" />
                   </Link>
-        </div>
+                </motion.div>
               ))}
             </div>
           </div>
