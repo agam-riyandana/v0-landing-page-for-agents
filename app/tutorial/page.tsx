@@ -161,7 +161,7 @@ export default function TutorialPage() {
                 : "Register for free now and start your first transaction"}
             </p>
             <Link
-              href="https://my.bayarkita.com/register"
+              href="https://app.bayarkita.web.id/register"
               className="inline-flex items-center gap-2 bg-background text-foreground px-6 sm:px-8 py-3 sm:py-4 font-black border-3 border-background shadow-[4px_4px_0_rgba(255,255,255,0.3)] hover:shadow-[6px_6px_0_rgba(255,255,255,0.4)] transition-all text-sm sm:text-base"
             >
               {language === "id" ? "Daftar Sekarang" : "Register Now"}
