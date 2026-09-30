@@ -30,7 +30,7 @@ export function LoginButton({ children, variant = "outline", size = "default", c
     return (
       <RedirectAnimation
         message={t.common.redirectingLogin}
-        redirectUrl="https://my.bayarkita.com/login"
+        redirectUrl="https://app.bayarkita.web.id/login"
         delay={2}
       />
     )
