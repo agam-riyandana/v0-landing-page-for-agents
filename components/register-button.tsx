@@ -29,7 +29,7 @@ export function RegisterButton({ children, variant = "default", size = "default"
     return (
       <RedirectAnimation
         message={t.common.redirectingRegister}
-        redirectUrl="https://my.bayarkita.com/register"
+        redirectUrl="https://app.bayarkita.web.id/register"
         delay={2}
       />
     )
