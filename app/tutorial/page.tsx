@@ -17,7 +17,7 @@ export default function TutorialPage() {
       description:
         language === "id"
           ? "Mulai dengan login atau daftar di my.bayarkita.com Daftarnya cepat, cukup gunakan nomor WhatsApp dan email aktif untuk langsung bisa transaksi."
-          : "Start with login or register at my.bayarkita.com Registration is quick, just use your WhatsApp number and active email to start transacting.",
+          : "Start with login or register at https://app.bayarkita.web.id Registration is quick, just use your WhatsApp number and active email to start transacting.",
       details: [
         language === "id" ? "Kunjungi my.bayarkita.com" : "Visit my.bayarkita.com",
         language === "id" ? "Isi nomor WhatsApp dan email" : "Fill in WhatsApp number and email",
