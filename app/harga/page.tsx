@@ -200,7 +200,7 @@ export default function HargaPage() {
                     size="lg"
                     className="w-full rounded-full h-12 text-base font-semibold"
                   >
-                    <Link href="https://my.bayarkita.com/register">
+                    <Link href="https://app.bayarkita.web.id/register">
                       {language === "id" ? "Mulai Transaksi Sekarang" : "Start Transaction Now"}
                     </Link>
                   </Button>
